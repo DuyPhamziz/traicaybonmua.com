@@ -5,63 +5,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trái cây bốn mùa</title>
+    <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/asset/css/base.css">
     <link rel="stylesheet" href="/asset/css/main.css">
-    <link href="bootstrap-5.3.3-dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="bootstrap-5.3.3-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="vendor/font-awesome/font-awesome-6-pro-main/css/all.css">
+
 </head>
 
 <body>
     <nav class="navbar navbar-expand-md navbar-dark sticky-top bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="https://nentang.vn">Nền tảng</a>
-            <div class="navbar-collapse collapse" id="navbarCollapse">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="index.html">Trang chủ</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="gioithieu.html">Giới thiệu</a>
-                    </li>
-                    <li class=" nav-item">
-                        <a class="nav-link" href="#">Sản phẩm</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="lienhe.html">Liên hệ</a>
-                    </li>
+            <div class="row">
+                <div class="col-1">
+                    <img class="navbar-brand" src="/asset/img/logo_4sf.png" style="width: 100%;">
+                </div>
+                <div class="col-3 d-flex align-items-center">
+                    <div class="navbar-collapse " id="navbarCollapse">
+                        <ul class="navbar-nav mr-auto justify-content-between ml-auto w-100">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#">Trang chủ</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="gioithieu.html">Giới thiệu</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="sanpham.html">Sản phẩm</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="lienhe.html">Liên hệ</a>
+                            </li>
 
-                </ul>
-                <form class="form-inline mt-2 mt-md-0" method="get" action="pages/search.html">
-                    <input class="form-control mr-sm-2" type="text" placeholder="Tìm kiếm" aria-label="Search"
-                        name="keyword_tensanpham">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Tìm kiếm</button>
-                </form>
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="col-1"></div>
+                <div class="col-4 d-flex align-items-center ">
+                    <form class="form-inline mt-2 mt-md-0 d-flex align-items-center justify-content-center w-100"
+                        method="get" action="pages/search.html">
+                        <div class="col-10">
+                            <input class="form-control mr-sm-2 flex-grow-1" type="text" placeholder="Tìm kiếm ở đây"
+                                aria-label="Search" name="keyword_tensanpham">
+                        </div>
+                        <div class="col-2">
+                            <button class="btn btn-outline-success flex-grow-1 my-sm-0" type=" submit">Tìm
+                                kiếm</button>
+                        </div>
+
+                    </form>
+                </div>
+                <div class="col-3 d-flex align-items-center ">
+                    <ul class="navbar-nav px-3 ms-auto">
+                        <li class="nav-item text-nowrap">
+                            <a class="nav-link" href="pages/cart.html">Giỏ hàng <i
+                                    class="fa-sharp fa-solid fa-cart-shopping"></i> &nbsp;</a>
+                        </li>
+                        <li class="nav-item text-nowrap">
+                            <!-- Nếu chưa đăng nhập thì hiển thị nút Đăng nhập -->
+                            <a class="nav-link" href="pages/login.html">Đăng nhập <i class="fa-solid fa-user"></i></a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <ul class="navbar-nav px-3">
-                <li class="nav-item text-nowrap">
-                    <a class="nav-link" href="pages/cart.html">Giỏ hàng</a>
-                </li>
-                <li class="nav-item text-nowrap">
-                    <!-- Nếu chưa đăng nhập thì hiển thị nút Đăng nhập -->
-                    <a class="nav-link" href="pages/login.html">Đăng nhập</a>
-                </li>
-            </ul>
+
+
+
         </div>
     </nav>
+    <!-- end header -->
+
+
     <footer class="footer mt-auto py-3">
         <div class="container">
-            <span>Bản quyền © bởi <a href="https://nentang.vn">Nền Tảng</a> -
+            <span>Bản quyền © bởi <a href="#">Nhóm 2</a> -
                 <script>document.write(new Date().getFullYear());</script>.
             </span>
-            <span class="text-muted">Hành trang tới Tương lai</span>
+            <span class="text-muted">Trái cây theo phong cách bốn mùa</span>
 
             <p class="float-right">
                 <a href="#">Về đầu trang</a>
             </p>
         </div>
     </footer>
-    <script src="bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
-    <script src="bootstrap-5.3.3-dist/js/bootstrap.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
 </body>
 
 </html>
