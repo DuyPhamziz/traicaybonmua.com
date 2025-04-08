@@ -1,5 +1,9 @@
 .navbar {
-    font-size: 14px;
+    font-size: 18px;
+}
+
+.nav-link {
+    padding: 10px 10px !important;
 }
 
 #lienhe_banner {
@@ -9,4 +13,22 @@
 .text-center {
     color: #212429;
     padding: 20px;
+}
+
+.img_description {
+    padding: 40px 10px;
+}
+
+.gif_1 {
+    width: 24%;
+    position: relative;
+    top: 40%;
+    margin-top: 10px;
+}
+
+.gif_2 {
+    width: 50%;
+    position: relative;
+    top: 45%;
+    margin-top: 10px;
 }
