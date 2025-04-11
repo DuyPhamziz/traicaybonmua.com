@@ -2,9 +2,9 @@ var citis = document.getElementById("city");
 var districts = document.getElementById("district");
 var wards = document.getElementById("ward");
 var Parameter = {
-  url: "https://raw.githubusercontent.com/kenzouno1/DiaGioiHanhChinhVN/master/data.json", 
-  method: "GET", 
-  responseType: "application/json", 
+  url: "https://raw.githubusercontent.com/kenzouno1/DiaGioiHanhChinhVN/master/data.json",
+  method: "GET",
+  responseType: "json",
 };
 var promise = axios(Parameter);
 promise.then(function (result) {
@@ -18,7 +18,7 @@ function renderCity(data) {
   citis.onchange = function () {
     district.length = 1;
     ward.length = 1;
-    if(this.value != ""){
+    if (this.value != "") {
       const result = data.filter(n => n.Id === this.value);
 
       for (const k of result[0].Districts) {

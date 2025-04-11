@@ -18,13 +18,14 @@
                     <img class="navbar-brand w-100" src="/asset/img/logo_4sf.png">
                 </div>
                 <!-- Thanh điều hướng (Navbar) trên điện thoại -->
-                <div class="col-8 col-md-7 d-flex align-items-center justify-content-end d-md-none">
+                <div class="col-8 col-md-6 d-flex align-items-center justify-content-end d-md-none">
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
                         aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                 </div>
+
                 <div class="col-1 col-md-7 d-flex align-items-center justify-content-end d-md-none">
                     <button class="navbar-toggler d-md-none" type="button" data-bs-toggle="collapse"
                         data-bs-target="#cartUserCollapse" aria-controls="cartUserCollapse" aria-expanded="false"
@@ -68,19 +69,19 @@
                 <div class="col-12 col-md-2 d-flex align-items-center justify-content-end ms-auto d-none d-md-block">
                     <ul class="navbar-nav ms-auto d-flex w-100 p-0 m-0">
                         <li class="nav-item d-flex flex-grow-1 text-nowrap w-25">
-                            <a class="nav-link w-50" href="pages/cart.html">Giỏ hàng <i
+                            <a class="nav-link w-50" href="giohang.html">Giỏ hàng <i
                                     class="fa-sharp fa-solid fa-cart-shopping"></i> </a>
                         </li>
                         &nbsp;&nbsp;
                         <li class="nav-item d-flex flex-grow-1 text-nowrap w-25">
-                            <a class="nav-link w-50" href="pages/login.html">Đăng nhập <i
+                            <a class="nav-link w-50" id="userNavLink" href=" pages/login.html">Đăng nhập <i
                                     class="fa-solid fa-user"></i></a>
                         </li>
                     </ul>
                 </div>
                 <div class="collapse" id="cartUserCollapse" style="color: aliceblue;">
                     <div class="d-flex justify-content-between p-3">
-                        <a class="nav-link" href="pages/cart.html">
+                        <a class="nav-link" href="giohang.html">
                             Giỏ hàng <i class="fa-sharp fa-solid fa-cart-shopping"></i>
                         </a>
                         <a class="nav-link" href="pages/login.html">
@@ -176,7 +177,7 @@
                     <h2 class="featurette-heading">Mua Trái Cây <span class="text-muted">Online</span> Dễ Dàng
                     </h2>
                     <p class="lead">Giao hỏa tốc - Đảm bảo tươi mát khi đến tay khách hàng.</p>
-                    <img class="d-none d-md-block gif_1" src="/asset/img/onlShip.gif" alt="">
+                    
                 </div>
                 <div class="col-md-7">
                     <img class="w-100" src="/asset/img/onlShip.png">
@@ -189,10 +190,10 @@
                     <h2 class="featurette-heading"> Trái Cây Bốn Mùa - <span class="text-muted">Khám Phá Lợi Ích Sức
                             Khỏe</span></h2>
                     <p class="lead">Thực phẩm giàu Vitamin - mang lại nhiều lợi ích về Sức khỏe.</p>
-                    <img class="d-none d-md-block gif_2" src="/asset/img/heal.git.gif" alt="">
+                    
                 </div>
                 <div class="col-md-7 order-md-1">
-                    <img class="w-100" src="asset/img/heal.png">
+                    <img class="w-100" src="/asset/img/heal.png">
                 </div>
             </div>
 
@@ -204,7 +205,7 @@
         <section class="jumbotron text-center">
             <div class="container">
                 <h1 class="jumbotron-heading">Danh mục Sản phẩm</h1>
-                <p class="lead text-muted">Các sản phẩm với chất lượng, uy tín, cam kết từ nhà Sản xuấtg.</p>
+                <p class="lead text-muted">Các sản phẩm với chất lượng, uy tín, cam kết từ nhà Sản xuất.</p>
             </div>
         </section>
 
@@ -420,10 +421,22 @@
             </p>
         </div>
     </footer>
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
 
 </body>
 
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+        const userNavLink = document.getElementById("userNavLink");
 
+        if (currentUser && userNavLink) {
+            userNavLink.innerHTML = `&nbsp; Chào, ${currentUser.userFullName} <i class="fa-solid fa-user"></i>`;
+            userNavLink.href = "#"; // hoặc link tới trang cá nhân
+        }
+    });
+</script>
+
+<script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </html>

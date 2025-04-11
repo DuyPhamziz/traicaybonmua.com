@@ -36,7 +36,7 @@
                     <div class="navbar-collapse collapse" id="navbarCollapse">
                         <ul class="navbar-nav mr-auto justify-content-between ml-auto w-100">
                             <li class="nav-item active">
-                                <a class="nav-link" href="#">Trang chủ</a>
+                                <a class="nav-link" href="index.html">Trang chủ</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="gioithieu.html">Giới thiệu</a>
@@ -47,7 +47,6 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="lienhe.html">Liên hệ</a>
                             </li>
-
                         </ul>
 
                     </div>
@@ -55,13 +54,7 @@
 
                 <!-- Form tìm kiếm -->
                 <div class="col-12 col-md-4 d-flex align-items-center justify-content-center">
-                    <form class="form-inline mt-2 mt-md-0 w-100" method="get" action="pages/search.html">
-                        <div class="input-group w-100">
-                            <input class="form-control mr-sm-2 w-75" type="text" placeholder="Tìm kiếm ở đây"
-                                aria-label="Search" name="keyword_tensanpham">
-                            <button class="btn btn-outline-success w-25" type="submit">Tìm kiếm</button>
-                        </div>
-                    </form>
+
                 </div>
                 <!-- Giỏ hàng và đăng nhập -->
                 <div class="col-12 col-md-2 d-flex align-items-center justify-content-end ms-auto d-none d-md-block">
@@ -95,14 +88,23 @@
         <div class="signup-content row">
             <div class="signup-form col-md-6">
                 <h2 class="form-title">Đăng Ký</h2>
-                <form method="POST" class="register-form" id="register-form">
+                <form method="" class="register-form" id="register-form">
                     <div class="form-group">
                         <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
                         <input type="text" name="name" id="name" placeholder="Tên Tài Khoản">
+                        <div style="color: red; display: none;" id="userError">Tên tài khoản có độ dài từ 3 đến 12 kì tự
+                            và không được để trống</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="fullname"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                        <input type="text" name="fname" id="fullname" placeholder="Họ và tên">
+                        <div style="color: red; display: none;" id="fnameError">Điền đầy đủ Họ và tên</div>
                     </div>
                     <div class="form-group">
                         <label for="email"><i class="zmdi zmdi-email"></i></label>
-                        <input type="email" name="email" id="email" placeholder="Số điện thoại">
+                        <input type="text" name="phone" id="phone" placeholder="Số điện thoại">
+                        <div style="color: red; display: none;" id="phoneError">Vui lòng nhập chính xác số điện thoại
+                        </div>
                     </div>
                     <div class="form-group">
 
@@ -124,16 +126,19 @@
                                     aria-label=".form-select-sm">
                                     <option value="" selected>Chọn phường xã</option>
                                 </select></div>
-
+                            <div style="color: red; display: none;" id="addError">Vui lòng chọn địa chỉ</div>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="pass"><i class="zmdi zmdi-lock"></i></label>
                         <input type="password" name="pass" id="pass" placeholder="Mật khẩu">
+                        <div style="color: red; display: none;" id="passError">Vui lòng nhập mật khẩu</div>
                     </div>
                     <div class="form-group">
                         <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
                         <input type="password" name="re_pass" id="re_pass" placeholder="Nhập lại mật khẩu">
+                        <div style="color: red; display: none;" id="repassError">Vui lòng nhập lại mật khẩu</div>
+                        <div style="color: red; display: none;" id="repassError2">Mật khẩu nhập lại không khớp</div>
                     </div>
                     <div class="form-group">
                         <input type="checkbox" name="agree-term" id="agree-term" class="agree-term">
@@ -141,7 +146,9 @@
                             <a href="#" class="term-service">điều khoản và chính sách </a>của cửa hàng</label>
                     </div>
                     <div class="form-group form-button">
-                        <input type="submit" name="signup" id="signup" class="form-submit" value="Đăng Ký">
+                        <button type="submit" name="signup" id="signup" class="form-submit" value="register"> ĐĂNG KÝ
+                        </button>
+
                     </div>
                 </form>
             </div>
@@ -164,9 +171,12 @@
             </p>
         </div>
     </footer>
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-    <script src="asset/js/axios.min.js"></script>
-    <script src="asset/js/selectOptionAddress.js"></script>
+
+
 </body>
+<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="asset/js/axios.min.js"></script>
+<script src="asset/js/selectOptionAddress.js"></script>
+<script src="asset/js/register.js"></script>
 
 </html>

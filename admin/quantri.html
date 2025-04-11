@@ -5,7 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trang Quản trị</title>
-    <link rel="stylesheet" href="/asset/css/style.css">
+
+    <link rel="stylesheet" href="../asset/css/base.css">
+    <link rel="stylesheet" href="../asset/css/main.css">
+    <link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.min.css">
 </head>
 
 <body>
@@ -66,13 +69,11 @@
                 <!-- Giỏ hàng và đăng nhập -->
                 <div class="col-12 col-md-2 d-flex align-items-center justify-content-end ms-auto d-none d-md-block">
                     <ul class="navbar-nav ms-auto d-flex w-100 p-0 m-0">
-                        <li class="nav-item d-flex flex-grow-1 text-nowrap w-25">
-                            <a class="nav-link w-50" href="pages/cart.html">Giỏ hàng <i
-                                    class="fa-sharp fa-solid fa-cart-shopping"></i> </a>
-                        </li>
+
                         &nbsp;&nbsp;
                         <li class="nav-item d-flex flex-grow-1 text-nowrap w-25">
-                            <a class="nav-link w-50" href="">Đăng nhập <i class="fa-solid fa-user"></i></a>
+                            <a class="nav-link w-50" href="dangnhap.html" id="userNavLink">Đăng nhập &nbsp;&nbsp; <i
+                                    class="fa-solid fa-user"></i> </a>
                         </li>
                     </ul>
                 </div>
@@ -81,7 +82,7 @@
                         <a class="nav-link" href="pages/cart.html">
                             Giỏ hàng <i class="fa-sharp fa-solid fa-cart-shopping"></i>
                         </a>
-                        <a class="nav-link" href="pages/login.html">
+                        <a class="nav-link" href="dangnhap.html">
                             Đăng nhập <i class="fa-solid fa-user"></i>
                         </a>
                     </div>
@@ -91,7 +92,88 @@
         </div>
     </nav>
     <!-- end header -->
+    <main role="main">
+        <div></div>
+        <div class=" row container">
+            <div class="col-4">
+                <div class="d-flex flex-column flex-shrink-0 p-5 bg-body-tertiary" style="width: 350px;">
+                    <a href="/"
+                        class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+                        <svg class="bi pe-none me-2" width="40" height="32" aria-hidden="true">
+                            <use xlink:href="#bootstrap"></use>
+                        </svg>
+                        <span class="fs-4">Quản Lí Cửa Hàng</span>
 
+                    </a>
+                    <hr>
+                    <ul class="nav nav-pills flex-column mb-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link active" data-target="sanpham">
+                                <svg class="bi pe-none me-2" width="16" height="16" aria-hidden="true">
+                                    <use xlink:href="#home"></use>
+                                </svg>
+                                Chức năng Sản phẩm
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link link-body-emphasis" data-target="tuvan">
+                                <svg class="bi pe-none me-2" width="16" height="16" aria-hidden="true">
+                                    <use xlink:href="#speedometer2"></use>
+                                </svg>
+                                Tư vấn Khách hàng
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link link-body-emphasis" data-target="doanhthu">
+                                <svg class="bi pe-none me-2" width="16" height="16" aria-hidden="true">
+                                    <use xlink:href="#table"></use>
+                                </svg>
+                                Doanh Thu
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link link-body-emphasis" data-target="donhang">
+                                <svg class="bi pe-none me-2" width="16" height="16" aria-hidden="true">
+                                    <use xlink:href="#grid"></use>
+                                </svg>
+                                Đơn Hàng
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link link-body-emphasis" data-target="giamgia">
+                                <svg class="bi pe-none me-2" width="16" height="16" aria-hidden="true">
+                                    <use xlink:href="#people-circle"></use>
+                                </svg>
+                                Giảm giá
+                            </a>
+                        </li>
+                    </ul>
+                    <hr>
+                    <div class="dropdown">
+                        <a href="#"
+                            class="d-flex align-items-center link-body-emphasis text-decoration-none dropdown-toggle"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="/asset/img/logo_4sf.png" alt="" width="32" height="32"
+                                class="rounded-circle me-2">
+                            <strong>Admin</strong>
+                        </a>
+                        <ul class="dropdown-menu text-small shadow">
+                            <li><a class="dropdown-item" href="#" data-target="hoso">Hồ sơ</a></li>
+                            <li><a class="dropdown-item" href="#">Cài đặt</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Đăng xuất</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-7 content_admin">
+
+            </div>
+
+
+    </main>
 
     <footer class="footer mt-auto py-3">
         <div class="container">
@@ -105,8 +187,26 @@
             </p>
         </div>
     </footer>
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+
 
 </body>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+        const userNavLink = document.getElementById("userNavLink");
+
+        if (currentUser && userNavLink) {
+            userNavLink.innerHTML = `&nbsp; Chào, ${currentUser.userFullName} &nbsp;&nbsp; <i class="fa-solid fa-user"></i>`;
+            userNavLink.href = "#"; // hoặc link tới trang cá nhân
+        }
+    });
+</script>
+<script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/admin/asset/js/app.js"></script>
+<script>
+    document.querySelector('.nav-link[data-target="sanpham"]')?.click();
+</script>
+
 
 </html>

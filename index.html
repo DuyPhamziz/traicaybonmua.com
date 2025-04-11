@@ -56,27 +56,31 @@
                 </div>
 
                 <!-- Form tìm kiếm -->
-                <div class="col-12 col-md-4 d-flex align-items-center justify-content-center">
-                    <form class="form-inline mt-2 mt-md-0 w-100" method="get" action="pages/search.html">
-                        <div class="input-group w-100">
-                            <input class="form-control mr-sm-2 w-75" type="text" placeholder="Tìm kiếm ở đây"
-                                aria-label="Search" name="keyword_tensanpham">
-                            <button class="btn btn-outline-success w-25" type="submit">Tìm kiếm</button>
-                        </div>
-                    </form>
+                <div class="col-12 col-md-3 d-flex align-items-center justify-content-center">
+
                 </div>
                 <!-- Giỏ hàng và đăng nhập -->
-                <div class="col-12 col-md-2 d-flex align-items-center justify-content-end ms-auto d-none d-md-block">
+                <div class="col-12 col-md-3 d-flex align-items-center justify-content-end ms-auto d-none d-md-block">
                     <ul class="navbar-nav ms-auto d-flex w-100 p-0 m-0">
                         <li class="nav-item d-flex flex-grow-1 text-nowrap w-25">
-                            <a class="nav-link w-50" href="pages/cart.html">Giỏ hàng <i
-                                    class="fa-sharp fa-solid fa-cart-shopping"></i> </a>
+                            <a class="nav-link w-50" href="" id="cartLink">Giỏ hàng <i
+                                    class="fa-sharp fa-solid fa-cart-shopping"></i>
+                            </a>
                         </li>
-                        &nbsp;&nbsp;
+
                         <li class="nav-item d-flex flex-grow-1 text-nowrap w-25">
-                            <a class="nav-link w-50" href="dangnhap.html">Đăng nhập <i class="fa-solid fa-user"></i></a>
+                            <a class="nav-link w-50" href="dangnhap.html" id="userNavLink"> Đăng nhập <i
+                                    class="fa-solid fa-user"></i></a>
                         </li>
                     </ul>
+                </div>
+                <!-- Lớp phủ -->
+                <div id="loginOverlay" class="overlay">
+                    <div class="overlay-content">
+                        <h3>Bạn cần đăng nhập để xem giỏ hàng.</h3>
+                        <a href="dangnhap.html" class="btn btn-primary">Đăng nhập</a>
+                        <button id="closeOverlay" class="btn btn-secondary">Đóng</button>
+                    </div>
                 </div>
                 <div class="collapse" id="cartUserCollapse" style="color: aliceblue;">
                     <div class="d-flex justify-content-between p-3">
@@ -176,7 +180,7 @@
                     <h2 class="featurette-heading">Mua Trái Cây <span class="text-muted">Online</span> Dễ Dàng
                     </h2>
                     <p class="lead">Giao hỏa tốc - Đảm bảo tươi mát khi đến tay khách hàng.</p>
-                    <img class="d-none d-md-block gif_1" src="/asset/img/onlShip.gif" alt="">
+
                 </div>
                 <div class="col-md-7">
                     <img class="w-100" src="/asset/img/onlShip.png">
@@ -189,7 +193,7 @@
                     <h2 class="featurette-heading"> Trái Cây Bốn Mùa - <span class="text-muted">Khám Phá Lợi Ích Sức
                             Khỏe</span></h2>
                     <p class="lead">Thực phẩm giàu Vitamin - mang lại nhiều lợi ích về Sức khỏe.</p>
-                    <img class="d-none d-md-block gif_2" src="/asset/img/heal.git.gif" alt="">
+
                 </div>
                 <div class="col-md-7 order-md-1">
                     <img class="w-100" src="asset/img/heal.png">
@@ -420,10 +424,31 @@
             </p>
         </div>
     </footer>
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <div id="showOverlayBtn">
+
+    </div>
 
 </body>
+<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<script>
+    const cartLink = document.getElementById("cartLink");
+    const overlay = document.getElementById("loginOverlay");
+    const closeOverlay = document.getElementById("closeOverlay");
 
+    // Giả sử bạn kiểm tra trạng thái đăng nhập qua biến (ví dụ session/localStorage)
+    const isLoggedIn = false; // Đổi thành true nếu người dùng đã đăng nhập
 
+    cartLink.addEventListener("click", function (e) {
+        if (!isLoggedIn) {
+            e.preventDefault(); // Không cho chuyển trang
+            overlay.classList.add("active"); // Hiện lớp phủ
+        }
+    });
+
+    closeOverlay.addEventListener("click", function () {
+        overlay.classList.remove("active");
+    });
+</script>
 
 </html>

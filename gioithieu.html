@@ -15,12 +15,28 @@
 <body>
     <nav class="navbar navbar-expand-md navbar-dark sticky-top bg-dark">
         <div class="container">
-            <div class="row">
-                <div class="col-1">
-                    <img class="navbar-brand" src="/asset/img/logo_4sf.png" style="width: 100%;">
+            <div class="row w-100">
+                <div class="col-3 col-md-1">
+                    <img class="navbar-brand w-100" src="/asset/img/logo_4sf.png">
                 </div>
-                <div class="col-3 d-flex align-items-center">
-                    <div class="navbar-collapse " id="navbarCollapse">
+                <!-- Thanh điều hướng (Navbar) trên điện thoại -->
+                <div class="col-8 col-md-7 d-flex align-items-center justify-content-end d-md-none">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+                <div class="col-1 col-md-7 d-flex align-items-center justify-content-end d-md-none">
+                    <button class="navbar-toggler d-md-none" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#cartUserCollapse" aria-controls="cartUserCollapse" aria-expanded="false"
+                        aria-label="Toggle cart and user">
+                        <i class="fa-solid fa-user"></i>
+                    </button>
+                </div>
+
+                <div class="col-12 col-md-5 d-flex align-items-center">
+                    <div class="navbar-collapse collapse" id="navbarCollapse">
                         <ul class="navbar-nav mr-auto justify-content-between ml-auto w-100">
                             <li class="nav-item active">
                                 <a class="nav-link" href="index.html">Trang chủ</a>
@@ -39,36 +55,41 @@
 
                     </div>
                 </div>
-                <div class="col-1"></div>
-                <div class="col-4 d-flex align-items-center ">
-                    <form class="form-inline mt-2 mt-md-0 d-flex align-items-center justify-content-center w-100"
-                        method="get" action="pages/search.html">
-                        <div class="col-10">
-                            <input class="form-control mr-sm-2 flex-grow-1" type="text" placeholder="Tìm kiếm ở đây"
-                                aria-label="Search" name="keyword_tensanpham">
-                        </div>
-                        <div class="col-2">
-                            <button class="btn btn-outline-success flex-grow-1 my-sm-0" type=" submit">Tìm
-                                kiếm</button>
-                        </div>
 
+                <!-- Form tìm kiếm -->
+                <div class="col-12 col-md-4 d-flex align-items-center justify-content-center">
+                    <form class="form-inline mt-2 mt-md-0 w-100" method="get" action="pages/search.html">
+                        <div class="input-group w-100">
+                            <input class="form-control mr-sm-2 w-75" type="text" placeholder="Tìm kiếm ở đây"
+                                aria-label="Search" name="keyword_tensanpham">
+                            <button class="btn btn-outline-success w-25" type="submit">Tìm kiếm</button>
+                        </div>
                     </form>
                 </div>
-                <div class="col-3 d-flex align-items-center ">
-                    <ul class="navbar-nav px-3 ms-auto">
-                        <li class="nav-item text-nowrap">
-                            <a class="nav-link" href="pages/cart.html">Giỏ hàng <i
-                                    class="fa-sharp fa-solid fa-cart-shopping"></i> &nbsp;</a>
+                <!-- Giỏ hàng và đăng nhập -->
+                <div class="col-12 col-md-2 d-flex align-items-center justify-content-end ms-auto d-none d-md-block">
+                    <ul class="navbar-nav ms-auto d-flex w-100 p-0 m-0">
+                        <li class="nav-item d-flex flex-grow-1 text-nowrap w-25">
+                            <a class="nav-link w-50" href="pages/cart.html">Giỏ hàng <i
+                                    class="fa-sharp fa-solid fa-cart-shopping"></i> </a>
                         </li>
-                        <li class="nav-item text-nowrap">
-                            <!-- Nếu chưa đăng nhập thì hiển thị nút Đăng nhập -->
-                            <a class="nav-link" href="pages/login.html">Đăng nhập <i class="fa-solid fa-user"></i></a>
+                        &nbsp;&nbsp;
+                        <li class="nav-item d-flex flex-grow-1 text-nowrap w-25">
+                            <a class="nav-link w-50" href="dangnhap.html">Đăng nhập <i class="fa-solid fa-user"></i></a>
                         </li>
                     </ul>
                 </div>
+                <div class="collapse" id="cartUserCollapse" style="color: aliceblue;">
+                    <div class="d-flex justify-content-between p-3">
+                        <a class="nav-link" href="pages/cart.html">
+                            Giỏ hàng <i class="fa-sharp fa-solid fa-cart-shopping"></i>
+                        </a>
+                        <a class="nav-link" href="dangnhap.html">
+                            Đăng nhập <i class="fa-solid fa-user"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
-
-
 
         </div>
     </nav>
