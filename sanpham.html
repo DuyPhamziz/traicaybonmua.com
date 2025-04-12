@@ -48,7 +48,7 @@
                                 <a class="nav-link" href="#">Sản phẩm</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="lienhe.html">Liên hệ</a>
+                                <a class="nav-link" onclick="showOverlay()">Liên hệ</a>
                             </li>
 
                         </ul>
@@ -64,7 +64,7 @@
                 <div class="col-12 col-md-3 d-flex align-items-center justify-content-end ms-auto d-none d-md-block">
                     <ul class="navbar-nav ms-auto d-flex w-100 p-0 m-0">
                         <li class="nav-item d-flex flex-grow-1 text-nowrap w-25">
-                            <a class="nav-link w-50" href="pages/cart.html">Giỏ hàng <i
+                            <a class="nav-link w-50" onclick="showOverlay()">Giỏ hàng <i
                                     class="fa-sharp fa-solid fa-cart-shopping"></i> </a>
                         </li>
 
@@ -243,18 +243,81 @@
 
     </main>
 
-    <footer class="footer mt-auto py-3">
-        <div class="container">
-            <span>Bản quyền © bởi <a href="#">Nhóm 2</a> -
-                <script>document.write(new Date().getFullYear());</script>.
-            </span>
-            <span class="text-muted">Trái cây theo phong cách bốn mùa</span>
-
-            <p class="float-right">
-                <a href="#">Về đầu trang</a>
-            </p>
+    <hr>
+    <footer class="tufooter mt-auto py-3">
+        <div class="tuthongtinfooter">
+            <div class="tuthongtin">
+                <div><b>Bản quyền của Công ty TNHH Morning Fruit</b></div>
+                <div>
+                    Giấy chứng nhận Đăng ký Kinh doanh số 03164646 do Sở Kế hoạch và Đầu tư Tỉnh Hậu Giang cấp ngày 02/01/2025. Đăng ký thay đổi lần 1 ngày 22/03/2025
+                    Giấy chứng nhận cơ sở đủ điều kiện an toàn thực phẩm số 3091/2022/BQLATTP-HCM do Ban Quản lý An toàn thực phẩm Tỉnh Hậu Giang cấp ngày 15/04/2025</div>
+            </div>
+        <div class="tuthongtin">
+            <div><b>Về shop : </b>Shop là thương hiệu trái cây tươi chất lượng cao, với đa dạng sản phẩm phục vụ mọi nhu cầu: đặc sản vùng miền, trái cây nhập khẩu, nước ép</div>
         </div>
+        <div class="tuthongtin">
+            <div><b>Địa chỉ : </b>Xã Hòa An, huyện Long Mỹ, tỉnh Hậu Giang</div>
+            <div><b>Số điện thoại : </b>0326754284</div>
+            <div><b>Emai : </b>traicay@gmail.com</div>
+        </div>
+        
+        <div class="tuthongtin">
+            <div><b>Hổ trợ khách hàng</b></div>
+            <div>
+                <ul>
+                    <li>Chính sách kiểm hàng</li>
+                    <li>Chính sách bảo hành</li>
+                    <li>Chính sách giao hàng</li>
+                    <li>Chính sách thanh toán</li>
+                    <li>Hướng dẫn mua hàng Online</li>
+                    <li>Kiến thức trái cây</li>
+                    <li>Liên hệ</li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="tuthongtin">
+            <div><b>Chăm sóc khách hàng</b></div>
+            <div>
+                <b>Số điện thoại : </b>0326754284
+            </div>
+            <div>
+                <b>Emai : </b>traicay@gmail.com
+            </div>
+            <div><b>Các trang mạng xã hội khác</b></div>
+            <div>
+                <a href="https://www.facebook.com/share/1AEdqtmWEC/" >
+                    <img class="tuMXH"src="asset/img/logo.mxh/fb.png" alt=""></a>
+                <a href="https://www.facebook.com/share/1AEdqtmWEC/" >
+                    <img class="tuMXH"src="asset/img/logo.mxh/instagram.jfif" alt=""></a>
+                <a href="https://www.facebook.com/share/1AEdqtmWEC/" >
+                    <img class="tuMXH"src="asset/img/logo.mxh/zalo.png" alt=""></a>
+            </div>
+        </div>
+    </div>
     </footer>
+    <hr>
+    <div style="text-align: center; margin: 5px;">
+        Copyright &copy 2025 - Trái Cây Chất Lượng Cao
+    </div>
+    <div id="tuoverlay">
+        <div class="tuoverlay-content">
+          <!-- Nút X -->
+          <button id="tucloseOverlayBtnX">&times;</button>
+    
+          <div id="tuchu">Bạn chưa đăng nhập</div>
+          <img id="tuhinhchuadn" src="asset/img/chuadangnhap.png" alt="Chưa đăng nhập">
+          <div class="tu2thongtin">
+            <p>Để tiếp tục mua hàng vui lòng <a class="tudndk" href="#">đăng nhập</a>.</p>
+            <p>Nếu bạn chưa có tài khoản hãy <a class="tudndk" href="#">đăng ký</a> nhé!</p>
+            <div style="text-align: center;">
+                     <button id="tucloseOverlayBtn">Đóng</button>
+            </div>
+       
+          </div>
+        </div>
+      </div>
+      <script src="asset/js/tujskiemtra.js"></script>
 
 
 </body>
