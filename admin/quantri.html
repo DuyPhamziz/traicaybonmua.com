@@ -13,7 +13,7 @@
 
 <body>
     <!-- header -->
-    <nav class="navbar navbar-expand-md navbar-dark sticky-top bg-dark">
+    <nav class="navbar navbar-expand-md navbar-dark sticky-top bg-dark style=" z-index: 1050;">
         <div class="container">
             <div class="row w-100">
                 <div class="col-3 col-md-1">
@@ -39,16 +39,7 @@
                     <div class="navbar-collapse collapse" id="navbarCollapse">
                         <ul class="navbar-nav mr-auto justify-content-between ml-auto w-100">
                             <li class="nav-item active">
-                                <a class="nav-link" href="#">Trang chủ</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="gioithieu.html">Giới thiệu</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="sanpham.html">Sản phẩm</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="lienhe.html">Liên hệ</a>
+                                <a class="nav-link" href="#">Trang chủ Admin</a>
                             </li>
 
                         </ul>
@@ -58,13 +49,7 @@
 
                 <!-- Form tìm kiếm -->
                 <div class="col-12 col-md-4 d-flex align-items-center justify-content-center">
-                    <form class="form-inline mt-2 mt-md-0 w-100" method="get" action="pages/search.html">
-                        <div class="input-group w-100">
-                            <input class="form-control mr-sm-2 w-75" type="text" placeholder="Tìm kiếm ở đây"
-                                aria-label="Search" name="keyword_tensanpham">
-                            <button class="btn btn-outline-success w-25" type="submit">Tìm kiếm</button>
-                        </div>
-                    </form>
+
                 </div>
                 <!-- Giỏ hàng và đăng nhập -->
                 <div class="col-12 col-md-2 d-flex align-items-center justify-content-end ms-auto d-none d-md-block">
@@ -72,8 +57,19 @@
 
                         &nbsp;&nbsp;
                         <li class="nav-item d-flex flex-grow-1 text-nowrap w-25">
-                            <a class="nav-link w-50" href="dangnhap.html" id="userNavLink">Đăng nhập &nbsp;&nbsp; <i
-                                    class="fa-solid fa-user"></i> </a>
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="userNavLink"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    Đăng nhập &nbsp;&nbsp; <i class="fa-solid fa-user"></i>
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                    <li><a class="dropdown-item w-50" href="dangnhap.html" href="#">Hồ sơ</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">Cài đặt</a></li>
+                                    <li><a class="dropdown-item" href="#">Đăng xuất</a></li>
+                                </ul>
+                            </div>
+
                         </li>
                     </ul>
                 </div>
@@ -93,84 +89,72 @@
     </nav>
     <!-- end header -->
     <main role="main">
-        <div></div>
-        <div class=" row container">
-            <div class="col-4">
-                <div class="d-flex flex-column flex-shrink-0 p-5 bg-body-tertiary" style="width: 350px;">
-                    <a href="/"
-                        class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-                        <svg class="bi pe-none me-2" width="40" height="32" aria-hidden="true">
-                            <use xlink:href="#bootstrap"></use>
-                        </svg>
-                        <span class="fs-4">Quản Lí Cửa Hàng</span>
+        <div class="row container">
+            <div class="container-fluid p-3">
+                <div class="row">
+                    <!-- Sidebar -->
+                    <div class="col-12 col-md-4 col-lg-3 p-0 ">
+                        <div class="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary h-100">
+                            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-decoration-none">
+                                <svg class="bi pe-none me-2" width="40" height="32" aria-hidden="true">
+                                    <use xlink:href="#bootstrap"></use>
+                                </svg>
+                                <span class="fs-5 d-none d-md-inline">Quản Lí Cửa Hàng</span>
+                            </a>
+                            <hr>
+                            <ul class="nav nav-pills flex-column mb-auto">
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link active" data-target="sanpham">
+                                        <svg class="bi pe-none me-2" width="16" height="16">
+                                            <use xlink:href="#home"></use>
+                                        </svg>
+                                        Sản phẩm
+                                    </a>
+                                </li>
+                                <li><a href="#" class="nav-link link-body-emphasis" data-target="tuvan">
+                                        <svg class="bi pe-none me-2" width="16" height="16">
+                                            <use xlink:href="#speedometer2"></use>
+                                        </svg>
+                                        Tư vấn
+                                    </a></li>
+                                <li><a href="#" class="nav-link link-body-emphasis" data-target="doanhthu">
+                                        <svg class="bi pe-none me-2" width="16" height="16">
+                                            <use xlink:href="#table"></use>
+                                        </svg>
+                                        Doanh thu
+                                    </a></li>
+                                <li><a href="#" class="nav-link link-body-emphasis" data-target="donhang">
+                                        <svg class="bi pe-none me-2" width="16" height="16">
+                                            <use xlink:href="#grid"></use>
+                                        </svg>
+                                        Đơn hàng
+                                    </a></li>
+                                <li><a href="#" class="nav-link link-body-emphasis" data-target="giamgia">
+                                        <svg class="bi pe-none me-2" width="16" height="16">
+                                            <use xlink:href="#people-circle"></use>
+                                        </svg>
+                                        Giảm giá
+                                    </a></li>
+                                <li><a href="#" class="nav-link link-body-emphasis" data-target="hoso">
+                                        <svg class="bi pe-none me-2" width="16" height="16">
+                                            <use xlink:href="#people-circle"></use>
+                                        </svg>
+                                        Hồ sơ hoạt động Admin
+                                    </a></li>
+                            </ul>
 
-                    </a>
-                    <hr>
-                    <ul class="nav nav-pills flex-column mb-auto">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link active" data-target="sanpham">
-                                <svg class="bi pe-none me-2" width="16" height="16" aria-hidden="true">
-                                    <use xlink:href="#home"></use>
-                                </svg>
-                                Chức năng Sản phẩm
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="nav-link link-body-emphasis" data-target="tuvan">
-                                <svg class="bi pe-none me-2" width="16" height="16" aria-hidden="true">
-                                    <use xlink:href="#speedometer2"></use>
-                                </svg>
-                                Tư vấn Khách hàng
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="nav-link link-body-emphasis" data-target="doanhthu">
-                                <svg class="bi pe-none me-2" width="16" height="16" aria-hidden="true">
-                                    <use xlink:href="#table"></use>
-                                </svg>
-                                Doanh Thu
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="nav-link link-body-emphasis" data-target="donhang">
-                                <svg class="bi pe-none me-2" width="16" height="16" aria-hidden="true">
-                                    <use xlink:href="#grid"></use>
-                                </svg>
-                                Đơn Hàng
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="nav-link link-body-emphasis" data-target="giamgia">
-                                <svg class="bi pe-none me-2" width="16" height="16" aria-hidden="true">
-                                    <use xlink:href="#people-circle"></use>
-                                </svg>
-                                Giảm giá
-                            </a>
-                        </li>
-                    </ul>
-                    <hr>
-                    <div class="dropdown">
-                        <a href="#"
-                            class="d-flex align-items-center link-body-emphasis text-decoration-none dropdown-toggle"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="/asset/img/logo_4sf.png" alt="" width="32" height="32"
-                                class="rounded-circle me-2">
-                            <strong>Admin</strong>
-                        </a>
-                        <ul class="dropdown-menu text-small shadow">
-                            <li><a class="dropdown-item" href="#" data-target="hoso">Hồ sơ</a></li>
-                            <li><a class="dropdown-item" href="#">Cài đặt</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Đăng xuất</a></li>
-                        </ul>
+                        </div>
                     </div>
+
+                    <!-- Content -->
+                    <div class="col-12 col-md-8 col-lg-9 content_admin p-3">
+
+
+                    </div>
+
                 </div>
             </div>
-            <div class="col-7 content_admin">
 
-            </div>
 
 
     </main>
@@ -188,25 +172,32 @@
         </div>
     </footer>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+            const userNavLink = document.getElementById("userNavLink");
+
+            if (currentUser && userNavLink) {
+                userNavLink.innerHTML = `&nbsp; Chào, ${currentUser.userFullName} &nbsp;&nbsp; <i class="fa-solid fa-user"></i>`;
+                userNavLink.href = "#"; // hoặc link tới trang cá nhân
+            }
+        });
+    </script>
+    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        document.querySelector('.nav-link[data-target="sanpham"]')?.click();
+    </script>
+
+
+    <script src="/admin/asset/js/work_admin.js"></script>
+    <script src="/admin/asset/js/app.js"></script>
+    <script src="/admin/asset/js/sale.js"></script>
+    <script src="/admin/asset/js/mess.js"></script>
+
 
 
 </body>
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const currentUser = JSON.parse(localStorage.getItem("currentUser"));
-        const userNavLink = document.getElementById("userNavLink");
-
-        if (currentUser && userNavLink) {
-            userNavLink.innerHTML = `&nbsp; Chào, ${currentUser.userFullName} &nbsp;&nbsp; <i class="fa-solid fa-user"></i>`;
-            userNavLink.href = "#"; // hoặc link tới trang cá nhân
-        }
-    });
-</script>
-<script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="/admin/asset/js/app.js"></script>
-<script>
-    document.querySelector('.nav-link[data-target="sanpham"]')?.click();
-</script>
 
 
 </html>

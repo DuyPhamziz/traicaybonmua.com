@@ -13,6 +13,7 @@
 </head>
 
 <body>
+    <!-- header -->
     <nav class="navbar navbar-expand-md navbar-dark sticky-top bg-dark">
         <div class="container">
             <div class="row w-100">
@@ -57,27 +58,31 @@
                 </div>
 
                 <!-- Form tìm kiếm -->
-                <div class="col-12 col-md-4 d-flex align-items-center justify-content-center">
-                    <form class="form-inline mt-2 mt-md-0 w-100" method="get" action="pages/search.html">
-                        <div class="input-group w-100">
-                            <input class="form-control mr-sm-2 w-75" type="text" placeholder="Tìm kiếm ở đây"
-                                aria-label="Search" name="keyword_tensanpham">
-                            <button class="btn btn-outline-success w-25" type="submit">Tìm kiếm</button>
-                        </div>
-                    </form>
+                <div class="col-12 col-md-3 d-flex align-items-center justify-content-center">
+
                 </div>
                 <!-- Giỏ hàng và đăng nhập -->
-                <div class="col-12 col-md-2 d-flex align-items-center justify-content-end ms-auto d-none d-md-block">
+                <div class="col-12 col-md-3 d-flex align-items-center justify-content-end ms-auto d-none d-md-block">
                     <ul class="navbar-nav ms-auto d-flex w-100 p-0 m-0">
                         <li class="nav-item d-flex flex-grow-1 text-nowrap w-25">
-                            <a class="nav-link w-50" href="pages/cart.html">Giỏ hàng <i
-                                    class="fa-sharp fa-solid fa-cart-shopping"></i> </a>
+                            <a class="nav-link w-50" href="" id="cartLink">Giỏ hàng <i
+                                    class="fa-sharp fa-solid fa-cart-shopping"></i>
+                            </a>
                         </li>
-                        &nbsp;&nbsp;
+
                         <li class="nav-item d-flex flex-grow-1 text-nowrap w-25">
-                            <a class="nav-link w-50" href="dangnhap.html">Đăng nhập <i class="fa-solid fa-user"></i></a>
+                            <a class="nav-link w-50" href="dangnhap.html" id="userNavLink"> Đăng nhập <i
+                                    class="fa-solid fa-user"></i></a>
                         </li>
                     </ul>
+                </div>
+                <!-- Lớp phủ -->
+                <div id="loginOverlay" class="overlay">
+                    <div class="overlay-content">
+                        <h3>Bạn cần đăng nhập để xem giỏ hàng.</h3>
+                        <a href="dangnhap.html" class="btn btn-primary">Đăng nhập</a>
+                        <button id="closeOverlay" class="btn btn-secondary">Đóng</button>
+                    </div>
                 </div>
                 <div class="collapse" id="cartUserCollapse" style="color: aliceblue;">
                     <div class="d-flex justify-content-between p-3">
@@ -112,6 +117,17 @@
             </p>
         </div>
     </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+            const userNavLink = document.getElementById("userNavLink");
+
+            if (currentUser && userNavLink) {
+                userNavLink.innerHTML = `&nbsp; Chào, ${currentUser.userFullName} <i class="fa-solid fa-user"></i>`;
+                userNavLink.href = "#"; // hoặc link tới trang cá nhân
+            }
+        });
+    </script>
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
 </body>

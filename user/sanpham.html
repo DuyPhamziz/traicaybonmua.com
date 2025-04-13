@@ -8,11 +8,13 @@
     <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/asset/css/base.css">
     <link rel="stylesheet" href="/asset/css/main.css">
-    <link rel="stylesheet" href="vendor/font-awesome/font-awesome-6-pro-main/css/all.css">
+    <link rel="stylesheet" href="/admin/asset/css/main.css">
+    <link rel="stylesheet" href="/vendor/font-awesome/font-awesome-6-pro-main/css/all.css">
 
 </head>
 
 <body>
+    <!-- header -->
     <nav class="navbar navbar-expand-md navbar-dark sticky-top bg-dark">
         <div class="container">
             <div class="row w-100">
@@ -57,27 +59,31 @@
                 </div>
 
                 <!-- Form tìm kiếm -->
-                <div class="col-12 col-md-4 d-flex align-items-center justify-content-center">
-                    <form class="form-inline mt-2 mt-md-0 w-100" method="get" action="pages/search.html">
-                        <div class="input-group w-100">
-                            <input class="form-control mr-sm-2 w-75" type="text" placeholder="Tìm kiếm ở đây"
-                                aria-label="Search" name="keyword_tensanpham">
-                            <button class="btn btn-outline-success w-25" type="submit">Tìm kiếm</button>
-                        </div>
-                    </form>
+                <div class="col-12 col-md-3 d-flex align-items-center justify-content-center">
+
                 </div>
                 <!-- Giỏ hàng và đăng nhập -->
-                <div class="col-12 col-md-2 d-flex align-items-center justify-content-end ms-auto d-none d-md-block">
+                <div class="col-12 col-md-3 d-flex align-items-center justify-content-end ms-auto d-none d-md-block">
                     <ul class="navbar-nav ms-auto d-flex w-100 p-0 m-0">
                         <li class="nav-item d-flex flex-grow-1 text-nowrap w-25">
-                            <a class="nav-link w-50" href="pages/cart.html">Giỏ hàng <i
-                                    class="fa-sharp fa-solid fa-cart-shopping"></i> </a>
+                            <a class="nav-link w-50" href="" id="cartLink">Giỏ hàng <i
+                                    class="fa-sharp fa-solid fa-cart-shopping"></i>
+                            </a>
                         </li>
-                        &nbsp;&nbsp;
+
                         <li class="nav-item d-flex flex-grow-1 text-nowrap w-25">
-                            <a class="nav-link w-50" href="dangnhap.html">Đăng nhập <i class="fa-solid fa-user"></i></a>
+                            <a class="nav-link w-50" href="dangnhap.html" id="userNavLink"> Đăng nhập <i
+                                    class="fa-solid fa-user"></i></a>
                         </li>
                     </ul>
+                </div>
+                <!-- Lớp phủ -->
+                <div id="loginOverlay" class="overlay">
+                    <div class="overlay-content">
+                        <h3>Bạn cần đăng nhập để xem giỏ hàng.</h3>
+                        <a href="dangnhap.html" class="btn btn-primary">Đăng nhập</a>
+                        <button id="closeOverlay" class="btn btn-secondary">Đóng</button>
+                    </div>
                 </div>
                 <div class="collapse" id="cartUserCollapse" style="color: aliceblue;">
                     <div class="d-flex justify-content-between p-3">
@@ -94,7 +100,199 @@
         </div>
     </nav>
     <!-- end header -->
+    <main role="main">
+        <div class="container">
+            <div class="row">
 
+                <div class="col-12 col-md-4 d-flex align-items-center">
+                    <span class="text-center w-25">Tìm kiếm</span>
+                    <form class="w-100">
+                        <input class="form-control p-3 w-75" type="text" id="search-input"
+                            placeholder="Tìm kiếm sản phẩm" aria-label="Search">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-4 d-none d-md-block">
+                    <div class="d-flex flex-column flex-shrink-0 p-3 bg-light d-none d-md-block " style="width: 280px;">
+                        <a href="/"
+                            class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+                            <svg class="bi me-2" width="40" height="32">
+                                <use xlink:href="#bootstrap"></use>
+                            </svg>
+                            <span class="fs-4">Danh mục Sản phẩm</span>
+                        </a>
+                        <hr>
+                        <ul class="nav nav-pills flex-column mb-auto" id="sidebar-filter">
+                            <li class="nav-item">
+                                <a href="#" class="nav-link active" data-filter="all" aria-current="page">
+                                    <svg class="bi me-2" width="16" height="16">
+                                        <use xlink:href="#home"></use>
+                                    </svg>
+                                    Tất cả
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link link-dark" data-filter="hot">
+                                    <svg class="bi me-2" width="16" height="16">
+                                        <use xlink:href="#home"></use>
+                                    </svg>
+                                    Sản phẩm Hot
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link link-dark" data-filter="tcvietnam">
+                                    <svg class="bi me-2" width="16" height="16">
+                                        <use xlink:href="#speedometer2"></use>
+                                    </svg>
+                                    Trái cây Việt Nam
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link link-dark" data-filter="tcnhapkhau">
+                                    <svg class="bi me-2" width="16" height="16">
+                                        <use xlink:href="#table"></use>
+                                    </svg>
+                                    Trái cây Nhập khẩu
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link link-dark" data-filter="combo">
+                                    <svg class="bi me-2" width="16" height="16">
+                                        <use xlink:href="#grid"></use>
+                                    </svg>
+                                    Combo Trái cây
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link link-dark" data-filter="gioqua">
+                                    <svg class="bi me-2" width="16" height="16">
+                                        <use xlink:href="#people-circle"></use>
+                                    </svg>
+                                    Giỏ quà Trái cây
+                                </a>
+                            </li>
+                        </ul>
+                        <hr>
+                        <ul class="nav nav-pills flex-column mb-auto" id="sidebar-filter">
+                            <a href="/"
+                                class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+                                <svg class="bi me-2" width="40" height="32">
+                                    <use xlink:href="#bootstrap"></use>
+                                </svg>
+                                <span class="fs-4">Trái cây theo mùa</span>
+                            </a>
+
+                            <li>
+                                <a href="#" class="nav-link link-dark" data-filter="muaxuan">
+                                    <svg class="bi me-2" width="16" height="16">
+                                        <use xlink:href="#speedometer2"></use>
+                                    </svg>
+                                    Xuân
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link link-dark" data-filter="muaha">
+                                    <svg class="bi me-2" width="16" height="16">
+                                        <use xlink:href="#table"></use>
+                                    </svg>
+                                    Hạ
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link link-dark" data-filter="muathu">
+                                    <svg class="bi me-2" width="16" height="16">
+                                        <use xlink:href="#grid"></use>
+                                    </svg>
+                                    Thu
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link link-dark" data-filter="muadong">
+                                    <svg class="bi me-2" width="16" height="16">
+                                        <use xlink:href="#people-circle"></use>
+                                    </svg>
+                                    Đông
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="">
+                            <select id="price-filter" class="form-select">
+                                <optgroup label="Lọc theo khoảng giá">
+                                    <option value="price_all">Tất cả giá</option>
+                                    <option value="price_0-100000">Dưới 100.000 VNĐ</option>
+                                    <option value="price_100000-200000">100.000 - 200.000 VNĐ</option>
+                                    <option value="price_200000-500000">200.000 - 500.000 VNĐ</option>
+                                    <option value="price_500000-1000000">500.000 - 1.000.000 VNĐ</option>
+                                </optgroup>
+
+                                <optgroup label="Sắp xếp theo giá">
+                                    <option value="sort_asc">Giá: Thấp đến Cao</option>
+                                    <option value="sort_desc">Giá: Cao đến Thấp</option>
+                                </optgroup>
+                            </select>
+
+
+                        </div>
+                        <div class="container">
+                            <div class="row" id="product-list">
+                                <!-- col (card) sẽ được thêm vào bằng JS -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-8 product-section">
+                    <!-- Danh mục mobile (chỉ hiện trên thiết bị nhỏ) -->
+                    <!-- Danh mục mobile - Chỉ hiển thị trên thiết bị nhỏ -->
+                    <div class="d-block d-md-none mb-3">
+
+                        <!-- Bộ lọc loại sản phẩm -->
+                        <div class="btn-group w-100 flex-wrap mb-2" role="group">
+                            <button class="btn btn-outline-primary" data-filter="all">Tất cả</button>
+                            <button class="btn btn-outline-primary" data-filter="hot">Hot</button>
+                            <button class="btn btn-outline-primary" data-filter="tcvietnam">Trái cây VN</button>
+                            <button class="btn btn-outline-primary" data-filter="tcnhapkhau">Nhập khẩu</button>
+                            <button class="btn btn-outline-primary" data-filter="combo">Combo</button>
+                            <button class="btn btn-outline-primary" data-filter="gioqua">Giỏ quà</button>
+                        </div>
+
+                        <!-- Bộ lọc theo mùa -->
+                        <div class="btn-group w-100 flex-wrap mb-3" role="group">
+                            <button class="btn btn-outline-success" data-filter="muaxuan">Xuân</button>
+                            <button class="btn btn-outline-success" data-filter="muaha">Hạ</button>
+                            <button class="btn btn-outline-success" data-filter="muathu">Thu</button>
+                            <button class="btn btn-outline-success" data-filter="muadong">Đông</button>
+                        </div>
+
+                        <!-- Bộ lọc giá -->
+                        <select id="price-filter-mobile" class="form-select mb-3">
+                            <optgroup label="Lọc theo khoảng giá">
+                                <option value="price_all">Tất cả giá</option>
+                                <option value="price_0-100000">Dưới 100.000 VNĐ</option>
+                                <option value="price_100000-200000">100.000 - 200.000 VNĐ</option>
+                                <option value="price_200000-500000">200.000 - 500.000 VNĐ</option>
+                                <option value="price_500000-1000000">500.000 - 1.000.000 VNĐ</option>
+                            </optgroup>
+                            <optgroup label="Sắp xếp theo giá">
+                                <option value="sort_asc">Giá: Thấp đến Cao</option>
+                                <option value="sort_desc">Giá: Cao đến Thấp</option>
+                            </optgroup>
+                        </select>
+                    </div>
+
+
+                    <div class="container row g-5 p-2 w-100" id="product-content" style="border: 1px solid red;"></div>
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination justify-content-center mt-4" id="pagination"></ul>
+                    </nav>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
 
     <footer class="footer mt-auto py-3">
         <div class="container">
@@ -108,8 +306,24 @@
             </p>
         </div>
     </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+            const userNavLink = document.getElementById("userNavLink");
+
+            if (currentUser && userNavLink) {
+                userNavLink.innerHTML = `&nbsp; Chào, ${currentUser.userFullName} <i class="fa-solid fa-user"></i>`;
+                userNavLink.href = "#"; // hoặc link tới trang cá nhân
+            }
+        });
+    </script>
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
+
+    <script src="/admin/asset/js/product.js"></script>
+
 </body>
+
+
 
 </html>

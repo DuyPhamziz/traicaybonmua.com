@@ -18,14 +18,13 @@
                     <img class="navbar-brand w-100" src="/asset/img/logo_4sf.png">
                 </div>
                 <!-- Thanh điều hướng (Navbar) trên điện thoại -->
-                <div class="col-8 col-md-6 d-flex align-items-center justify-content-end d-md-none">
+                <div class="col-8 col-md-7 d-flex align-items-center justify-content-end d-md-none">
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
                         aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                 </div>
-
                 <div class="col-1 col-md-7 d-flex align-items-center justify-content-end d-md-none">
                     <button class="navbar-toggler d-md-none" type="button" data-bs-toggle="collapse"
                         data-bs-target="#cartUserCollapse" aria-controls="cartUserCollapse" aria-expanded="false"
@@ -41,13 +40,13 @@
                                 <a class="nav-link" href="#">Trang chủ</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="gioithieu.html">Giới thiệu</a>
+                                <a class="nav-link" href="/user/gioithieu.html">Giới thiệu</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="sanpham.html">Sản phẩm</a>
+                                <a class="nav-link" href="/user/sanpham.html">Sản phẩm</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="lienhe.html">Liên hệ</a>
+                                <a class="nav-link" href="/user/lienhe.html">Liên hệ</a>
                             </li>
 
                         </ul>
@@ -56,35 +55,38 @@
                 </div>
 
                 <!-- Form tìm kiếm -->
-                <div class="col-12 col-md-4 d-flex align-items-center justify-content-center">
-                    <form class="form-inline mt-2 mt-md-0 w-100" method="get" action="pages/search.html">
-                        <div class="input-group w-100">
-                            <input class="form-control mr-sm-2 w-75" type="text" placeholder="Tìm kiếm ở đây"
-                                aria-label="Search" name="keyword_tensanpham">
-                            <button class="btn btn-outline-success w-25" type="submit">Tìm kiếm</button>
-                        </div>
-                    </form>
+                <div class="col-12 col-md-3 d-flex align-items-center justify-content-center">
+
                 </div>
                 <!-- Giỏ hàng và đăng nhập -->
-                <div class="col-12 col-md-2 d-flex align-items-center justify-content-end ms-auto d-none d-md-block">
+                <div class="col-12 col-md-3 d-flex align-items-center justify-content-end ms-auto d-none d-md-block">
                     <ul class="navbar-nav ms-auto d-flex w-100 p-0 m-0">
                         <li class="nav-item d-flex flex-grow-1 text-nowrap w-25">
-                            <a class="nav-link w-50" href="giohang.html">Giỏ hàng <i
-                                    class="fa-sharp fa-solid fa-cart-shopping"></i> </a>
+                            <a class="nav-link w-50" href="" id="cartLink">Giỏ hàng <i
+                                    class="fa-sharp fa-solid fa-cart-shopping"></i>
+                            </a>
                         </li>
-                        &nbsp;&nbsp;
+
                         <li class="nav-item d-flex flex-grow-1 text-nowrap w-25">
-                            <a class="nav-link w-50" id="userNavLink" href=" pages/login.html">Đăng nhập <i
+                            <a class="nav-link w-50" href="dangnhap.html" id="userNavLink"> Đăng nhập <i
                                     class="fa-solid fa-user"></i></a>
                         </li>
                     </ul>
                 </div>
+                <!-- Lớp phủ -->
+                <div id="loginOverlay" class="overlay">
+                    <div class="overlay-content">
+                        <h3>Bạn cần đăng nhập để xem giỏ hàng.</h3>
+                        <a href="dangnhap.html" class="btn btn-primary">Đăng nhập</a>
+                        <button id="closeOverlay" class="btn btn-secondary">Đóng</button>
+                    </div>
+                </div>
                 <div class="collapse" id="cartUserCollapse" style="color: aliceblue;">
                     <div class="d-flex justify-content-between p-3">
-                        <a class="nav-link" href="giohang.html">
+                        <a class="nav-link" href="pages/cart.html">
                             Giỏ hàng <i class="fa-sharp fa-solid fa-cart-shopping"></i>
                         </a>
-                        <a class="nav-link" href="pages/login.html">
+                        <a class="nav-link" href="dangnhap.html">
                             Đăng nhập <i class="fa-solid fa-user"></i>
                         </a>
                     </div>
@@ -177,7 +179,7 @@
                     <h2 class="featurette-heading">Mua Trái Cây <span class="text-muted">Online</span> Dễ Dàng
                     </h2>
                     <p class="lead">Giao hỏa tốc - Đảm bảo tươi mát khi đến tay khách hàng.</p>
-                    
+
                 </div>
                 <div class="col-md-7">
                     <img class="w-100" src="/asset/img/onlShip.png">
@@ -190,7 +192,7 @@
                     <h2 class="featurette-heading"> Trái Cây Bốn Mùa - <span class="text-muted">Khám Phá Lợi Ích Sức
                             Khỏe</span></h2>
                     <p class="lead">Thực phẩm giàu Vitamin - mang lại nhiều lợi ích về Sức khỏe.</p>
-                    
+
                 </div>
                 <div class="col-md-7 order-md-1">
                     <img class="w-100" src="/asset/img/heal.png">
@@ -437,6 +439,6 @@
     });
 </script>
 
-<script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </html>

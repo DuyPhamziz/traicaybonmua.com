@@ -94,41 +94,83 @@
         </div>
     </nav>
     <!-- end header -->
+
+
     <main role="main">
+        <div class="container pt-5">
+            <div class="row">
+                <div class="col-md-3">
+                    <img class="w-60" src="/asset/img/4anhtai.jpg">
+                </div>
+                <div class="col-md-9">
+                    <h2 class="featurette-heading">Welcome to Trai Cay Bon Mua </h2>
+                    <p class="lead">Khám phá thế giới trái cây tươi ngon, chất lượng thượng hạng, được tuyển chọn tinh
+                        tế từ
+                        khắp dải đất Việt và nhập khẩu từ những vùng đất trù phú danh tiếng toàn cầu. Với tâm huyết
+                        "Tươi
+                        ngon mỗi ngày, vun đắp sức khỏe", chúng tôi cam kết trao đến bạn những sản phẩm chín mọng tự
+                        nhiên,
+                        tuyệt đối không hóa chất bảo quản, đạt chuẩn an toàn vệ sinh thực phẩm. Mỗi mùa, Trái Cây Bốn
+                        Mùa
+                        mang đến sự phong phú của hương vị, độ tươi mới hoàn hảo và mức giá ưu đãi. Tận hưởng trải
+                        nghiệm
+                        mua sắm an tâm với vô vàn chương trình khuyến mãi hấp dẫn, combo tiết kiệm độc đáo cùng dịch vụ
+                        giao
+                        hàng siêu tốc. Trái Cây Bốn Mùa – nơi hội tụ tinh túy tự nhiên, trao trọn an lành trong từng
+                        khoảnh
+                        khắc thưởng thức.
+                    </p>
+                </div>
+
+            </div>
+
+        </div v class="container" v>
+        <hr class="featurette-divider">
         <!-- Block content - Đục lỗ trên giao diện bố cục chung, đặt tên là `content` -->
         <div class="container mt-2">
             <h1 class="text-center">Liên hệ với Trái cây bốn mùa</h1>
             <div class="row">
-                <div class="col col-md-6">
+                <div class="col col-md-5">
                     <img id="lienhe_banner" src="/asset/img/traiacquy/banner_lienhe.jpg">
                 </div>
-                <div class="col col-md-6">
-                    <form method="post" class="fs-3" action="">
+                <div class="col col-md-7">
+                    <form method="post" id="contact-form" class="fs-3">
                         <div class="form-group">
-                            <label for="email">Email của bạn</label>
+                            <label for="email"></label>
                             <input type="email" class="form-control" id="email" name="email"
                                 placeholder="Email của bạn">
                         </div>
                         <div class="form-group">
-                            <label for="title">Họ và tên</label>
+                            <label for="title"></label>
                             <input type="text" class="form-control" id="title" name="title" placeholder="Họ và tên">
                         </div>
                         <div class="form-group">
-                            <label for="message">Lời nhắn của bạn</label>
-                            <textarea name="message" class="form-control"></textarea>
+                            <label for="message"></label>
+                            <textarea name="message" class="form-control" placeholder="Lời nhắn của bạn, có thể kèm số điện thoại để chúng tôi liên lạc với bạn"></textarea>
                         </div>
-                        <button class="btn btn-primary" name="btnGoiLoiNhan">Gởi lời nhắn</button>
+                        <button type="submit" class="btn btn-primary" name="btnGoiLoiNhan">Gởi lời nhắn</button>
                     </form>
                 </div>
-            </div>
-            <div class="row mt-2">
-                <div class="col col-md-12">
 
+            </div>
+            <hr class="featurette-divider">
+            <div class="row featurette d-flex align-items-center">
+                <div class="col-md-7 order-md-4">
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12975.46151822487!2d105.59111452818152!3d9.764213280596927!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31a0f1d182b3d5b9%3A0x12253499637acf6f!2zS2h1IEjDsmEgQW4gxJBIIEPhuqduIFRoxqEsIFFMNjEsIEhvw6AgQW4sIFBo4bulbmcgSGnhu4dwLCBI4bqtdSBHaWFuZywgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1744007090260!5m2!1svi!2s"
-                        width="100%" height="450" frameborder="0" style="border:0" allowfullscreen=""></iframe>
+                        width="100%" height="350" frameborder="0" style="border:0" allowfullscreen=""></iframe>
                 </div>
+                <div class="col-md-5 order-md-2">
+                    <h2 class="featurette-heading">Địa chỉ</h2>
+                    <p class="lead">Tại Khu Hòa An, trường Đại học Cần Thơ, xã Hòa An, huyện Phụng Hiệp, tỉnh Hậu Giang.
+                    </p>
+                    <p class="lead">Hotline Support: 0338892575.
+                    </p>
+                </div>
+
             </div>
+
+            <hr class="featurette-divider">
         </div>
         <!-- End block content -->
     </main>
@@ -146,7 +188,48 @@
         </div>
     </footer>
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Lắng nghe sự kiện submit form
+            const contactForm = document.getElementById("contact-form");
 
+            if (contactForm) {
+                contactForm.addEventListener("submit", function (e) {
+                    e.preventDefault();
+
+                    // Lấy giá trị từ form
+                    const email = document.getElementById("email").value;
+                    const title = document.getElementById("title").value;
+                    const message = document.querySelector("textarea[name='message']").value;
+
+                    if (email && title && message) {
+                        // Lưu lời nhắn vào localStorage
+                        const contactMessages = JSON.parse(localStorage.getItem("contactMessages")) || [];
+                        const newMessage = {
+                            email,
+                            title,
+                            message,
+                            date: new Date().toLocaleString(), // 🕒 Thời gian gửi
+                            read: false // 👀 Trạng thái chưa đọc
+                        };
+                        contactMessages.push(newMessage);
+
+                        localStorage.setItem("contactMessages", JSON.stringify(contactMessages));
+
+                        // Sau khi gửi, làm trống form và thông báo
+                        contactForm.reset();
+                        alert("Lời nhắn đã được gửi thành công.");
+                    } else {
+                        alert("Vui lòng điền đầy đủ thông tin.");
+                    }
+                });
+            } else {
+                console.error("Không tìm thấy phần tử '#contact-form'");
+            }
+        });
+
+
+    </script>
 </body>
 
 </html>
