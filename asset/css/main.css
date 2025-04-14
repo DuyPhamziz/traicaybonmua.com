@@ -665,7 +665,7 @@ label.valid:after {
     height: 55px;
     background-color: #f152d6;
     width: 48%;
-    font-size: 20px;
+    font-size: 15px;
 }
 .tugiohang {
     height: 39px;
@@ -676,7 +676,7 @@ label.valid:after {
     height: 55px;
     background-color: #19c427;
     width: 48%;
-    font-size: 20px;
+    font-size: 15px;
 }
 
 .tuthongtinfooter {
@@ -726,6 +726,7 @@ label.valid:after {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 450px;
   }
 
   #tucloseOverlayBtnX {
@@ -784,4 +785,59 @@ label.valid:after {
 
   #tucloseOverlayBtn:hover {
     background-color: #aaa;
+  }
+  .tuthongtinfooter {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+    gap: 20px;
+  }
+  
+  .tuthongtin {
+    flex: 1 1 200px;
+    min-width: 200px;
+    max-width: 300px;
+  }
+  
+  /* Responsive cho mobile */
+  @media (max-width: 768px) {
+    .tuthongtinfooter {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .tuthongtin {
+      width: 100%;
+    }
+  
+    .tuMXH {
+      width: 24px;
+      height: 24px;
+      margin-right: 10px;
+    }
+  }
+  .tuxemnhieusp {
+    text-align: center;
+    margin: 30px 0;
+  }
+  
+  .tunhieusp {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #28a745; /* xanh lá đẹp */
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .tunhieusp:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+  }
+  .tunut {
+    margin: 14px;
   }
