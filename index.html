@@ -7,6 +7,8 @@
     <title>Trái cây bốn mùa</title>
     <link rel="stylesheet" href="/asset/css/style.css">
     <link rel="stylesheet" href="/asset/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 
 
 </head>
@@ -49,6 +51,7 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="lienhe.html">Liên hệ</a>
+                                <a class="nav-link" href="lienhe.html">Liên hệ</a>
                             </li>
 
                         </ul>
@@ -84,7 +87,7 @@
                 </div>
                 <div class="collapse" id="cartUserCollapse" style="color: aliceblue;">
                     <div class="d-flex justify-content-between p-3">
-                        <a class="nav-link" href="pages/cart.html">
+                        <a onclick="showOverlay()" class="nav-link">
                             Giỏ hàng <i class="fa-sharp fa-solid fa-cart-shopping"></i>
                         </a>
                         <a class="nav-link" href="dangnhap.html">
@@ -388,61 +391,65 @@
         </div>
 
         <!-- End block content -->
+        <div class="tuxemnhieusp">
+            <a class="tunhieusp" href="sanpham.html">Nhiều sản phẩm hơn</a>
+        </div>
     </main>
-    <footer class="mt-auto py-3">
-        <div class="p-3"></div>
-        <hr>
-        <div class="p-5"></div>
-        <div class="container ">
-            <div class="row">
-                <div class="col-md-3 d-none d-md-block">
-                    <div><b>Bản quyền của Công ty TNHH Morning Fruit</b></div>
-                    <div>
-                        Giấy chứng nhận Đăng ký Kinh doanh số 03164646 do Sở Kế hoạch và Đầu tư Tỉnh Hậu Giang cấp ngày
-                        02/01/2025. </div>
-                </div>
-
-                <div class="col-md-3">
-                    <div><b>Địa chỉ : </b>Xã Hòa An, huyện Long Mỹ, tỉnh Hậu Giang</div>
-                    <div><b>Số điện thoại : </b>0326754284</div>
-                    <div><b>Emai : </b>traicay@gmail.com</div>
-                </div>
-
-                <div class="col-md-3 d-none d-md-block">
-                    <div><b>Hổ trợ khách hàng</b></div>
-                    <div>
-                        <ul>
-                            <li>Chính sách kiểm hàng</li>
-                            <li>Chính sách bảo hành</li>
-                            <li>Chính sách giao hàng</li>
-                            <li>Chính sách thanh toán</li>
-                            <li>Hướng dẫn mua hàng Online</li>
-                            <li>Kiến thức trái cây</li>
-                            <li>Liên hệ</li>
-
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div><b>Chăm sóc khách hàng</b></div>
-                    <div>
-                        <b>Số điện thoại : </b>0326754284
-                    </div>
-                    <div>
-                        <b>Email : </b>traicay@gmail.com
-                    </div>
-                    <div><b>Các trang mạng xã hội khác</b></div>
-                    <div>
-                        <a href="/">
-                            <i class="fa-brands fa-facebook p-3 fs-3"></i>
-                            <a href="/">
-                                <i class="fa-brands fa-square-instagram p-3 fs-3"></i>
-                                <a href="/">
-                                    <i class="fa-brands fa-square-github p-3 fs-3"></i>
-                    </div>
-                </div>
-
+    <hr>
+    <footer class="tufooter mt-auto py-3">
+        <div class="tuthongtinfooter">
+            <div class="tuthongtin">
+                <div><b>Bản quyền của Công ty TNHH Morning Fruit</b></div>
+                <div>
+                    Giấy chứng nhận Đăng ký Kinh doanh số 03164646 do Sở Kế hoạch và Đầu tư Tỉnh Hậu Giang cấp ngày
+                    02/01/2025. Đăng ký thay đổi lần 1 ngày 22/03/2025
+                    Giấy chứng nhận cơ sở đủ điều kiện an toàn thực phẩm số 3091/2022/BQLATTP-HCM do Ban Quản lý An toàn
+                    thực phẩm Tỉnh Hậu Giang cấp ngày 15/04/2025</div>
             </div>
+            <div class="tuthongtin">
+                <div><b>Về shop : </b>Shop là thương hiệu trái cây tươi chất lượng cao, với đa dạng sản phẩm phục vụ mọi
+                    nhu cầu: đặc sản vùng miền, trái cây nhập khẩu, nước ép</div>
+            </div>
+            <div class="tuthongtin">
+                <div><b>Địa chỉ : </b>Xã Hòa An, huyện Long Mỹ, tỉnh Hậu Giang</div>
+                <div><b>Số điện thoại : </b>0326754284</div>
+                <div><b>Emai : </b>traicay@gmail.com</div>
+            </div>
+
+            <div class="tuthongtin">
+                <div><b>Hổ trợ khách hàng</b></div>
+                <div>
+                    <ul>
+                        <li>Chính sách kiểm hàng</li>
+                        <li>Chính sách bảo hành</li>
+                        <li>Chính sách giao hàng</li>
+                        <li>Chính sách thanh toán</li>
+                        <li>Hướng dẫn mua hàng Online</li>
+                        <li>Kiến thức trái cây</li>
+                        <li>Liên hệ</li>
+
+                    </ul>
+                </div>
+            </div>
+            <div class="tuthongtin">
+                <div><b>Chăm sóc khách hàng</b></div>
+                <div>
+                    <b>Số điện thoại : </b>0326754284
+                </div>
+                <div>
+                    <b>Emai : </b>traicay@gmail.com
+                </div>
+                <div><b>Các trang mạng xã hội khác</b></div>
+                <div>
+                    <a href="https://www.facebook.com/share/1AEdqtmWEC/">
+                        <img class="tuMXH" src="asset/img/logo.mxh/fb.png" alt=""></a>
+                    <a href="https://www.facebook.com/share/1AEdqtmWEC/">
+                        <img class="tuMXH" src="asset/img/logo.mxh/instagram.jfif" alt=""></a>
+                    <a href="https://www.facebook.com/share/1AEdqtmWEC/">
+                        <img class="tuMXH" src="asset/img/logo.mxh/zalo.png" alt=""></a>
+                </div>
+            </div>
+        </div>
     </footer>
     <hr>
     <div class="text-center fw-bold bg-success text-white" style="text-decoration: none;">
@@ -454,14 +461,10 @@
             <button id="tucloseOverlayBtnX">&times;</button>
 
             <div id="tuchu">Bạn chưa đăng nhập</div>
-            <img id="tuhinhchuadn" src="/asset/img/chuadangnhap.png" alt="Chưa đăng nhập">
+            <img id="tuhinhchuadn" src="asset/img/chuadangnhap.png" alt="Chưa đăng nhập">
             <div class="tu2thongtin">
-                <p>Để tiếp tục mua hàng vui lòng <a class="tudndk" href="/dangnhap.html"
-                        onclick="event.preventDefault();">đăng
-                        nhập</a>.</p>
-                <p>Nếu bạn chưa có tài khoản hãy <a class="tudndk" href="/dangky.html"
-                        onclick="event.preventDefault();">đăng
-                        ký</a> nhé!</p>
+                <p>Để tiếp tục mua hàng vui lòng <a class="tudndk" href="#">đăng nhập</a>.</p>
+                <p>Nếu bạn chưa có tài khoản hãy <a class="tudndk" href="#">đăng ký</a> nhé!</p>
                 <div style="text-align: center;">
                     <button id="tucloseOverlayBtn">Đóng</button>
                 </div>
