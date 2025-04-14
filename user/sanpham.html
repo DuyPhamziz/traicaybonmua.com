@@ -4,12 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trái cây bốn mùa</title>
-    <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/asset/css/base.css">
-    <link rel="stylesheet" href="/asset/css/main.css">
-    <link rel="stylesheet" href="/admin/asset/css/main.css">
-    <link rel="stylesheet" href="/vendor/font-awesome/font-awesome-6-pro-main/css/all.css">
+    <title>Trái cây bốn mùa - Sản phẩm</title>
+    <link rel="stylesheet" href="/asset/css/style.css">
 
 </head>
 
@@ -41,16 +37,16 @@
                     <div class="navbar-collapse collapse" id="navbarCollapse">
                         <ul class="navbar-nav mr-auto justify-content-between ml-auto w-100">
                             <li class="nav-item active">
-                                <a class="nav-link" href="#">Trang chủ</a>
+                                <a class="nav-link" href="/user/index.html">Trang chủ</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="gioithieu.html">Giới thiệu</a>
+                                <a class="nav-link" href="/user/gioithieu.html">Giới thiệu</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="sanpham.html">Sản phẩm</a>
+                                <a class="nav-link" href="#">Sản phẩm</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="lienhe.html">Liên hệ</a>
+                                <a class="nav-link" href="/user/lienhe.html">Liên hệ</a>
                             </li>
 
                         </ul>
@@ -65,36 +61,28 @@
                 <!-- Giỏ hàng và đăng nhập -->
                 <div class="col-12 col-md-3 d-flex align-items-center justify-content-end ms-auto d-none d-md-block">
                     <ul class="navbar-nav ms-auto d-flex w-100 p-0 m-0">
-                        <li class="nav-item d-flex flex-grow-1 text-nowrap w-25">
-                            <a class="nav-link w-50" href="" id="cartLink">Giỏ hàng <i
-                                    class="fa-sharp fa-solid fa-cart-shopping"></i>
+                        <li class="nav-item d-flex flex-grow-1 text-nowrap w-25 position-relative">
+                            <a class="nav-link w-50 position-relative" onclick="showOverlay()">
+                                Giỏ hàng
+                                <span class="position-relative">
+                                    <i class="fa-sharp fa-solid fa-cart-shopping"></i>
+                                    <span id="cart-count"
+                                        class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                                        style="font-size: 0.6rem; padding: 4px 6px;">
+                                        0
+                                    </span>
+                                </span>
                             </a>
                         </li>
 
-                        <li class="nav-item d-flex flex-grow-1 text-nowrap w-25">
+                        <li class="nav-item d-flex flex-grow-1 text-nowrap w-25" id="userNavItem">
                             <a class="nav-link w-50" href="dangnhap.html" id="userNavLink"> Đăng nhập <i
                                     class="fa-solid fa-user"></i></a>
                         </li>
                     </ul>
                 </div>
-                <!-- Lớp phủ -->
-                <div id="loginOverlay" class="overlay">
-                    <div class="overlay-content">
-                        <h3>Bạn cần đăng nhập để xem giỏ hàng.</h3>
-                        <a href="dangnhap.html" class="btn btn-primary">Đăng nhập</a>
-                        <button id="closeOverlay" class="btn btn-secondary">Đóng</button>
-                    </div>
-                </div>
-                <div class="collapse" id="cartUserCollapse" style="color: aliceblue;">
-                    <div class="d-flex justify-content-between p-3">
-                        <a class="nav-link" href="pages/cart.html">
-                            Giỏ hàng <i class="fa-sharp fa-solid fa-cart-shopping"></i>
-                        </a>
-                        <a class="nav-link" href="dangnhap.html">
-                            Đăng nhập <i class="fa-solid fa-user"></i>
-                        </a>
-                    </div>
-                </div>
+
+
             </div>
 
         </div>
@@ -103,11 +91,10 @@
     <main role="main">
         <div class="container">
             <div class="row">
-
-                <div class="col-12 col-md-4 d-flex align-items-center">
-                    <span class="text-center w-25">Tìm kiếm</span>
+                <div class="col-12 col-md-4 d-flex align-items-center pt-4 pb-3">
+                    <span class="text-center w-25 p-1">Tìm kiếm</span>
                     <form class="w-100">
-                        <input class="form-control p-3 w-75" type="text" id="search-input"
+                        <input class="form-control p-3 w-100" type="text" id="search-input"
                             placeholder="Tìm kiếm sản phẩm" aria-label="Search">
                     </form>
                 </div>
@@ -115,14 +102,12 @@
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-4 d-none d-md-block">
+                <div class="col-4 d-none d-md-block" id="sidebar">
                     <div class="d-flex flex-column flex-shrink-0 p-3 bg-light d-none d-md-block " style="width: 280px;">
                         <a href="/"
                             class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
-                            <svg class="bi me-2" width="40" height="32">
-                                <use xlink:href="#bootstrap"></use>
-                            </svg>
-                            <span class="fs-4">Danh mục Sản phẩm</span>
+
+                            <span class="fs-4 w-100 text-center p-0">Danh mục Sản phẩm</span>
                         </a>
                         <hr>
                         <ul class="nav nav-pills flex-column mb-auto" id="sidebar-filter">
@@ -243,9 +228,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-8 product-section">
+                <div class="col-12 col-md-8 product-section bg-light">
                     <!-- Danh mục mobile (chỉ hiện trên thiết bị nhỏ) -->
-                    <!-- Danh mục mobile - Chỉ hiển thị trên thiết bị nhỏ -->
                     <div class="d-block d-md-none mb-3">
 
                         <!-- Bộ lọc loại sản phẩm -->
@@ -283,7 +267,7 @@
                     </div>
 
 
-                    <div class="container row g-5 p-2 w-100" id="product-content" style="border: 1px solid red;"></div>
+                    <div class="container row g-5 p-2 w-100" id="product-content"></div>
                     <nav aria-label="Page navigation example">
                         <ul class="pagination justify-content-center mt-4" id="pagination"></ul>
                     </nav>
@@ -294,36 +278,129 @@
 
     </main>
 
-    <footer class="footer mt-auto py-3">
+    <footer class="mt-auto py-3">
+        <div class="p-3"></div>
+        <hr>
+        <div class="p-5"></div>
         <div class="container">
-            <span>Bản quyền © bởi <a href="#">Nhóm 2</a> -
-                <script>document.write(new Date().getFullYear());</script>.
-            </span>
-            <span class="text-muted">Trái cây theo phong cách bốn mùa</span>
+            <div class="row">
+                <div class="col-md-3 d-none d-md-block">
+                    <div><b>Bản quyền của Công ty TNHH Morning Fruit</b></div>
+                    <div>
+                        Giấy chứng nhận Đăng ký Kinh doanh số 03164646 do Sở Kế hoạch và Đầu tư Tỉnh Hậu Giang cấp ngày
+                        02/01/2025. </div>
+                </div>
 
-            <p class="float-right">
-                <a href="#">Về đầu trang</a>
-            </p>
-        </div>
+                <div class="col-md-3">
+                    <div><b>Địa chỉ : </b>Xã Hòa An, huyện Long Mỹ, tỉnh Hậu Giang</div>
+                    <div><b>Số điện thoại : </b>0326754284</div>
+                    <div><b>Emai : </b>traicay@gmail.com</div>
+                </div>
+
+                <div class="col-md-3 d-none d-md-block">
+                    <div><b>Hổ trợ khách hàng</b></div>
+                    <div>
+                        <ul>
+                            <li>Chính sách kiểm hàng</li>
+                            <li>Chính sách bảo hành</li>
+                            <li>Chính sách giao hàng</li>
+                            <li>Chính sách thanh toán</li>
+                            <li>Hướng dẫn mua hàng Online</li>
+                            <li>Kiến thức trái cây</li>
+                            <li>Liên hệ</li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div><b>Chăm sóc khách hàng</b></div>
+                    <div>
+                        <b>Số điện thoại : </b>0326754284
+                    </div>
+                    <div>
+                        <b>Email : </b>traicay@gmail.com
+                    </div>
+                    <div><b>Các trang mạng xã hội khác</b></div>
+                    <div>
+                        <a href="/">
+                            <i class="fa-brands fa-facebook p-3 fs-3"></i> </a>
+                        <a href="/">
+                            <i class="fa-brands fa-square-instagram p-3 fs-3"></i></a>
+                        <a href="/">
+                            <i class="fa-brands fa-square-github p-3 fs-3"></i></a>
+                    </div>
+                </div>
+
+            </div>
     </footer>
+    <hr>
+    <div class="text-center fw-bold" style="text-decoration: none;">
+        Copyright &copy 2025 - Nhóm 2 lập trình web
+    </div>
+
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const currentUser = JSON.parse(localStorage.getItem("currentUser"));
-            const userNavLink = document.getElementById("userNavLink");
+            const userNavItem = document.getElementById("userNavItem");
 
-            if (currentUser && userNavLink) {
-                userNavLink.innerHTML = `&nbsp; Chào, ${currentUser.userFullName} <i class="fa-solid fa-user"></i>`;
-                userNavLink.href = "#"; // hoặc link tới trang cá nhân
+            if (currentUser && userNavItem) {
+                userNavItem.innerHTML = `
+            <div class="nav-item dropdown w-100">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarUserDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Chào, ${currentUser.userFullName} <i class="fa-solid fa-user"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarUserDropdown">
+                    <li><a class="dropdown-item" href="#" id="logoutBtn">Đăng xuất</a></li>
+                </ul>
+            </div>
+        `;
+
+                // Sự kiện Đăng xuất
+                document.getElementById("logoutBtn").addEventListener("click", function (e) {
+                    e.preventDefault();
+                    localStorage.removeItem("currentUser");
+                    window.location.href = "/index.html"; 
+                });
             }
         });
+        document.addEventListener("DOMContentLoaded", function () {
+            const sidebar = document.querySelector('#sidebar');
+            const sidebarLinks = sidebar.querySelectorAll('.nav-link');
+
+            sidebarLinks.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    // Bỏ class active khỏi tất cả link trong sidebar
+                    sidebarLinks.forEach(l => {
+                        l.classList.remove('text-white', 'bg-success');
+                        l.classList.add('link-dark');
+                    });
+
+                    // Thêm class active vào link được chọn
+                    this.classList.remove('link-dark');
+                    this.classList.add('text-white', 'bg-success');
+                });
+            });
+        });
     </script>
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-
-
+    <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="/admin/asset/js/product.js"></script>
-
+    <script src="/admin/asset/js/cart.js"></script>
+    <div id="cart-overlay" class="position-fixed top-0 end-0 bg-light shadow-lg p-3 rounded-start"
+        style="width: 400px; max-height: 67vh; margin-top: 60px; z-index: 1050; display: none; overflow-y: auto;">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h5 class="mb-0"><i class="fa-solid fa-cart-shopping"></i> Giỏ hàng</h5>
+            <button onclick="closeOverlay()" class="btn btn-sm btn-outline-secondary">Đóng</button>
+        </div>
+        <div id="cart-items" class="mb-3"></div>
+        <div class="border-top pt-3">
+            <h6>Tổng cộng: <span id="cart-total" class="text-danger fw-bold">0 VNĐ</span></h6>
+            <button class="btn btn-success w-100 mt-2"><a style="text-decoration: none; color: white;"
+                    href="/user/giohang.html">Đi tới giỏ hàng >></a></button>
+        </div>
+    </div>
+    <script src="/admin/asset/js/logout.js"></script>
 </body>
-
-
 
 </html>

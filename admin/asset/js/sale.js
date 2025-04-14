@@ -46,7 +46,7 @@ function renderSaleProductList() {
                         Danh mục: ${p.danhmuc.join(', ')}
                     </p>
                     <div>
-                        <input type="number" id="discount-percent" class="form-control mb-2" placeholder="Nhập % giảm giá" />
+                        <input type="number" id="discount-percent" class="form-control mb-2 w-100" placeholder="Nhập % giảm giá" />
                         <button class="btn btn-success btn-sm me-2" onclick="applySale(${index}, parseFloat(document.getElementById('discount-percent').value))">Áp dụng giảm giá</button>
                         <button class="btn btn-danger btn-sm" onclick="cancelSale(${index})">Hủy giảm giá</button>
                     </div>

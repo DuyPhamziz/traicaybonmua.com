@@ -4,8 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trái cây bốn mùa</title>
+    <title>Trái cây bốn mùa - Đăng nhập</title>
+    <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/asset/css/style.css">
+    <link rel="stylesheet" href="/asset/css/main.css">
 
 </head>
 
@@ -45,7 +47,7 @@
                                 <a class="nav-link" href="sanpham.html">Sản phẩm</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="lienhe.html">Liên hệ</a>
+                                <a onclick="showOverlayRequest()" class="nav-link">Liên hệ</a>
                             </li>
 
                         </ul>
@@ -54,23 +56,17 @@
                 </div>
 
                 <!-- Form tìm kiếm -->
-                <div class="col-12 col-md-4 d-flex align-items-center justify-content-center">
-                    <form class="form-inline mt-2 mt-md-0 w-100" method="get" action="pages/search.html">
-                        <div class="input-group w-100">
-                            <input class="form-control mr-sm-2 w-75" type="text" placeholder="Tìm kiếm ở đây"
-                                aria-label="Search" name="keyword_tensanpham">
-                            <button class="btn btn-outline-success w-25" type="submit">Tìm kiếm</button>
-                        </div>
-                    </form>
+                <div class="col-12 col-md-3 d-flex align-items-center justify-content-center">
+
                 </div>
                 <!-- Giỏ hàng và đăng nhập -->
-                <div class="col-12 col-md-2 d-flex align-items-center justify-content-end ms-auto d-none d-md-block">
+                <div class="col-12 col-md-3 d-flex align-items-center justify-content-end ms-auto d-none d-md-block">
                     <ul class="navbar-nav ms-auto d-flex w-100 p-0 m-0">
                         <li class="nav-item d-flex flex-grow-1 text-nowrap w-25">
-                            <a class="nav-link w-50" href="pages/cart.html">Giỏ hàng <i
+                            <a onclick="showOverlayRequest()" class="nav-link w-50">Giỏ hàng <i
                                     class="fa-sharp fa-solid fa-cart-shopping"></i> </a>
                         </li>
-                        &nbsp;&nbsp;
+
                         <li class="nav-item d-flex flex-grow-1 text-nowrap w-25">
                             <a class="nav-link w-50" href="dangnhap.html">Đăng nhập <i class="fa-solid fa-user"></i></a>
                         </li>
@@ -138,8 +134,9 @@
                             <div class="card text-white bg-primary py-5 d-md-down-none" style="width:44%">
                                 <div class="card-body text-center">
                                     <div>
-                                        <h2>Đăng ký</h2>
-                                        <p>Đăng ký để làm thành viên của Trang web bán hàng. Bạn sẽ được một số quyền
+                                        <h2 class="text-white">Đăng ký</h2>
+                                        <p class="text-white">Đăng ký để làm thành viên của Trang web bán hàng. Bạn sẽ
+                                            được một số quyền
                                             lợi nhất định khi làm thành viên của Chúng tôi.</p>
                                         <a class="btn btn-primary active mt-3" href="dangky.html">Đăng ký ngay!</a>
                                     </div>
@@ -153,18 +150,83 @@
         <!-- End block content -->
     </main>
 
-    <footer class="footer mt-auto py-3">
+    <footer class="mt-auto py-3">
+        <div class="p-3"></div>
+        <hr>
+        <div class="p-5"></div>
         <div class="container">
-            <span>Bản quyền © bởi <a href="#">Nhóm 2</a> -
-                <script>document.write(new Date().getFullYear());</script>.
-            </span>
-            <span class="text-muted">Trái cây theo phong cách bốn mùa</span>
+            <div class="row">
+                <div class="col-md-3 d-none d-md-block">
+                    <div><b>Bản quyền của Công ty TNHH Morning Fruit</b></div>
+                    <div>
+                        Giấy chứng nhận Đăng ký Kinh doanh số 03164646 do Sở Kế hoạch và Đầu tư Tỉnh Hậu Giang cấp ngày
+                        02/01/2025. </div>
+                </div>
 
-            <p class="float-right">
-                <a href="#">Về đầu trang</a>
-            </p>
-        </div>
+                <div class="col-md-3">
+                    <div><b>Địa chỉ : </b>Xã Hòa An, huyện Long Mỹ, tỉnh Hậu Giang</div>
+                    <div><b>Số điện thoại : </b>0326754284</div>
+                    <div><b>Emai : </b>traicay@gmail.com</div>
+                </div>
+
+                <div class="col-md-3 d-none d-md-block">
+                    <div><b>Hổ trợ khách hàng</b></div>
+                    <div>
+                        <ul>
+                            <li>Chính sách kiểm hàng</li>
+                            <li>Chính sách bảo hành</li>
+                            <li>Chính sách giao hàng</li>
+                            <li>Chính sách thanh toán</li>
+                            <li>Hướng dẫn mua hàng Online</li>
+                            <li>Kiến thức trái cây</li>
+                            <li>Liên hệ</li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div><b>Chăm sóc khách hàng</b></div>
+                    <div>
+                        <b>Số điện thoại : </b>0326754284
+                    </div>
+                    <div>
+                        <b>Email : </b>traicay@gmail.com
+                    </div>
+                    <div><b>Các trang mạng xã hội khác</b></div>
+                    <div>
+                        <a href="/">
+                            <i class="fa-brands fa-facebook p-3 fs-3"></i>
+                            <a href="/">
+                                <i class="fa-brands fa-square-instagram p-3 fs-3"></i>
+                                <a href="/">
+                                    <i class="fa-brands fa-square-github p-3 fs-3"></i>
+                    </div>
+                </div>
+
+            </div>
     </footer>
+    <hr>
+    <div class="text-center fw-bold" style="text-decoration: none;">
+        Copyright &copy 2025 - Nhóm 2 lập trình web
+    </div>
+    <div id="tuoverlay">
+        <div class="tuoverlay-content">
+            <!-- Nút X -->
+            <button id="tucloseOverlayBtnX">&times;</button>
+
+            <div id="tuchu">Bạn chưa đăng nhập</div>
+            <img id="tuhinhchuadn" src="asset/img/chuadangnhap.png" alt="Chưa đăng nhập">
+            <div class="tu2thongtin">
+                <p>Để tiếp tục mua hàng vui lòng <a class="tudndk" href="#">đăng nhập</a>.</p>
+                <p>Nếu bạn chưa có tài khoản hãy <a class="tudndk" href="#">đăng ký</a> nhé!</p>
+                <div style="text-align: center;">
+                    <button id="tucloseOverlayBtn">Đóng</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script src="asset/js/tujskiemtra.js"></script>
 
 </body>
 <script src="vendor/bootstrap/js/bootstrap.min.js"></script>

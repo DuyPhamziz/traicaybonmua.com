@@ -25,3 +25,132 @@
 .message {
     transition: background-color 0.3s ease;
 }
+
+/*giao diện giỏ hàng */
+#cart-container {
+    margin-top: 20px;
+}
+
+.row.mb-4 {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#cart-container .col-md-4 h5 {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+#cart-container .col-md-2 p {
+    font-size: 0.9rem;
+    color: #888;
+}
+
+.btn-outline-secondary {
+    border-color: #ddd;
+    color: #555;
+}
+
+.btn-outline-secondary:hover {
+    background-color: #f8f9fa;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: white;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+
+input[type="number"] {
+    text-align: center;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 40px;
+    padding: 5px;
+}
+
+.form-span {
+    font-weight: 600;
+}
+
+.product-item {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.product-item:last-child {
+    border-bottom: none;
+}
+
+.product-img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+}
+
+/* Lớp phủ toàn màn hình */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Màu nền mờ */
+    display: none;
+    /* Mặc định không hiển thị */
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+/* Nội dung của lớp phủ */
+.overlay-content {
+    background-color: white;
+    padding: 30px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.overlay-content h2 {
+    margin: 0 0 10px;
+    font-size: 24px;
+    color: #333;
+}
+
+.overlay-content p {
+    margin: 0 0 20px;
+    font-size: 18px;
+    color: #555;
+}
+
+.overlay-content button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.overlay-content button:hover {
+    background-color: #45a049;
+}

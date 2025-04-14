@@ -2,7 +2,7 @@ const menuLinks = document.querySelectorAll('.nav-link[data-target]');
 const contentArea = document.querySelector('.content_admin');
 let product_fruit = JSON.parse(localStorage.getItem("product_fruit") || "[]");
 const contentData = {
-    sanpham: `<h2>Quản lý sản phẩm</h2>
+    sanpham: `<h2><i class="fa-sharp fa-solid fa-tomato"></i> Quản lý sản phẩm</h2>
     <p>Thông tin về sản phẩm sẽ được hiển thị tại đây.</p>
     <form id="product-form" class="row g-3">
     <input type="hidden" id="product-index">
@@ -60,11 +60,40 @@ const contentData = {
         <nav aria-label="Page navigation" class="mt-3">
             <ul class="pagination" id="pagination-products"></ul>
         </nav>`,
-    tuvan: `<h2>Tư vấn khách hàng</h2>
+    tuvan: `<h2><i class="fa-regular fa-comment-medical"></i> Tư vấn khách hàng</h2>
             <p>Danh sách câu hỏi, phản hồi từ khách hàng.</p>
             <div id="contact-messages-list"></div>`,
-    doanhthu: `<h2>Báo cáo doanh thu</h2><p>Biểu đồ và bảng thống kê doanh số.</p>`,
-    donhang: `<h2>Danh sách đơn hàng</h2><p>Chi tiết các đơn hàng đã đặt.</p>`,
+    doanhthu: `
+           <h2 class="mb-4"> <i class="fa-solid fa-money-bill-trend-up"></i> Báo cáo doanh thu</h2>
+
+  <div class="row mb-4">
+    <div class="col-md-4">
+      <label for="filter-date" class="form-label">Lọc theo ngày:</label>
+      <input type="date" id="filter-date" class="form-control">
+    </div>
+    <div class="col-md-4">
+      <label for="filter-month" class="form-label">Lọc theo tháng:</label>
+      <input type="month" id="filter-month" class="form-control">
+    </div>
+    <div class="col-md-4 d-flex align-items-end">
+      <button class="btn btn-primary w-100" onclick="renderRevenueReport()">Lọc</button>
+    </div>
+  </div>
+
+  <canvas id="revenueChart" height="100"></canvas>
+
+  <table class="table table-bordered table-striped mt-4">
+    <thead class="table-dark">
+      <tr>
+        <th>Ngày</th>
+        <th>Số đơn hàng</th>
+        <th>Tổng doanh thu</th>
+      </tr>
+    </thead>
+    <tbody id="revenueTableBody"></tbody>
+  </table>
+          `,
+    donhang: `<h2><i class="fa-solid fa-dollar-sign"></i> Danh sách đơn hàng</h2><p>Chi tiết các đơn hàng đã đặt.</p><div id="all-orders-list" class="container mt-4"></div>`,
     giamgia: `<h2>Quản lý mã giảm giá</h2>
 <p>Danh sách mã khuyến mãi đang áp dụng.</p>
 
@@ -113,9 +142,13 @@ menuLinks.forEach(link => {
 
         setTimeout(() => {
             if (target === 'tuvan') {
-                renderContactMessages(); // Gọi hàm renderContactMessages sau khi nội dung đã được chèn
+                renderContactMessages();
+            } else if (target === 'donhang') {
+                loadAllOrders();
+            } else if (target === 'doanhthu') {
+                renderRevenueReport();
             }
-        }, 0);
+        }, 100);
 
         // Xử lý class active để làm nổi bật mục đang chọn
         menuLinks.forEach(l => l.classList.remove('active'));

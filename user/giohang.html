@@ -4,11 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trái cây bốn mùa</title>
-    <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/asset/css/base.css">
-    <link rel="stylesheet" href="/asset/css/main.css">
-    <link rel="stylesheet" href="vendor/font-awesome/font-awesome-6-pro-main/css/all.css">
+    <title>Trái cây bốn mùa - Giỏ hàng</title>
+    <link rel="stylesheet" href="/asset/css/style.css">
 
 </head>
 
@@ -70,49 +67,95 @@
                             </a>
                         </li>
 
-                        <li class="nav-item d-flex flex-grow-1 text-nowrap w-25">
-                            <a class="nav-link w-50" href="dangnhap.html" id="userNavLink"> Đăng nhập <i
+                        <li class="nav-item d-flex flex-grow-1 text-nowrap w-25" id="userNavItem">
+                            <a class="nav-link w-50" href="/dangnhap.html" id="userNavLink"> Đăng nhập <i
                                     class="fa-solid fa-user"></i></a>
                         </li>
                     </ul>
                 </div>
                 <!-- Lớp phủ -->
-                <div id="loginOverlay" class="overlay">
-                    <div class="overlay-content">
-                        <h3>Bạn cần đăng nhập để xem giỏ hàng.</h3>
-                        <a href="dangnhap.html" class="btn btn-primary">Đăng nhập</a>
-                        <button id="closeOverlay" class="btn btn-secondary">Đóng</button>
-                    </div>
-                </div>
-                <div class="collapse" id="cartUserCollapse" style="color: aliceblue;">
-                    <div class="d-flex justify-content-between p-3">
-                        <a class="nav-link" href="pages/cart.html">
-                            Giỏ hàng <i class="fa-sharp fa-solid fa-cart-shopping"></i>
-                        </a>
-                        <a class="nav-link" href="dangnhap.html">
-                            Đăng nhập <i class="fa-solid fa-user"></i>
-                        </a>
-                    </div>
-                </div>
+
             </div>
 
         </div>
     </nav>
     <!-- end header -->
 
+    <body onload="loadCart()">
+        <div class="container mt-5 bg-light">
+            <h2 class="mb-4"><i class="fa-solid fa-cart-shopping"></i> Giỏ hàng của bạn</h2>
+            <div id="cart-container"></div>
+            <a href="sanpham.html" class="btn btn-outline-secondary">
+                <i style="margin-top: 5px; margin-left: 5px;" class="fa-solid fa-arrow-left"></i> Tiếp tục mua hàng
+            </a>
+            <div class="text-end mt-3">
+                <h5>Tổng cộng: <span id="total-price" class="text-danger fw-bold">0 VNĐ</span></h5>
 
-    <footer class="footer mt-auto py-3">
-        <div class="container">
-            <span>Bản quyền © bởi <a href="#">Nhóm 2</a> -
-                <script>document.write(new Date().getFullYear());</script>.
-            </span>
-            <span class="text-muted">Trái cây theo phong cách bốn mùa</span>
-
-            <p class="float-right">
-                <a href="#">Về đầu trang</a>
-            </p>
+                <button id="checkoutBtn" style="height: 40px; width: 235px; font-weight: bold;" type="button"
+                    class="btn btn-warning">THANH TOÁN</button>
+            </div>
         </div>
+    </body>
+
+    <footer class="mt-auto py-3">
+        <div class="p-3"></div>
+        <hr>
+        <div class="p-5"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 d-none d-md-block">
+                    <div><b>Bản quyền của Công ty TNHH Morning Fruit</b></div>
+                    <div>
+                        Giấy chứng nhận Đăng ký Kinh doanh số 03164646 do Sở Kế hoạch và Đầu tư Tỉnh Hậu Giang cấp ngày
+                        02/01/2025. </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div><b>Địa chỉ : </b>Xã Hòa An, huyện Long Mỹ, tỉnh Hậu Giang</div>
+                    <div><b>Số điện thoại : </b>0326754284</div>
+                    <div><b>Emai : </b>traicay@gmail.com</div>
+                </div>
+
+                <div class="col-md-3 d-none d-md-block">
+                    <div><b>Hổ trợ khách hàng</b></div>
+                    <div>
+                        <ul>
+                            <li>Chính sách kiểm hàng</li>
+                            <li>Chính sách bảo hành</li>
+                            <li>Chính sách giao hàng</li>
+                            <li>Chính sách thanh toán</li>
+                            <li>Hướng dẫn mua hàng Online</li>
+                            <li>Kiến thức trái cây</li>
+                            <li>Liên hệ</li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div><b>Chăm sóc khách hàng</b></div>
+                    <div>
+                        <b>Số điện thoại : </b>0326754284
+                    </div>
+                    <div>
+                        <b>Email : </b>traicay@gmail.com
+                    </div>
+                    <div><b>Các trang mạng xã hội khác</b></div>
+                    <div>
+                        <a href="/">
+                            <i class="fa-brands fa-facebook p-3 fs-3"></i> </a>
+                        <a href="/">
+                            <i class="fa-brands fa-square-instagram p-3 fs-3"></i></a>
+                        <a href="/">
+                            <i class="fa-brands fa-square-github p-3 fs-3"></i></a>
+                    </div>
+                </div>
+
+            </div>
     </footer>
+    <hr>
+    <div class="text-center fw-bold" style="text-decoration: none;">
+        Copyright &copy 2025 - Nhóm 2 lập trình web
+    </div>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const currentUser = JSON.parse(localStorage.getItem("currentUser"));
@@ -120,12 +163,91 @@
 
             if (currentUser && userNavLink) {
                 userNavLink.innerHTML = `&nbsp; Chào, ${currentUser.userFullName} <i class="fa-solid fa-user"></i>`;
-                userNavLink.href = "#"; // hoặc link tới trang cá nhân
+                userNavLink.href = "#";
             }
         });
-    </script>
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
+        function loadCart() {
+            const cart = JSON.parse(localStorage.getItem("cart")) || [];
+            const container = document.getElementById("cart-container");
+            const totalEl = document.getElementById("total-price");
+            let total = 0;
+            container.innerHTML = "";
+
+            if (cart.length === 0) {
+                container.innerHTML = "<p>Giỏ hàng của bạn đang trống.</p>";
+                return;
+            }
+
+            cart.forEach((item, index) => {
+                const price = parseInt(item.giadagiam.replace(/\D/g, ""));
+                const itemTotal = price * item.soluong;
+                total += itemTotal;
+
+                const row = `
+                <div class="row mb-4 align-items-center border-bottom pb-3">
+                    <div class="col-md-2 col-2">
+                        <img src="${item.hinh}" class="img-fluid rounded" style="max-height: 100px;">
+                    </div>
+                    <div class="col-md-4 col-4">
+                        <h5>${item.tensp}</h5>
+                        <p class="text-muted">${item.giadagiam}</p>
+                    </div>
+                    <div class="col-md-4 col-4">
+                        <div class="d-flex align-items-center">
+                            <button class="btn btn-outline-secondary btn-sm" onclick="changeQuantity(${index}, -1)">-</button>
+                            <input type="number" value="${item.soluong}" min="1" class="form-control mx-2 text-center" style="width: 40px; padding: 4px" onchange="updateQuantity(${index}, this.value)">
+                            <button class="btn btn-outline-secondary btn-sm" onclick="changeQuantity(${index}, 1)">+</button>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-2">
+                        <button class="btn btn-danger btn-sm" onclick="removeFromCart(${index})">Xóa</button>
+                    </div>
+                </div>
+            `;
+                container.innerHTML += row;
+            });
+
+            totalEl.innerText = total.toLocaleString("vi-VN") + " VNĐ";
+        }
+
+        function changeQuantity(index, delta) {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            cart[index].soluong += delta;
+            if (cart[index].soluong < 1) cart[index].soluong = 1;
+            localStorage.setItem("cart", JSON.stringify(cart));
+            loadCart();
+        }
+
+        function updateQuantity(index, quantity) {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            cart[index].soluong = parseInt(quantity);
+            if (isNaN(cart[index].soluong) || cart[index].soluong < 1) cart[index].soluong = 1;
+            localStorage.setItem("cart", JSON.stringify(cart));
+            loadCart();
+        }
+
+        function removeFromCart(index) {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            cart.splice(index, 1);
+            localStorage.setItem("cart", JSON.stringify(cart));
+            loadCart();
+        }
+        document.getElementById('checkoutBtn').addEventListener('click', function () {
+            // Kiểm tra nếu giỏ hàng có sản phẩm
+            const cart = JSON.parse(localStorage.getItem("cart")) || [];
+            if (cart.length === 0) {
+                alert("Giỏ hàng của bạn đang trống. Vui lòng thêm sản phẩm trước khi thanh toán.");
+            } else {
+                // Chuyển hướng tới trang thanh toán
+                window.location.href = 'thanhtoan.html';  // Thay bằng đường dẫn thực tế của trang thanh toán
+            }
+        });
+
+    </script>
+
+    <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/admin/asset/js/logout.js"></script>
 </body>
 
 </html>

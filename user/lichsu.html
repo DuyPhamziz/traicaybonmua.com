@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Lịch sử mua hàng</title>
+    <link rel="stylesheet" href="/asset/css/style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark sticky-top bg-dark">
+        <div class="container">
+            <div class="row w-100">
+                <div class="col-3 col-md-1">
+                    <img class="navbar-brand w-100" src="/asset/img/logo_4sf.png">
+                </div>
+                <!-- Thanh điều hướng (Navbar) trên điện thoại -->
+                <div class="col-8 col-md-7 d-flex align-items-center justify-content-end d-md-none">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+                <div class="col-1 col-md-7 d-flex align-items-center justify-content-end d-md-none">
+                    <button class="navbar-toggler d-md-none" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#cartUserCollapse" aria-controls="cartUserCollapse" aria-expanded="false"
+                        aria-label="Toggle cart and user">
+                        <i class="fa-solid fa-user"></i>
+                    </button>
+                </div>
+
+                <div class="col-12 col-md-5 d-flex align-items-center">
+                    <div class="navbar-collapse collapse" id="navbarCollapse">
+                        <ul class="navbar-nav mr-auto justify-content-between ml-auto w-100">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="/user/index.html">Trang chủ</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/user/gioithieu.html">Giới thiệu</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/user/sanpham.html">Sản phẩm</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/user/lienhe.html">Liên hệ</a>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                </div>
+
+                <!-- Form tìm kiếm -->
+                <div class="col-12 col-md-3 d-flex align-items-center justify-content-center">
+
+                </div>
+                <!-- Giỏ hàng và đăng nhập -->
+                <div class="col-12 col-md-3 d-flex align-items-center justify-content-end ms-auto d-none d-md-block">
+                    <ul class="navbar-nav ms-auto d-flex w-100 p-0 m-0">
+                        <li class="nav-item d-flex flex-grow-1 text-nowrap w-25">
+                            <a class="nav-link w-50" href="/user/giohang.html" id="cartLink">Giỏ hàng <i
+                                    class="fa-sharp fa-solid fa-cart-shopping"></i>
+                            </a>
+                        </li>
+
+                        <li class="nav-item d-flex flex-grow-1 text-nowrap w-25" id="userNavItem">
+                            <a class="nav-link w-50" href="/dangnhap.html" id="userNavLink"> Đăng nhập <i
+                                    class="fa-solid fa-user"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+    <div class="container my-5">
+        <h2 class="text-center my-4">Lịch Sử Mua Hàng</h2>
+        <div id="orderHistoryContainer" class="container"></div>
+    </div>
+    <footer class="mt-auto py-3">
+        <div class="p-3"></div>
+        <hr>
+        <div class="p-5"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 d-none d-md-block">
+                    <div><b>Bản quyền của Công ty TNHH Morning Fruit</b></div>
+                    <div>
+                        Giấy chứng nhận Đăng ký Kinh doanh số 03164646 do Sở Kế hoạch và Đầu tư Tỉnh Hậu Giang
+                        cấp ngày
+                        02/01/2025. </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div><b>Địa chỉ : </b>Xã Hòa An, huyện Long Mỹ, tỉnh Hậu Giang</div>
+                    <div><b>Số điện thoại : </b>0326754284</div>
+                    <div><b>Emai : </b>traicay@gmail.com</div>
+                </div>
+
+                <div class="col-md-3 d-none d-md-block">
+                    <div><b>Hổ trợ khách hàng</b></div>
+                    <div>
+                        <ul>
+                            <li>Chính sách kiểm hàng</li>
+                            <li>Chính sách bảo hành</li>
+                            <li>Chính sách giao hàng</li>
+                            <li>Chính sách thanh toán</li>
+                            <li>Hướng dẫn mua hàng Online</li>
+                            <li>Kiến thức trái cây</li>
+                            <li>Liên hệ</li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div><b>Chăm sóc khách hàng</b></div>
+                    <div>
+                        <b>Số điện thoại : </b>0326754284
+                    </div>
+                    <div>
+                        <b>Email : </b>traicay@gmail.com
+                    </div>
+                    <div><b>Các trang mạng xã hội khác</b></div>
+                    <div>
+                        <a href="/">
+                            <i class="fa-brands fa-facebook p-3 fs-3"></i> </a>
+                        <a href="/">
+                            <i class="fa-brands fa-square-instagram p-3 fs-3"></i></a>
+                        <a href="/">
+                            <i class="fa-brands fa-square-github p-3 fs-3"></i></a>
+                    </div>
+                </div>
+
+            </div>
+    </footer>
+    <hr>
+    <div class="text-center fw-bold" style="text-decoration: none;">
+        Copyright &copy 2025 - Nhóm 2 lập trình web
+    </div>
+    <script src="/admin/asset/js/history.js"></script>
+</body>
+
+</html>

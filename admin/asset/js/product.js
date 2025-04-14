@@ -54,16 +54,18 @@ function renderProducts(page = 1) {
     const container = document.getElementById("product-content");
     container.innerHTML = "";
 
-    paginated.forEach(i => {
+    paginated.forEach((i, index) => {
         const col = document.createElement("div");
         col.className = "col-md-3 mb-4";
         let percentGiam = 0;
+        const realIndex = product_fruit.findIndex(p => p.tensp === i.tensp);
         const giaGoc = parsePrice(i.giagoc);
         const giaGiam = parsePrice(i.giadagiam);
         if (giaGoc > giaGiam) {
             percentGiam = Math.round((1 - giaGiam / giaGoc) * 100);
         }
         col.className = "col-6 col-sm-6 col-md-4 col-lg-3 px-2 mb-4";
+        const isUserPage = window.location.pathname.includes('/user/');
         col.innerHTML = `
             <div class="card h-100">
                 <img src="${i.hinh}" class="card-img-top img-fluid" alt="${i.tensp}">
@@ -72,7 +74,7 @@ function renderProducts(page = 1) {
                     ${percentGiam > 0 ? `<strong class="text-danger">Đã giảm: ${percentGiam}%</strong><br>` : '<strong class="text-danger">.</strong>'}
                     <p class="card-text text-muted text-decoration-line-through">${giaGoc.toLocaleString()} VNĐ</p>
                     <p class="card-text text-danger fw-bold">${giaGiam.toLocaleString()} VNĐ</p>
-                    <a href="#" class="btn btn-primary w-100">Mua ngay</a>
+                    <button onclick="${isUserPage ? `addToCart(${realIndex})` : 'showOverlayRequest()'}" class="btn btn-success w-100">Thêm vào giỏ</button>
                 </div>
             </div>
         `;
@@ -148,3 +150,8 @@ document.querySelectorAll('#price-filter, #price-filter-mobile').forEach(select 
 });
 
 renderProducts();
+
+
+
+
+

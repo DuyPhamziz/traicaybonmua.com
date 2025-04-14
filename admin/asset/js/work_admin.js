@@ -11,7 +11,7 @@ function renderAdminLogs() {
     if (logs.length === 0) return `<h2>Thông tin Admin</h2><p>Chưa có hoạt động nào được ghi nhận.</p>`;
 
     let logHtml = `
-        <h2>Hồ sơ hoạt động Admin</h2>
+        <h2><i class="fa-solid fa-hammer"></i> Hồ sơ hoạt động Admin</h2>
         <p><strong>Lịch sử hoạt động:</strong></p>
         <ul class="list-group">
             ${logs.map(log => `<li class="list-group-item">${log}</li>`).join('')}

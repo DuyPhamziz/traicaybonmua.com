@@ -5,15 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trang Quản trị</title>
+    <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/admin/asset/css/main.css">
+    <link rel="stylesheet" href="/asset/css/base.css">
+    <link rel="stylesheet" href="/vendor/font-awesome/font-awesome-6-pro-main/css/all.css">
 
-    <link rel="stylesheet" href="../asset/css/base.css">
-    <link rel="stylesheet" href="../asset/css/main.css">
-    <link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.min.css">
 </head>
 
 <body>
     <!-- header -->
-    <nav class="navbar navbar-expand-md navbar-dark sticky-top bg-dark style=" z-index: 1050;">
+    <nav class="navbar navbar-expand-md navbar-dark sticky-top bg-dark style=" z-index: 1050;>
         <div class="container">
             <div class="row w-100">
                 <div class="col-3 col-md-1">
@@ -39,7 +40,7 @@
                     <div class="navbar-collapse collapse" id="navbarCollapse">
                         <ul class="navbar-nav mr-auto justify-content-between ml-auto w-100">
                             <li class="nav-item active">
-                                <a class="nav-link" href="#">Trang chủ Admin</a>
+                                <a class="nav-link text-white" href="#">Trang chủ Admin</a>
                             </li>
 
                         </ul>
@@ -66,7 +67,7 @@
                                     <li><a class="dropdown-item w-50" href="dangnhap.html" href="#">Hồ sơ</a>
                                     </li>
                                     <li><a class="dropdown-item" href="#">Cài đặt</a></li>
-                                    <li><a class="dropdown-item" href="#">Đăng xuất</a></li>
+                                    <li><a class="dropdown-item" href="/index.html">Đăng xuất</a></li>
                                 </ul>
                             </div>
 
@@ -111,31 +112,31 @@
                                         Sản phẩm
                                     </a>
                                 </li>
-                                <li><a href="#" class="nav-link link-body-emphasis" data-target="tuvan">
+                                <li><a href="#" class="nav-link link-dark" data-target="tuvan">
                                         <svg class="bi pe-none me-2" width="16" height="16">
                                             <use xlink:href="#speedometer2"></use>
                                         </svg>
                                         Tư vấn
                                     </a></li>
-                                <li><a href="#" class="nav-link link-body-emphasis" data-target="doanhthu">
+                                <li><a href="#" class="nav-link link-dark" data-target="doanhthu">
                                         <svg class="bi pe-none me-2" width="16" height="16">
                                             <use xlink:href="#table"></use>
                                         </svg>
                                         Doanh thu
                                     </a></li>
-                                <li><a href="#" class="nav-link link-body-emphasis" data-target="donhang">
+                                <li><a href="#" class="nav-link link-dark" data-target="donhang">
                                         <svg class="bi pe-none me-2" width="16" height="16">
                                             <use xlink:href="#grid"></use>
                                         </svg>
                                         Đơn hàng
                                     </a></li>
-                                <li><a href="#" class="nav-link link-body-emphasis" data-target="giamgia">
+                                <li><a href="#" class="nav-link link-dark" data-target="giamgia">
                                         <svg class="bi pe-none me-2" width="16" height="16">
                                             <use xlink:href="#people-circle"></use>
                                         </svg>
                                         Giảm giá
                                     </a></li>
-                                <li><a href="#" class="nav-link link-body-emphasis" data-target="hoso">
+                                <li><a href="#" class="nav-link link-dark" data-target="hoso">
                                         <svg class="bi pe-none me-2" width="16" height="16">
                                             <use xlink:href="#people-circle"></use>
                                         </svg>
@@ -148,6 +149,8 @@
 
                     <!-- Content -->
                     <div class="col-12 col-md-8 col-lg-9 content_admin p-3">
+                        <marquee direction="left" scrollamount="5">
+                            Chào chủ shop, chúc một ngày tốt lành <i class="fa-solid fa-heart"></i> </marquee>
 
 
                     </div>
@@ -155,23 +158,67 @@
                 </div>
             </div>
 
-
-
     </main>
 
-    <footer class="footer mt-auto py-3">
+    <footer class="mt-auto py-3">
+        <div class="p-3"></div>
+        <hr>
+        <div class="p-5"></div>
         <div class="container">
-            <span>Bản quyền © bởi <a href="#">Nhóm 2</a> -
-                <script>document.write(new Date().getFullYear());</script>.
-            </span>
-            <span class="text-muted">Trái cây theo phong cách bốn mùa</span>
+            <div class="row">
+                <div class="col-md-3 d-none d-md-block">
+                    <div><b>Bản quyền của Công ty TNHH Morning Fruit</b></div>
+                    <div>
+                        Giấy chứng nhận Đăng ký Kinh doanh số 03164646 do Sở Kế hoạch và Đầu tư Tỉnh Hậu Giang cấp ngày
+                        02/01/2025. </div>
+                </div>
 
-            <p class="float-right">
-                <a href="#">Về đầu trang</a>
-            </p>
-        </div>
+                <div class="col-md-3">
+                    <div><b>Địa chỉ : </b>Xã Hòa An, huyện Long Mỹ, tỉnh Hậu Giang</div>
+                    <div><b>Số điện thoại : </b>0326754284</div>
+                    <div><b>Emai : </b>traicay@gmail.com</div>
+                </div>
+
+                <div class="col-md-3 d-none d-md-block">
+                    <div><b>Hổ trợ khách hàng</b></div>
+                    <div>
+                        <ul>
+                            <li>Chính sách kiểm hàng</li>
+                            <li>Chính sách bảo hành</li>
+                            <li>Chính sách giao hàng</li>
+                            <li>Chính sách thanh toán</li>
+                            <li>Hướng dẫn mua hàng Online</li>
+                            <li>Kiến thức trái cây</li>
+                            <li>Liên hệ</li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div><b>Chăm sóc khách hàng</b></div>
+                    <div>
+                        <b>Số điện thoại : </b>0326754284
+                    </div>
+                    <div>
+                        <b>Email : </b>traicay@gmail.com
+                    </div>
+                    <div><b>Các trang mạng xã hội khác</b></div>
+                    <div>
+                        <a href="/">
+                            <i class="fa-brands fa-facebook p-3 fs-3"></i>
+                            <a href="/">
+                                <i class="fa-brands fa-square-instagram p-3 fs-3"></i>
+                                <a href="/">
+                                    <i class="fa-brands fa-square-github p-3 fs-3"></i>
+                    </div>
+                </div>
+
+            </div>
     </footer>
-
+    <hr>
+    <div class="text-center fw-bold" style="text-decoration: none;">
+        Copyright &copy 2025 - Nhóm 2 lập trình web
+    </div>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const currentUser = JSON.parse(localStorage.getItem("currentUser"));
@@ -182,19 +229,42 @@
                 userNavLink.href = "#"; // hoặc link tới trang cá nhân
             }
         });
+
     </script>
-    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <script>
         document.querySelector('.nav-link[data-target="sanpham"]')?.click();
+
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                // Bỏ class active khỏi tất cả
+                navLinks.forEach(l => {
+                    l.classList.remove('text-white', 'bg-success');
+                    l.classList.add('link-dark');
+                });
+
+                // Thêm class cho mục được chọn
+                this.classList.remove('link-dark');
+                this.classList.add('text-white', 'bg-success');
+            });
+        });
+
     </script>
 
 
     <script src="/admin/asset/js/work_admin.js"></script>
     <script src="/admin/asset/js/app.js"></script>
+
+    <script src="/admin/asset/js/revenue.js"></script>
     <script src="/admin/asset/js/sale.js"></script>
     <script src="/admin/asset/js/mess.js"></script>
-
+    <script src="/vendor/jsdelivr/chart.js"></script>
+    <script src="/admin/asset/js/bill.js" defer></script>
 
 
 </body>
