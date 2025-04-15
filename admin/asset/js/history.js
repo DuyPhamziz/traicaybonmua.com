@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const container = document.getElementById("orderHistoryContainer");
     if (orderHistory.length === 0) {
-        container.innerHTML = "<p class='text-muted'>Bạn chưa có đơn hàng nào.</p>";
+        container.innerHTML = "<p class='text-muted p-3 fw-bold'>Bạn chưa có đơn hàng nào.</p>";
         return;
     }
 
@@ -23,10 +23,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 <div class="border p-2 my-1">
                     <img src="${item.hinh}" alt="${item.tensp}" style="width: 50px; height: 50px; object-fit: cover; margin-right: 10px;">
                     <strong>${item.tensp}</strong> - Số lượng: ${item.soluong}<br>
-                    Giá: ${item.giadagiam} | Thành tiền: ${total.toLocaleString()} VNĐ
+                    Giá: ${item.giadagiam} | Thành tiền: ${total.toLocaleString()} VNĐ <br>
                 </div>
             `;
         });
+
+        const receivedButton = order.status === "Đang giao"
+            ? `<button class="btn btn-success btn-sm mt-2 confirm-receive-btn" data-order-index="${orderHistory.length - index - 1}">Đã nhận được hàng</button>`
+            : "";
 
         container.innerHTML += `
             <div class="card mb-4 shadow-sm">
@@ -36,9 +40,39 @@ document.addEventListener("DOMContentLoaded", function () {
                     <p><strong>Điện thoại:</strong> ${order.customer.phone}</p>
                     <p><strong>Địa chỉ:</strong> ${order.customer.address}</p>
                     <p><strong>Thời gian:</strong> ${order.date}</p>
+                    <p><strong>Trạng thái:</strong> <span class="badge bg-info">${order.status}</span></p>
                     <div>${itemsHTML}</div>
+                    ${receivedButton}
                 </div>
             </div>
         `;
+    });
+
+    // ✅ Gắn sự kiện sau khi render xong đơn hàng
+    document.querySelectorAll('.confirm-receive-btn').forEach(btn => {
+        btn.addEventListener('click', function () {
+            const index = this.getAttribute('data-order-index');
+            const orderKey = `orderHistory_${currentUser.userID}`;
+            const orderHistory = JSON.parse(localStorage.getItem(orderKey)) || [];
+
+            // Cho phép cả "Đã giao" và "Đang giao" xác nhận
+            if (orderHistory[index].status === "Đang giao" || orderHistory[index].status === "Đã giao") {
+                orderHistory[index].status = "Hoàn tất"; // ✅ Cập nhật trạng thái
+                localStorage.setItem(orderKey, JSON.stringify(orderHistory));
+
+                // ✅ Cập nhật trạng thái bên allOrders
+                const allOrders = JSON.parse(localStorage.getItem("allOrders")) || [];
+                const match = allOrders.find(o =>
+                    o.userID === currentUser.userID && o.date === orderHistory[index].date
+                );
+                if (match) {
+                    match.status = "Hoàn tất";
+                    localStorage.setItem("allOrders", JSON.stringify(allOrders));
+                }
+
+                alert("Cảm ơn bạn đã xác nhận. Đơn hàng đã được đánh dấu là 'Hoàn tất'.");
+                location.reload(); // Reload để hiển thị lại
+            }
+        });
     });
 });

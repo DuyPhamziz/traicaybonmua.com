@@ -154,3 +154,24 @@ input[type="number"] {
 .overlay-content button:hover {
     background-color: #45a049;
 }
+
+.card.border-success {
+    border-color: #28a745 !important;
+}
+
+.card.bg-light {
+    background-color: #f8f9fa !important;
+}
+
+.card-header.bg-primary {
+    background-color: #007bff !important;
+}
+
+.card-header .text-white {
+    color: #fff !important;
+}
+
+.badge.bg-success {
+    background-color: #28a745 !important;
+    font-size: 1rem;
+}

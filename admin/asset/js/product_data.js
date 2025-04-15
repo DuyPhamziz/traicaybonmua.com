@@ -23,7 +23,7 @@ let product_fruit = [
     },
     {
         tensp: "Chuối Nam Mỹ",
-        hinh: "/admin/asset/img/sanpham/chuoinammy.jpg",
+        hinh: "/admin/asset/img/sanpham/chuoinammy.png",
         danhmuc: ["tcnhapkhau", "muaxuan"],
         giagoc: "50.000 VNĐ",
         giadagiam: "39.000 VNĐ"
@@ -51,7 +51,7 @@ let product_fruit = [
     },
     {
         tensp: "Dưa hấu Long An",
-        hinh: "/admin/asset/img/sanpham/duahaulongan.jpg",
+        hinh: "/admin/asset/img/sanpham/duahaulongan.png",
         danhmuc: ["tcvietnam", "muaha"],
         giagoc: "35.000 VNĐ",
         giadagiam: "29.000 VNĐ"
@@ -65,63 +65,63 @@ let product_fruit = [
     },
     {
         tensp: "Ổi ruột đỏ",
-        hinh: "/admin/asset/img/sanpham/oiruotdo.jpg",
+        hinh: "/admin/asset/img/sanpham/oiruotdo.png",
         danhmuc: ["tcvietnam", "muathu"],
         giagoc: "40.000 VNĐ",
         giadagiam: "32.000 VNĐ"
     },
     {
         tensp: "Dứa (Thơm) Queen",
-        hinh: "/admin/asset/img/sanpham/duaqueen.jpg",
+        hinh: "/admin/asset/img/sanpham/duaqueen.png",
         danhmuc: ["tcvietnam", "muadong", "hot"],
         giagoc: "45.000 VNĐ",
         giadagiam: "35.000 VNĐ"
     },
     {
         tensp: "Lựu Ấn Độ",
-        hinh: "/admin/asset/img/sanpham/luuando.jpg",
+        hinh: "/admin/asset/img/sanpham/luaando.png",
         danhmuc: ["tcnhapkhau", "muaha"],
         giagoc: "180.000 VNĐ",
         giadagiam: "145.000 VNĐ"
     },
     {
         tensp: "Dâu tây Đà Lạt",
-        hinh: "/admin/asset/img/sanpham/daudalat.jpg",
+        hinh: "/admin/asset/img/sanpham/daudalat.png",
         danhmuc: ["tcvietnam", "muadong"],
         giagoc: "200.000 VNĐ",
         giadagiam: "165.000 VNĐ"
     },
     {
         tensp: "Kiwi vàng New Zealand",
-        hinh: "/admin/asset/img/sanpham/kiwinewzealand.jpg",
+        hinh: "/admin/asset/img/sanpham/kiwinewzealand.png",
         danhmuc: ["tcnhapkhau", "muadong"],
         giagoc: "220.000 VNĐ",
         giadagiam: "185.000 VNĐ"
     },
     {
         tensp: "Mít Thái",
-        hinh: "/admin/asset/img/sanpham/mitthai.jpg",
+        hinh: "/admin/asset/img/sanpham/mitthai.png",
         danhmuc: ["tcvietnam", "muathu"],
         giagoc: "60.000 VNĐ",
         giadagiam: "49.000 VNĐ"
     },
     {
         tensp: "Thanh long ruột đỏ",
-        hinh: "/admin/asset/img/sanpham/thanhlongruotdo.jpg",
+        hinh: "/admin/asset/img/sanpham/thanhlongruotdo.png",
         danhmuc: ["tcvietnam", "muadong"],
         giagoc: "45.000 VNĐ",
         giadagiam: "35.000 VNĐ"
     },
     {
         tensp: "Sapoche",
-        hinh: "/admin/asset/img/sanpham/sapoche.jpg",
+        hinh: "/admin/asset/img/sanpham/sapoche.png",
         danhmuc: ["tcvietnam", "muadong"],
         giagoc: "35.000 VNĐ",
         giadagiam: "27.000 VNĐ"
     },
     {
         tensp: "Chôm chôm",
-        hinh: "/admin/asset/img/sanpham/chomchom.jpg",
+        hinh: "/admin/asset/img/sanpham/chomchom.png",
         danhmuc: ["tcvietnam", "muaha"],
         giagoc: "60.000 VNĐ",
         giadagiam: "49.000 VNĐ"
@@ -149,28 +149,28 @@ let product_fruit = [
     },
     {
         tensp: "Quýt đường",
-        hinh: "/admin/asset/img/sanpham/quytduong.jpg",
+        hinh: "/admin/asset/img/sanpham/quytduong.png",
         danhmuc: ["tcvietnam", "muaxuan"],
         giagoc: "55.000 VNĐ",
         giadagiam: "45.000 VNĐ"
     },
     {
         tensp: "Bơ sáp",
-        hinh: "/admin/asset/img/sanpham/bosap.jpg",
+        hinh: "/admin/asset/img/sanpham/bosap.png",
         danhmuc: ["tcvietnam"],
         giagoc: "60.000 VNĐ",
         giadagiam: "48.000 VNĐ"
     },
     {
         tensp: "Vải thiều",
-        hinh: "/admin/asset/img/sanpham/vaithieu.jpg",
+        hinh: "/admin/asset/img/sanpham/vaithieu.png",
         danhmuc: ["tcvietnam"],
         giagoc: "70.000 VNĐ",
         giadagiam: "55.000 VNĐ"
     },
     {
         tensp: "Đào tiên",
-        hinh: "/admin/asset/img/sanpham/daotien.jpg",
+        hinh: "/admin/asset/img/sanpham/daotien.png",
         danhmuc: ["tcnhapkhau"],
         giagoc: "230.000 VNĐ",
         giadagiam: "190.000 VNĐ"
@@ -191,49 +191,49 @@ let product_fruit = [
     },
     {
         tensp: "Combo Vitamin C Tươi Mát",
-        hinh: "/admin/asset/img/sanpham/combovitaminc.webp",
+        hinh: "/admin/asset/img/sanpham/combovitaminc.png",
         danhmuc: ["combo", "hot"],
         giagoc: "450.000 VNĐ",
         giadagiam: "349.000 VNĐ"
     },
     {
         tensp: "Combo Trái cây nhiệt đới",
-        hinh: "/admin/asset/img/sanpham/combonhietdoi.jpg",
+        hinh: "/admin/asset/img/sanpham/combonhietdoi.png",
         danhmuc: ["combo", "hot"],
         giagoc: "520.000 VNĐ",
         giadagiam: "410.000 VNĐ"
     },
     {
         tensp: "Combo Dinh dưỡng mỗi ngày",
-        hinh: "/admin/asset/img/sanpham/combodinhduong.jpg",
+        hinh: "/admin/asset/img/sanpham/combodinhduong.png",
         danhmuc: ["combo", "hot"],
         giagoc: "480.000 VNĐ",
         giadagiam: "385.000 VNĐ"
     },
     {
         tensp: "Combo Trái cây giảm cân",
-        hinh: "/admin/asset/img/sanpham/combogiamcan.jpeg",
+        hinh: "/admin/asset/img/sanpham/combogiamcan.png",
         danhmuc: ["combo", "hot"],
         giagoc: "430.000 VNĐ",
         giadagiam: "329.000 VNĐ"
     },
     {
         tensp: "Combo Sức khỏe gia đình",
-        hinh: "/admin/asset/img/sanpham/combosuckhoegiadinh.jpg",
+        hinh: "/admin/asset/img/sanpham/combosuckhoegiadinh.png",
         danhmuc: ["combo", "hot"],
         giagoc: "550.000 VNĐ",
         giadagiam: "429.000 VNĐ"
     },
     {
         tensp: "Combo Premium nhập khẩu",
-        hinh: "/admin/asset/img/sanpham/combonhapkhau.jpg",
+        hinh: "/admin/asset/img/sanpham/combonhapkhau.png",
         danhmuc: ["combo", "hot"],
         giagoc: "680.000 VNĐ",
         giadagiam: "559.000 VNĐ"
     },
     {
         tensp: "Giỏ quà Tết Sum Vầy",
-        hinh: "/admin/asset/img/sanpham/combotet.jpg",
+        hinh: "/admin/asset/img/sanpham/combotet.png",
         danhmuc: ["gioqua", "hot"],
         giagoc: "650.000 VNĐ",
         giadagiam: "499.000 VNĐ"
@@ -282,16 +282,16 @@ let product_fruit = [
     }
     ,
     {
-        tensp: "Yomi Yomi nomi",
-        hinh: "/admin/asset/img/sanpham/taqyomiyomi.webp",
-        danhmuc: ["hot"],
-        giagoc: "100000000.000 VNĐ",
-        giadagiam: "9990000.000 VNĐ"
+        tensp: "NHO RUBY ROMAN NHẬT BẢN",
+        hinh: "/admin/asset/img/sanpham/nhoruby.png",
+        danhmuc: ["hot", "tcnhapkhau"],
+        giagoc: "11000.000 VNĐ",
+        giadagiam: "10900.000 VNĐ"
     }
     ,
     {
         tensp: "Lửa lửa nomi",
-        hinh: "/admin/asset/img/sanpham/taqlua.jpg",
+        hinh: "/admin/asset/img/sanpham/taqlua.png",
         danhmuc: ["hot", "muaha"],
         giagoc: "100000000.000 VNĐ",
         giadagiam: "9990000.000 VNĐ"

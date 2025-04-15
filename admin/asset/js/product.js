@@ -70,7 +70,7 @@ function renderProducts(page = 1) {
             <div class="card h-100">
                 <img src="${i.hinh}" class="card-img-top img-fluid" alt="${i.tensp}">
                 <div class="card-body">
-                    <h5 class="card-title">${i.tensp}</h5> 
+                    <div class="title-wrapper"><h5 class="card-title">${i.tensp}</h5></div>
                     ${percentGiam > 0 ? `<strong class="text-danger">Đã giảm: ${percentGiam}%</strong><br>` : '<strong class="text-danger">.</strong>'}
                     <p class="card-text text-muted text-decoration-line-through">${giaGoc.toLocaleString()} VNĐ</p>
                     <p class="card-text text-danger fw-bold">${giaGiam.toLocaleString()} VNĐ</p>

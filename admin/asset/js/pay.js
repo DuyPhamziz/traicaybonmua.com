@@ -30,7 +30,8 @@ function confirmCheckout() {
             address: address
         },
         items: cart,
-        userID: currentUser.userID // Lưu thêm userID để quản lý theo người dùng
+        userID: currentUser.userID, // Lưu để lọc đơn của người dùng
+        status: "Chờ duyệt" // ✅ thêm trạng thái mặc định
     };
 
     // Lưu đơn hàng vào key `allOrders` (chung cho tất cả người dùng, admin sẽ xử lý)

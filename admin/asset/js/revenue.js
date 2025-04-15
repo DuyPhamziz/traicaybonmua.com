@@ -1,5 +1,4 @@
-let revenueChart; // To store chart instance
-
+let revenueChart;
 function renderRevenueReport() {
     const allOrders = JSON.parse(localStorage.getItem("allOrders")) || [];
 
@@ -10,12 +9,15 @@ function renderRevenueReport() {
 
     allOrders.forEach(order => {
         const dateObj = new Date(order.date);
-        const dayStr = dateObj.toISOString().split("T")[0];     // yyyy-mm-dd
-        const monthStr = dayStr.slice(0, 7);                     // yyyy-mm
+        const dayStr = dateObj.toISOString().split("T")[0];
+        const monthStr = dayStr.slice(0, 7);
 
         // Áp dụng bộ lọc nếu có
         if (filterDay && dayStr !== filterDay) return;
         if (filterMonth && monthStr !== filterMonth) return;
+
+        // Chỉ tính doanh thu khi trạng thái là "Đã giao" hoặc "Hoàn tất"
+        if (order.status !== "Đã giao" && order.status !== "Hoàn tất") return;
 
         let total = 0;
         order.items.forEach(item => {
@@ -44,17 +46,19 @@ function renderRevenueReport() {
         data.push(row.total);
 
         tbody.innerHTML += `
-      <tr>
-        <td>${date}</td>
-        <td>${row.count}</td>
-        <td>${row.total.toLocaleString("vi-VN")} VNĐ</td>
-      </tr>
-    `;
+            <tr>
+                <td>${date}</td>
+                <td>${row.count}</td>
+                <td>${row.total.toLocaleString("vi-VN")} VNĐ</td>
+            </tr>
+        `;
     });
 
     // Vẽ biểu đồ
     const ctx = document.getElementById("revenueChart").getContext("2d");
-    if (revenueChart) revenueChart.destroy();
+    if (revenueChart instanceof Chart) {
+        revenueChart.destroy();  
+    }
 
     revenueChart = new Chart(ctx, {
         type: "bar",

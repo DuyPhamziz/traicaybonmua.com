@@ -2,7 +2,6 @@ function loadAllOrders() {
     const allOrders = JSON.parse(localStorage.getItem("allOrders")) || [];
     const container = document.getElementById("all-orders-list");
 
-    // Nếu không có đơn hàng nào
     if (allOrders.length === 0) {
         container.innerHTML = "<p>Chưa có đơn hàng nào.</p>";
         return;
@@ -18,13 +17,27 @@ function loadAllOrders() {
                 </li>
             `;
         }).join("");
-
+    
+        const statusOptions = ['Chờ duyệt', 'Đã duyệt', 'Đang giao', 'Đã giao', 'Hoàn tất'];
+        const statusSelect = `
+            <select class="form-select form-select-sm status-select" data-index="${index}">
+                ${statusOptions.map(s => `<option value="${s}" ${s === order.status ? 'selected' : ''}>${s}</option>`).join('')}
+            </select>
+        `;
+    
+        // Kiểm tra nếu trạng thái là "Hoàn tất"
+        const isCompleted = order.status === "Hoàn tất";
+    
+        let cardClass = isCompleted ? "card mb-3 border-success" : "card mb-3";
+        let statusHtml = isCompleted ? `<span class="badge bg-success">Hoàn tất</span>` : `<span>Trạng thái: ${statusSelect}</span>`;
+    
         html += `
-            <div class="card mb-3">
-                <div class="card-header bg-primary text-white">
-                    Đơn hàng #${index + 1} - Ngày: ${order.date}
+            <div class="${cardClass}">
+                <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+                    <span>Đơn hàng #${index + 1} - Ngày: ${order.date}</span>
+                    ${statusHtml}
                 </div>
-                <div class="card-body">
+                <div class="card-body ${isCompleted ? 'bg-light' : ''}">
                     <p><strong>Khách hàng:</strong> ${order.customer.name}</p>
                     <p><strong>Email:</strong> ${order.customer.email}</p>
                     <p><strong>Điện thoại:</strong> ${order.customer.phone}</p>
@@ -34,34 +47,39 @@ function loadAllOrders() {
             </div>
         `;
     });
+    
 
     container.innerHTML = html;
-}
-document.addEventListener("DOMContentLoaded", function () {
-    // Xử lý click menu để hiển thị danh mục
-    const menuLinks = document.querySelectorAll('.menu-link');
-    const contentArea = document.getElementById('content-area'); // Khu vực hiển thị nội dung
 
-    menuLinks.forEach(link => {
-        link.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = link.getAttribute('data-target');
+    // Gắn sự kiện đổi trạng thái
+    document.querySelectorAll('.status-select').forEach(select => {
+        select.addEventListener('change', function () {
+            const index = this.getAttribute('data-index');
+            const newStatus = this.value;
 
-          
-            const sections = document.querySelectorAll('.content-section');
-            sections.forEach(section => section.style.display = 'none');
+            // Cập nhật trong allOrders
+            allOrders[index].status = newStatus;
+            localStorage.setItem('allOrders', JSON.stringify(allOrders));
 
-           
-            const targetSection = document.getElementById(target);
-            if (targetSection) {
-                targetSection.style.display = 'block';
+            // Cập nhật trong lịch sử người dùng
+            const userID = allOrders[index].userID;
+            const userOrderKey = `orderHistory_${userID}`;
+            const userOrders = JSON.parse(localStorage.getItem(userOrderKey)) || [];
+
+            // Tìm đúng đơn hàng theo thời gian và cập nhật trạng thái
+            const matchedOrder = userOrders.find(o =>
+                o.date === allOrders[index].date &&
+                o.customer.phone === allOrders[index].customer.phone
+            );
+
+            if (matchedOrder) {
+                matchedOrder.status = newStatus;
+                localStorage.setItem(userOrderKey, JSON.stringify(userOrders));
             }
 
-
-            if (target === 'all-orders-list') {
-                loadAllOrders();
-            }
-
+            alert(`Cập nhật trạng thái đơn hàng #${+index + 1} thành "${newStatus}"`);
+            location.reload();
         });
     });
-});
+
+}

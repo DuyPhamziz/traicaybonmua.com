@@ -6,6 +6,9 @@
   --navbar-height: 60px;
   --header-with-search-height: calc(var(--header-height) - var(--navbar-height) -5px);
 }
+body {
+  font-family: 'Times New Roman', Times, serif;
+}
 
 * {
   box-sizing: inherit;

@@ -876,3 +876,9 @@ label.valid:after {
 .tunut {
     margin: 14px;
 }
+
+.title-wrapper {
+    width: 140.4px;
+    height: 72px;
+    overflow: hidden;
+}
