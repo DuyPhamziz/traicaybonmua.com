@@ -2,460 +2,420 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trái cây bốn mùa - Trang chủ</title>
-    <link rel="stylesheet" href="/asset/css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trái cây bốn mùa - Trang chủ</title>
+  <link rel="stylesheet" href="/asset/css/style.css">
+</head>
 
 <body>
-    <!-- header -->
-    <nav class="navbar navbar-expand-md navbar-dark sticky-top bg-dark">
-        <div class="container">
-            <div class="row w-100">
-                <div class="col-3 col-md-1">
-                    <img class="navbar-brand w-100" src="/asset/img/logo_4sf.png">
-                </div>
-                <!-- Thanh điều hướng (Navbar) trên điện thoại -->
-                <div class="col-7 col-md-7 d-flex align-items-center justify-content-end d-md-none">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
-                        aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                </div>
-                <div class="col-2 col-md-7 d-flex align-items-center justify-content-end d-md-none">
-                    <button class="navbar-toggler d-md-none" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#cartUserCollapse" aria-controls="cartUserCollapse" aria-expanded="false"
-                        aria-label="Toggle cart and user">
-                        <i class="fa-solid fa-user"></i>
-                    </button>
-                </div>
-
-                <div class="col-12 col-md-5 d-flex align-items-center">
-                    <div class="navbar-collapse collapse" id="navbarCollapse">
-                        <ul class="navbar-nav mr-auto justify-content-between ml-auto w-100">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="#">Trang chủ</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/user/gioithieu.html">Giới thiệu</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/user/sanpham.html">Sản phẩm</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/user/lienhe.html">Liên hệ</a>
-                            </li>
-
-                        </ul>
-
-                    </div>
-                </div>
-
-                <!-- Form tìm kiếm -->
-                <div class="col-12 col-md-3 d-flex align-items-center justify-content-center">
-
-                </div>
-                <!-- Giỏ hàng và đăng nhập -->
-                <div class="col-12 col-md-3 d-flex align-items-center justify-content-end ms-auto d-none d-md-block">
-                    <ul class="navbar-nav ms-auto d-flex w-100 p-0 m-0">
-                        <li class="nav-item d-flex flex-grow-1 text-nowrap w-25">
-                            <a class="nav-link w-50" href="" id="cartLink">Giỏ hàng <i
-                                    class="fa-sharp fa-solid fa-cart-shopping"></i>
-                            </a>
-                        </li>
-
-                        <li class="nav-item d-flex flex-grow-1 text-nowrap w-25" id="userNavItem">
-                            <a class="nav-link w-50" href="/dangnhap.html" id="userNavLink"> Đăng nhập <i
-                                    class="fa-solid fa-user"></i></a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- Lớp phủ -->
-                <div id="loginOverlay" class="overlay">
-                    <div class="overlay-content">
-                        <h3>Bạn cần đăng nhập để xem giỏ hàng.</h3>
-                        <a href="/dangnhap.html" class="btn btn-primary">Đăng nhập</a>
-                        <button id="closeOverlay" class="btn btn-secondary">Đóng</button>
-                    </div>
-                </div>
-                <div class="collapse" id="cartUserCollapse" style="color: aliceblue;">
-                    <div class="d-flex justify-content-between p-3">
-                        <a class="nav-link" href="pages/cart.html">
-                            Giỏ hàng <i class="fa-sharp fa-solid fa-cart-shopping"></i>
-                        </a>
-                        <a class="nav-link" href="/dangnhap.html">
-                            Đăng nhập <i class="fa-solid fa-user"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
+  <nav class="navbar navbar-expand-md navbar-dark sticky-top bg-dark">
+    <div class="container">
+      <div class="row w-100">
+        <div class="col-3 col-md-1">
+          <img class="navbar-brand w-100" src="/asset/img/logo_4sf.png">
         </div>
-    </nav>
-    <!-- end header -->
-
-    <main role="main">
-        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="/asset/img/slide_show/slide_show1.png" style=" object-fit: cover;" class="d-block w-100"
-                        alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="/asset/img/slide_show/slide_show2.png" style=" object-fit: cover;" class="d-block w-100"
-                        alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="/asset/img/slide_show/slide_show3.png" class="d-block w-100" alt="...">
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
+        <div class="col-7 col-md-7 d-flex align-items-center justify-content-end d-md-none">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
         </div>
-        <!-- Block content - Đục lỗ trên giao diện bố cục chung, đặt tên là `content` -->
-
-        <!-- Tính năng Marketing -->
-        <div class="container marketing">
-            <!-- Three columns of text below the carousel -->
-            <div class="row">
-                <div class="col-lg-3">
-                    <div class="img_description d-flex justify-content-center"><img
-                            class="bd-placeholder-img rounded-circle" width="140" height="140"
-                            src="/asset/img/4mua/xuan.png"></div>
-                    <h2>Mùa Xuân - Tươi Mới và Sức Khỏe</h2>
-                    <p>Chào đón mùa xuân với những trái cây tươi ngon! Mùa xuân là mùa của sự đổi mới và năng lượng. Hãy
-                        bắt đầu ngày mới bằng những trái cây tươi mới, ngọt ngào và giàu dinh dưỡng. Trái cây mùa xuân
-                        giúp bổ sung vitamin và khoáng chất, mang lại sức sống mới cho cơ thể.</p>
-                </div><!-- /.col-lg-4 -->
-                <div class="col-lg-3">
-                    <div class="img_description d-flex justify-content-center">
-                        <img class="bd-placeholder-img rounded-circle" width="140" height="140"
-                            src="/asset/img/4mua/ha.png">
-                    </div>
-                    <h2>Mùa Hạ - Giải Nhiệt và Mát Lạnh</h2>
-                    <p>Giải nhiệt mùa hè với trái cây tươi mát, mọng nước! Khi mùa hè đến, hãy để trái cây mát lạnh giúp
-                        bạn xua tan cái nóng bức!</p>
-                </div><!-- /.col-lg-4 -->
-                <div class="col-lg-3">
-                    <div class="img_description d-flex justify-content-center">
-                        <img class="bd-placeholder-img rounded-circle" width="140" height="140"
-                            src="/asset/img/4mua/thu.jpg">
-                    </div>
-                    <h2>Mùa Thu - Ngọt Ngào và Bổ Dưỡng</h2>
-                    <p>Thu về, thưởng thức trái cây ngọt ngào và bổ dưỡng! Mùa thu là thời điểm lý tưởng để thưởng thức
-                        những loại trái cây ngọt ngào, bổ dưỡng. Những trái táo giòn ngọt, lê thơm lừng hay nhãn tươi
-                        mát đều là sự lựa chọn hoàn hảo cho mùa thu này. Trái cây mùa thu không chỉ ngon miệng mà còn
-                        giúp cung cấp nhiều dưỡng chất, mang lại sức khỏe và sự thư giãn cho bạn và gia đình.</p>
-                </div><!-- /.col-lg-4 -->
-                <div class="col-lg-3">
-                    <div class="img_description d-flex justify-content-center">
-                        <img class="bd-placeholder-img rounded-circle" width="140" height="140"
-                            src="/asset/img/4mua/dong.png">
-                    </div>
-                    <h2>Mùa Đông - Ấm Áp và Bổ Sung Vitamin</h2>
-                    <p>Giữ ấm cơ thể với trái cây mùa đông bổ dưỡng! Mùa đông lạnh giá, hãy bảo vệ sức khỏe của bạn và
-                        gia đình bằng những trái cây giàu vitamin C như cam, quýt, kiwi. Những trái cây này không chỉ
-                        giúp tăng cường hệ miễn dịch mà còn mang đến hương vị tươi mới, ấm áp trong những ngày đông se
-                        lạnh.</p>
-                </div><!-- /.col-lg-4 -->
-            </div><!-- /.row -->
-
-
-            <!-- START THE FEATURETTES -->
-            <hr class="featurette-divider">
-            <div class="row featurette">
-                <div class="col-md-5">
-                    <h2 class="featurette-heading">Mua Trái Cây <span class="text-muted">Online</span> Dễ Dàng
-                    </h2>
-                    <p class="lead">Giao hỏa tốc - Đảm bảo tươi mát khi đến tay khách hàng.</p>
-
-                </div>
-                <div class="col-md-7">
-                    <img class="w-100" src="/asset/img/onlShip.png">
-                </div>
-            </div>
-
-            <hr class="featurette-divider">
-            <div class="row featurette">
-                <div class="col-md-5 order-md-2">
-                    <h2 class="featurette-heading"> Trái Cây Bốn Mùa - <span class="text-muted">Khám Phá Lợi Ích Sức
-                            Khỏe</span></h2>
-                    <p class="lead">Thực phẩm giàu Vitamin - mang lại nhiều lợi ích về Sức khỏe.</p>
-
-                </div>
-                <div class="col-md-7 order-md-1">
-                    <img class="w-100" src="/asset/img/heal.png">
-                </div>
-            </div>
-
-            <hr class="featurette-divider">
-            <!-- /END THE FEATURETTES -->
+        <div class="col-2 col-md-7 d-flex align-items-center justify-content-end d-md-none">
+          <button class="navbar-toggler d-md-none" type="button" data-bs-toggle="collapse"
+            data-bs-target="#cartUserCollapse" aria-controls="cartUserCollapse" aria-expanded="false"
+            aria-label="Toggle cart and user">
+            <i class="fa-solid fa-user"></i>
+          </button>
         </div>
 
-        <!-- Danh sách sản phẩm -->
-        <section class="jumbotron text-center">
-            <div class="container">
-                <h1 class="jumbotron-heading">Danh mục Sản phẩm</h1>
-                <p class="lead text-muted">Các sản phẩm với chất lượng, uy tín, cam kết từ nhà Sản xuấtg.</p>
-            </div>
-        </section>
+        <div class="col-12 col-md-5 d-flex align-items-center">
+          <div class="navbar-collapse collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto justify-content-between ml-auto w-100">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Trang chủ</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/user/gioithieu.html">Giới thiệu</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/user/sanpham.html">Sản phẩm</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/user/lienhe.html">Liên hệ</a>
+              </li>
 
-        <!-- Giải thuật duyệt và render Danh sách sản phẩm theo dòng, cột của Bootstrap -->
-        <div class="tusanpham-container">
-            <div class="tucacsanpham">
-                <img class="tuhinhtraicay" src="/asset/img/traicayvn/traicayvn1.jpeg" alt="">
-                <div class="thongtinsp">
-                    <div class="tutensp"><b>Chôm chôm</b></div>
-                    <div class="tumota"><b>Mô tả:</b> Chôm chôm tươi mộng đến từ Vĩnh Long</div>
-                    <div class="tugia"><b>150.000đ/Kg</b></div>
-                    <tr>
-                        <th>
-                            <input class="tuinput" style="width: 100%;" type="number" required minlength="1"
-                                placeholder="Nhập số kg bạn muốn mua">
-                        </th>
-                        <br>
-                        <th>
-                            <button onclick="showOverlay()" class="tudathang" type="submit">Đặt hàng</button>
-                            <button onclick="showOverlay()" class="tugiohang">Thêm vào Giỏ</button>
-                        </th>
-                    </tr>
-                </div>
-            </div>
-            <div class="tucacsanpham">
-                <img class="tuhinhtraicay" src="/asset/img/traicayvn/traicayvn2.jpeg" alt="">
-                <div class="thongtinsp">
-                    <div class="tutensp"><b>Măng cụt</b></div>
-                    <div class="tumota"><b>Mô tả:</b> Măng cụt tươi mộng đến từ Bình Dương</div>
-                    <div class="tugia"><b>150.000đ/Kg</b></div>
-                    <tr>
-                        <th>
-                            <input class="tuinput" style="width: 100%;" type="number" required minlength="1"
-                                placeholder="Nhập số kg bạn muốn mua">
-                        </th>
-                        <br>
-                        <th>
-                            <button onclick="showOverlay()" class="tudathang" type="submit">Đặt hàng</button>
-                            <button onclick="showOverlay()" class="tugiohang">Thêm vào Giỏ</button>
-                        </th>
-                    </tr>
-                </div>
-            </div>
-            <div class="tucacsanpham">
-                <img class="tuhinhtraicay" src="/asset/img/traicayvn/traicayvn3.jpg" alt="">
-                <div class="thongtinsp">
-                    <div class="tutensp"><b>Sầu riêng</b></div>
-                    <div class="tumota"><b>Mô tả:</b> Sầu riêng thơm lừng đến từ Đắk Lắk</div>
-                    <div class="tugia"><b>300.000đ/Kg</b></div>
-                    <tr>
-                        <th>
-                            <input class="tuinput" style="width: 100%;" type="number" required minlength="1"
-                                placeholder="Nhập số kg bạn muốn mua">
-                        </th>
-                        <br>
-                        <th>
-                            <button onclick="showOverlay()" class="tudathang" type="submit">Đặt hàng</button>
-                            <button onclick="showOverlay()" class="tugiohang">Thêm vào Giỏ</button>
-                        </th>
-                    </tr>
-                </div>
-            </div>
-            <div class="tucacsanpham">
-                <img class="tuhinhtraicay" src="/asset/img/traicayvn/traicayvn4.jpg" alt="">
-                <div class="thongtinsp">
-                    <div class="tutensp"><b>Vải</b></div>
-                    <div class="tumota"><b>Mô tả:</b> Vải mộng nước đến từ Vĩnh Long</div>
-                    <div class="tugia"><b>150.000đ/Kg</b></div>
-                    <tr>
-                        <th>
-                            <input class="tuinput" style="width: 100%;" type="number" required minlength="1"
-                                placeholder="Nhập số kg bạn muốn mua">
-                        </th>
-                        <br>
-                        <th>
-                            <button onclick="showOverlay()" class="tudathang" type="submit">Đặt hàng</button>
-                            <button onclick="showOverlay()" class="tugiohang">Thêm vào Giỏ</button>
-                        </th>
-                    </tr>
-                </div>
-            </div>
-            <div class="tucacsanpham">
-                <img class="tuhinhtraicay" src="/asset/img/traicayvn/traicayvn5.jpg" alt="">
-                <div class="thongtinsp">
-                    <div class="tutensp"><b>Sabo</b></div>
-                    <div class="tumota"><b>Mô tả:</b> Sabo thơm vàng đến từ Tiền Giang</div>
-                    <div class="tugia"><b>150.000đ/Kg</b></div>
-                    <tr>
-                        <th>
-                            <input class="tuinput" style="width: 100%;" type="number" required minlength="1"
-                                placeholder="Nhập số kg bạn muốn mua">
-                        </th>
-                        <br>
-                        <th>
-                            <button onclick="showOverlay()" class="tudathang" type="submit">Đặt hàng</button>
-                            <button onclick="showOverlay()" class="tugiohang">Thêm vào Giỏ</button>
-                        </th>
-                    </tr>
-                </div>
-            </div>
-            <div class="tucacsanpham">
-                <img class="tuhinhtraicay" src="/asset/img/traicayvn/traicayvn6.jpg" alt="">
-                <div class="thongtinsp">
-                    <div class="tutensp"><b>Vú sữa</b></div>
-                    <div class="tumota"><b>Mô tả:</b> Vú sữa tươi mộng đến từ Tiền Giang</div>
-                    <div class="tugia"><b>250.000đ/Kg</b></div>
-                    <tr>
-                        <th>
-                            <input class="tuinput" style="width: 100%;" type="number" required minlength="1"
-                                placeholder="Nhập số kg bạn muốn mua">
-                        </th>
-                        <br>
-                        <th>
-                            <button onclick="showOverlay()" class="tudathang" type="submit">Đặt hàng</button>
-                            <button onclick="showOverlay()" class="tugiohang">Thêm vào Giỏ</button>
-                        </th>
-                    </tr>
-                </div>
-            </div>
-            <div class="tucacsanpham">
-                <img class="tuhinhtraicay" src="/asset/img/traicayvn/traicayvn7.jpg" alt="">
-                <div class="thongtinsp">
-                    <div class="tutensp"><b>Nhãn</b></div>
-                    <div class="tumota"><b>Mô tả:</b> Nhãn tươi mộng đến từ Hưng Yên</div>
-                    <div class="tugia"><b>150.000đ/Kg</b></div>
-                    <tr>
-                        <th>
-                            <input class="tuinput" style="width: 100%;" type="number" required minlength="1"
-                                placeholder="Nhập số kg bạn muốn mua">
-                        </th>
-                        <br>
-                        <th>
-                            <button onclick="showOverlay()" class="tudathang" type="submit">Đặt hàng</button>
-                            <button onclick="showOverlay()" class="tugiohang">Thêm vào Giỏ</button>
-                        </th>
-                    </tr>
-                </div>
-            </div>
-            <div class="tucacsanpham">
-                <img class="tuhinhtraicay" src="/asset/img/traicayvn/traicayvn8.jpg" alt="">
-                <div class="thongtinsp">
-                    <div class="tutensp"><b>Thanh long</b></div>
-                    <div class="tumota"><b>Mô tả:</b> Thanh long tươi ngon đến từ Long An</div>
-                    <div class="tugia"><b>150.000đ/Kg</b></div>
-                    <tr>
-                        <th>
-                            <input class="tuinput" style="width: 100%;" type="number" required minlength="1"
-                                placeholder="Nhập số kg bạn muốn mua">
-                        </th>
-                        <br>
-                        <th>
-                            <button onclick="showOverlay()" class="tudathang" type="submit">Đặt hàng</button>
-                            <button onclick="showOverlay()" class="tugiohang">Thêm vào Giỏ</button>
-                        </th>
-                    </tr>
-                </div>
-            </div>
-            <div class="tucacsanpham">
-                <img class="tuhinhtraicay" src="/asset/img/traicayvn/traicayvn9.jpg" alt="">
-                <div class="thongtinsp">
-                    <div class="tutensp"><b>Xoài</b></div>
-                    <div class="tumota"><b>Mô tả:</b> Xoài tươi mộng đến từ Tiền Giang</div>
-                    <div class="tugia"><b>150.000đ/Kg</b></div>
-                    <tr>
-                        <th>
-                            <input class="tuinput" style="width: 100%;" type="number" required minlength="1"
-                                placeholder="Nhập số kg bạn muốn mua">
-                        </th>
-                        <br>
-                        <th>
-                            <button onclick="showOverlay()" class="tudathang" type="submit">Đặt hàng</button>
-                            <button onclick="showOverlay()" class="tugiohang">Thêm vào Giỏ</button>
-                        </th>
-                    </tr>
-                </div>
-            </div>
+            </ul>
+
+          </div>
         </div>
 
-        <!-- End block content -->
-        <div class="tuxemnhieusp">
-            <a class="tunhieusp" href="sanpham.html">Nhiều sản phẩm hơn</a>
+        <div class="col-12 col-md-3 d-flex align-items-center justify-content-center">
+
         </div>
+        <div class="col-12 col-md-3 d-flex align-items-center justify-content-end ms-auto d-none d-md-block">
+          <ul class="navbar-nav ms-auto d-flex w-100 p-0 m-0">
+            <li class="nav-item d-flex flex-grow-1 text-nowrap w-25">
+              <a class="nav-link w-50 position-relative" onclick="showOverlay()">
+                Giỏ hàng
+                <span class="position-relative">
+                  <i class="fa-sharp fa-solid fa-cart-shopping"></i>
+                  <span id="cart-count"
+                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                    style="font-size: 0.6rem; padding: 4px 6px;">
+                    0
+                  </span>
+                </span>
+              </a>
+            </li>
 
-    </main>
-    <footer class="mt-auto py-3">
-        <div class="p-4"></div>
-        <hr>
-        <div class="p-3 bg-light"></div>
-        <div class="container-fluid bg-light">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3 d-none d-md-block">
-                        <div><b>Bản quyền của Công ty TNHH Morning Fruit</b></div>
-                        <div>
-                            Giấy chứng nhận Đăng ký Kinh doanh số 03164646 do Sở Kế hoạch và Đầu tư Tỉnh Hậu Giang cấp
-                            ngày
-                            02/01/2025. </div>
-                    </div>
-
-                    <div class="col-md-3">
-                        <div><b>Địa chỉ : </b>Xã Hòa An, huyện Long Mỹ, tỉnh Hậu Giang</div>
-                        <div><b>Số điện thoại : </b>0326754284</div>
-                        <div><b>Emai : </b>traicay@gmail.com</div>
-                    </div>
-
-                    <div class="col-md-3 d-none d-md-block">
-                        <div><b>Hổ trợ khách hàng</b></div>
-                        <div>
-                            <ul>
-                                <li>Chính sách kiểm hàng</li>
-                                <li>Chính sách bảo hành</li>
-                                <li>Chính sách giao hàng</li>
-                                <li>Chính sách thanh toán</li>
-                                <li>Hướng dẫn mua hàng Online</li>
-                                <li>Kiến thức trái cây</li>
-                                <li>Liên hệ</li>
-
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div><b>Chăm sóc khách hàng</b></div>
-                        <div>
-                            <b>Số điện thoại : </b>0326754284
-                        </div>
-                        <div>
-                            <b>Email : </b>traicay@gmail.com
-                        </div>
-                        <div><b>Các trang mạng xã hội khác</b></div>
-                        <div>
-                            <a href="https://github.com/DuyPhamziz/traicaybonmua.com">
-                                <i class="fa-brands fa-facebook p-3 fs-3"></i> </a>
-                            <a href="https://github.com/DuyPhamziz/traicaybonmua.com">
-                                <i class="fa-brands fa-square-instagram p-3 fs-3"></i></a>
-                            <a href="https://github.com/DuyPhamziz/traicaybonmua.com">
-                                <i class="fa-brands fa-square-github p-3 fs-3"></i></a>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
+            <li class="nav-item d-flex flex-grow-1 text-nowrap w-25" id="userNavItem">
+              <a class="nav-link w-50" href="/dangnhap.html" id="userNavLink"> Đăng nhập <i
+                  class="fa-solid fa-user"></i></a>
+            </li>
+          </ul>
         </div>
-    </footer>
-    <hr class="p-0">
-    <div class="text-center fw-bold bg-success text-white" style="text-decoration: none;">
-        Copyright &copy 2025 - Nhóm 2 lập trình web
+        <div id="loginOverlay" class="overlay">
+          <div class="overlay-content">
+            <h3>Bạn cần đăng nhập để xem giỏ hàng.</h3>
+            <a href="/dangnhap.html" class="btn btn-primary">Đăng nhập</a>
+            <button id="closeOverlay" class="btn btn-secondary">Đóng</button>
+          </div>
+        </div>
+        <div class="collapse" id="cartUserCollapse" style="color: aliceblue;">
+          <div class="d-flex justify-content-between p-3">
+            <a class="nav-link" href="pages/cart.html">
+              Giỏ hàng <i class="fa-sharp fa-solid fa-cart-shopping"></i>
+            </a>
+            <a class="nav-link" href="/dangnhap.html">
+              Đăng nhập <i class="fa-solid fa-user"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
     </div>
-    <script src="/admin/asset/js/product_data.js"></script>
-    <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="/admin/asset/js/logout.js"></script>
+  </nav>
+
+  <main role="main">
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="/asset/img/slide_show/slide_show1.png" style=" object-fit: cover;" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="/asset/img/slide_show/slide_show2.png" style=" object-fit: cover;" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="/asset/img/slide_show/slide_show3.png" class="d-block w-100" alt="...">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <div class="container marketing">
+      <div class="row">
+        <div class="col-lg-3">
+          <div class="img_description d-flex justify-content-center"><img class="bd-placeholder-img rounded-circle"
+              width="140" height="140" src="/asset/img/4mua/xuan.png"></div>
+          <h2>Mùa Xuân - Tươi Mới và Sức Khỏe</h2>
+          <p>Chào đón mùa xuân với những trái cây tươi ngon! Mùa xuân là mùa của sự đổi mới và năng lượng. Hãy
+            bắt đầu ngày mới bằng những trái cây tươi mới, ngọt ngào và giàu dinh dưỡng. Trái cây mùa xuân
+            giúp bổ sung vitamin và khoáng chất, mang lại sức sống mới cho cơ thể.</p>
+        </div>
+        <div class="col-lg-3">
+          <div class="img_description d-flex justify-content-center">
+            <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="/asset/img/4mua/ha.png">
+          </div>
+          <h2>Mùa Hạ - Giải Nhiệt và Mát Lạnh</h2>
+          <p>Giải nhiệt mùa hè với trái cây tươi mát, mọng nước! Khi mùa hè đến, hãy để trái cây mát lạnh giúp
+            bạn xua tan cái nóng bức!</p>
+        </div>
+        <div class="col-lg-3">
+          <div class="img_description d-flex justify-content-center">
+            <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="/asset/img/4mua/thu.jpg">
+          </div>
+          <h2>Mùa Thu - Ngọt Ngào và Bổ Dưỡng</h2>
+          <p>Thu về, thưởng thức trái cây ngọt ngào và bổ dưỡng! Mùa thu là thời điểm lý tưởng để thưởng thức
+            những loại trái cây ngọt ngào, bổ dưỡng. Những trái táo giòn ngọt, lê thơm lừng hay nhãn tươi
+            mát đều là sự lựa chọn hoàn hảo cho mùa thu này. Trái cây mùa thu không chỉ ngon miệng mà còn
+            giúp cung cấp nhiều dưỡng chất, mang lại sức khỏe và sự thư giãn cho bạn và gia đình.</p>
+        </div>
+        <div class="col-lg-3">
+          <div class="img_description d-flex justify-content-center">
+            <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="/asset/img/4mua/dong.png">
+          </div>
+          <h2>Mùa Đông - Ấm Áp và Bổ Sung Vitamin</h2>
+          <p>Giữ ấm cơ thể với trái cây mùa đông bổ dưỡng! Mùa đông lạnh giá, hãy bảo vệ sức khỏe của bạn và
+            gia đình bằng những trái cây giàu vitamin C như cam, quýt, kiwi. Những trái cây này không chỉ
+            giúp tăng cường hệ miễn dịch mà còn mang đến hương vị tươi mới, ấm áp trong những ngày đông se
+            lạnh.</p>
+        </div>
+      </div>
+
+
+      <hr class="featurette-divider">
+      <div class="row featurette">
+        <div class="col-md-5">
+          <h2 class="featurette-heading">Mua Trái Cây <span class="text-muted">Online</span> Dễ Dàng
+          </h2>
+          <p class="lead">Giao hỏa tốc - Đảm bảo tươi mát khi đến tay khách hàng.</p>
+
+        </div>
+        <div class="col-md-7">
+          <img class="w-100" src="/asset/img/onlShip.png">
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+      <div class="row featurette">
+        <div class="col-md-5 order-md-2">
+          <h2 class="featurette-heading"> Trái Cây Bốn Mùa - <span class="text-muted">Khám Phá Lợi Ích Sức
+              Khỏe</span></h2>
+          <p class="lead">Thực phẩm giàu Vitamin - mang lại nhiều lợi ích về Sức khỏe.</p>
+
+        </div>
+        <div class="col-md-7 order-md-1">
+          <img class="w-100" src="/asset/img/heal.png">
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+    </div>
+
+    <section class="jumbotron text-center">
+      <div class="container">
+        <h1 class="jumbotron-heading">Danh mục sản phẩm tham khảo</h1>
+        <p class="lead text-muted">Các sản phẩm với chất lượng, uy tín, cam kết từ nhà Sản xuất.</p>
+      </div>
+    </section>
+
+    <div class="tusanpham-container">
+      <div class="container my-5">
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+              <img src="/asset/img/traicayvn/traicayvn1.jpeg" class="card-img-top" alt="Chôm chôm">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Chôm chôm</h5>
+                <p class="card-text">Chôm chôm tươi ngon, chứa nhiều vitamin và chất dinh dưỡng cho sức khỏe.</p>
+                <p class="fw-bold">Giá: 49.000đ/kg</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+              <img src="/asset/img/traicayvn/traicayvn2.jpeg" class="card-img-top" alt="Măng cụt">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Măng cụt</h5>
+                <p class="card-text">Trái cây tươi ngon, chứa nhiều vitamin và chất dinh dưỡng cho sức khỏe.</p>
+                <p class="fw-bold">Giá: 50.000đ/kg</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+              <img src="/asset/img/traicayvn/traicayvn3.jpg" class="card-img-top" alt="Sầu riêng">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Sầu riêng</h5>
+                <p class="card-text">Trái cây tươi ngon, chứa nhiều vitamin và chất dinh dưỡng cho sức khỏe.</p>
+                <p class="fw-bold">Giá: 119.000đ/kg</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-4 mt-4">
+          <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+              <img src="/asset/img/traicayvn/traicayvn4.jpg" class="card-img-top" alt="Vải">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Vải</h5>
+                <p class="card-text">Chứa nhiều vitamin và chất dinh dưỡng cho sức khỏe.</p>
+                <p class="fw-bold">Giá: 55.000đ/kg</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+              <img src="/asset/img/traicayvn/traicayvn5.jpg" class="card-img-top" alt="Sabo">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Saboche</h5>
+                <p class="card-text">Tươi ngon, giàu chất dinh dưỡng.</p>
+                <p class="fw-bold">Giá: 27.000đ/kg</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+              <img src="/asset/img/traicayvn/traicayvn6.jpg" class="card-img-top" alt="Vú sữa">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Vú sữa</h5>
+                <p class="card-text">Giàu chất xơ và vitamin thiết yếu.</p>
+                <p class="fw-bold">Giá: 70.000đ/kg</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-4 mt-4">
+          <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+              <img src="/asset/img/traicayvn/traicayvn7.jpg" class="card-img-top" alt="Nhãn">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Nhãn</h5>
+                <p class="card-text">Tươi ngon, mọng nước và bổ dưỡng.</p>
+                <p class="fw-bold">Giá: 60.000đ/kg</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+              <img src="/asset/img/traicayvn/traicayvn8.jpg" class="card-img-top" alt="Thanh long">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Thanh long</h5>
+                <p class="card-text">Bổ sung năng lượng và vitamin.</p>
+                <p class="fw-bold">Giá: 35.000đ/kg</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+              <img src="/asset/img/traicayvn/traicayvn9.jpg" class="card-img-top" alt="Xoài">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Xoài</h5>
+                <p class="card-text">Thơm ngon, phù hợp mọi gia đình.</p>
+                <p class="fw-bold">Giá: 75.000đ/kg</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="tuxemnhieusp">
+      <a class="tunhieusp" href="sanpham.html">Xem thêm nhiều sản phẩm hơn và mua hàng</a>
+    </div>
+
+  </main>
+  <footer class="mt-auto py-3">
+    <div class="p-4"></div>
+    <hr>
+    <div class="p-3 bg-light"></div>
+    <div class="container-fluid bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 d-none d-md-block">
+            <div><b>Bản quyền của Công ty TNHH Morning Fruit</b></div>
+            <div>
+              Giấy chứng nhận Đăng ký Kinh doanh số 03164646 do Sở Kế hoạch và Đầu tư Tỉnh Hậu Giang cấp
+              ngày
+              02/01/2025. </div>
+          </div>
+
+          <div class="col-md-3">
+            <div><b>Địa chỉ : </b>Xã Hòa An, huyện Long Mỹ, tỉnh Hậu Giang</div>
+            <div><b>Số điện thoại : </b>0326754284</div>
+            <div><b>Emai : </b>traicay@gmail.com</div>
+          </div>
+
+          <div class="col-md-3 d-none d-md-block">
+            <div><b>Hổ trợ khách hàng</b></div>
+            <div>
+              <ul>
+                <li>Chính sách kiểm hàng</li>
+                <li>Chính sách bảo hành</li>
+                <li>Chính sách giao hàng</li>
+                <li>Chính sách thanh toán</li>
+                <li>Hướng dẫn mua hàng Online</li>
+                <li>Kiến thức trái cây</li>
+                <li>Liên hệ</li>
+
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div><b>Chăm sóc khách hàng</b></div>
+            <div>
+              <b>Số điện thoại : </b>0326754284
+            </div>
+            <div>
+              <b>Email : </b>traicay@gmail.com
+            </div>
+            <div><b>Các trang mạng xã hội khác</b></div>
+            <div>
+              <a href="https://github.com/DuyPhamziz/traicaybonmua.com">
+                <i class="fa-brands fa-facebook p-3 fs-3"></i> </a>
+              <a href="https://github.com/DuyPhamziz/traicaybonmua.com">
+                <i class="fa-brands fa-square-instagram p-3 fs-3"></i></a>
+              <a href="https://github.com/DuyPhamziz/traicaybonmua.com">
+                <i class="fa-brands fa-square-github p-3 fs-3"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </footer>
+  <hr class="p-0">
+  <div class="text-center fw-bold bg-success text-white" style="text-decoration: none;">
+    Copyright &copy 2025 - Nhóm 2 lập trình web
+  </div>
+  <script>
+    function addToCart(productId) {
+      const quantity = parseInt(document.getElementById(`quantity${productId}`).value);
+
+      if (isNaN(quantity) || quantity < 1) {
+        alert('Vui lòng nhập số lượng hợp lệ.');
+        return;
+      }
+
+      const product = {
+        id: productId,
+        name: "Chôm chôm",
+        price: 60000,
+        quantity: quantity,
+        image: "/asset/img/traicayvn/traicayvn1.jpeg"
+      };
+
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+      const index = cart.findIndex(item => item.id === product.id);
+      if (index !== -1) {
+        cart[index].quantity += quantity;  
+      } else {
+        cart.push(product);  
+      }
+
+      localStorage.setItem('cart', JSON.stringify(cart));
+      alert(`Đã thêm ${quantity} kg ${product.name} vào giỏ hàng.`);
+    }
+
+    function buyNow(productId) {
+      addToCart(productId);
+      window.location.href = "giohang.html";  
+    }
+  </script>
+
+  <script src="/admin/asset/js/product_data.js"></script>
+  <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/admin/asset/js/logout.js"></script>
 </body>
 
 
