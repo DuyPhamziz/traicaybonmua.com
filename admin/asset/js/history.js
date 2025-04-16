@@ -48,19 +48,19 @@ document.addEventListener("DOMContentLoaded", function () {
         `;
     });
 
-    // ✅ Gắn sự kiện sau khi render xong đơn hàng
+  
     document.querySelectorAll('.confirm-receive-btn').forEach(btn => {
         btn.addEventListener('click', function () {
             const index = this.getAttribute('data-order-index');
             const orderKey = `orderHistory_${currentUser.userID}`;
             const orderHistory = JSON.parse(localStorage.getItem(orderKey)) || [];
 
-            // Cho phép cả "Đã giao" và "Đang giao" xác nhận
+           
             if (orderHistory[index].status === "Đang giao" || orderHistory[index].status === "Đã giao") {
-                orderHistory[index].status = "Hoàn tất"; // ✅ Cập nhật trạng thái
+                orderHistory[index].status = "Hoàn tất";
                 localStorage.setItem(orderKey, JSON.stringify(orderHistory));
 
-                // ✅ Cập nhật trạng thái bên allOrders
+              
                 const allOrders = JSON.parse(localStorage.getItem("allOrders")) || [];
                 const match = allOrders.find(o =>
                     o.userID === currentUser.userID && o.date === orderHistory[index].date
@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
 
                 alert("Cảm ơn bạn đã xác nhận. Đơn hàng đã được đánh dấu là 'Hoàn tất'.");
-                location.reload(); // Reload để hiển thị lại
+                location.reload(); 
             }
         });
     });

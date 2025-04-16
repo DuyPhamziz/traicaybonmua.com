@@ -150,7 +150,7 @@ menuLinks.forEach(link => {
             }
         }, 100);
 
-        // Xử lý class active để làm nổi bật mục đang chọn
+      
         menuLinks.forEach(l => l.classList.remove('active'));
         link.classList.add('active');
         if (target === 'sanpham') {
@@ -172,12 +172,12 @@ if (hoSoLink) {
         const htmlContent = contentData["hoso"] || "<p>Không có dữ liệu.</p>";
         contentArea.innerHTML = htmlContent;
 
-        // Bỏ class active bên sidebar (nếu có)
+       
         menuLinks.forEach(l => l.classList.remove('active'));
     });
 }
 
-// them sua xoa
+
 
 let currentPage = 1;
 let productsPerPage = 6;
@@ -193,11 +193,11 @@ function renderProductList() {
 
     let products = product_fruit;
 
-    // Lọc theo tìm kiếm
+   
     let searchTerm = searchInput.value.toLowerCase();
     let filteredProducts = products.filter(p => p.tensp.toLowerCase().includes(searchTerm));
 
-    // Lọc theo danh mục
+    
     let selectedCategory = filterCategory.value;
     if (selectedCategory) {
         filteredProducts = filteredProducts.filter(p =>
@@ -205,7 +205,7 @@ function renderProductList() {
         );
     }
 
-    // Gắn realIndex để xử lý sửa/xóa đúng sản phẩm
+   
     filteredProducts = filteredProducts.map(p => {
         const realIndex = product_fruit.findIndex(prod =>
             prod.tensp === p.tensp &&
@@ -216,13 +216,13 @@ function renderProductList() {
         return { ...p, realIndex };
     });
 
-    // Phân trang
+   
     const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
     if (currentPage > totalPages) currentPage = totalPages || 1;
     const startIndex = (currentPage - 1) * productsPerPage;
     const paginatedProducts = filteredProducts.slice(startIndex, startIndex + productsPerPage);
 
-    // Hiển thị danh sách
+  
     listContainer.innerHTML = paginatedProducts.map((p) => `
          <div class="col-md-4 mb-3">
              <div class="card">
@@ -241,12 +241,11 @@ function renderProductList() {
          </div>
      `).join('');
 
-    // Cập nhật phân trang
+    
     renderPaginationProduct(totalPages);
 
 }
 
-// Hàm tạo phân trang
 function renderPaginationProduct(totalPages) {
     const paginationContainer = document.getElementById("pagination-products");
     paginationContainer.innerHTML = '';
@@ -293,13 +292,13 @@ function initProductForm() {
             };
 
             if (index === "") {
-                // Thêm mới
+              
                 product_fruit.push(product);
                 logAdminAction(`Đã thêm sản phẩm "${product.tensp}".`);
             } else {
-                // Sửa
+             
                 const old = product_fruit[parseInt(index)];
-                product.giamgia = old.giamgia || null; // giữ lại giảm giá nếu có
+                product.giamgia = old.giamgia || null; 
 
                 product_fruit[parseInt(index)] = product;
                 logAdminAction(`Đã chỉnh sửa sản phẩm "${product.tensp}".`);
@@ -315,11 +314,11 @@ function initProductForm() {
         if (file) {
             const reader = new FileReader();
             reader.onload = function () {
-                updateProduct(reader.result); // ảnh mới (base64)
+                updateProduct(reader.result); 
             };
             reader.readAsDataURL(file);
         } else {
-            // Nếu không chọn ảnh mới
+            
             if (index === "") {
                 alert("Vui lòng chọn hình ảnh!");
                 return;
@@ -329,7 +328,7 @@ function initProductForm() {
         }
     });
 
-    // Sự kiện tìm kiếm và lọc
+    
     document.getElementById("search-input").addEventListener('input', () => {
         currentPage = 1;
         renderProductList();
@@ -351,7 +350,7 @@ function deleteProduct(index) {
     product_fruit.splice(index, 1);
     saveProductData();
 
-    // Điều chỉnh lại currentPage nếu cần
+   
     const totalPages = Math.ceil(product_fruit.length / productsPerPage);
     if (currentPage > totalPages) currentPage = totalPages || 1;
 

@@ -238,13 +238,13 @@
             loadCart();
         }
         document.getElementById('checkoutBtn').addEventListener('click', function () {
-            // Kiểm tra nếu giỏ hàng có sản phẩm
+           
             const cart = JSON.parse(localStorage.getItem("cart")) || [];
             if (cart.length === 0) {
                 alert("Giỏ hàng của bạn đang trống. Vui lòng thêm sản phẩm trước khi thanh toán.");
             } else {
-                // Chuyển hướng tới trang thanh toán
-                window.location.href = 'thanhtoan.html';  // Thay bằng đường dẫn thực tế của trang thanh toán
+               
+                window.location.href = 'thanhtoan.html';  
             }
         });
 

@@ -3,7 +3,7 @@ function logAdminAction(action) {
     const time = now.toLocaleString('vi-VN');
     const logEntry = `${time} - ${action}`;
     let logs = JSON.parse(localStorage.getItem("adminLogs")) || [];
-    logs.unshift(logEntry); // mới nhất ở đầu
+    logs.unshift(logEntry); 
     localStorage.setItem("adminLogs", JSON.stringify(logs));
 }
 function renderAdminLogs() {

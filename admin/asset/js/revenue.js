@@ -12,11 +12,11 @@ function renderRevenueReport() {
         const dayStr = dateObj.toISOString().split("T")[0];
         const monthStr = dayStr.slice(0, 7);
 
-        // Áp dụng bộ lọc nếu có
+       
         if (filterDay && dayStr !== filterDay) return;
         if (filterMonth && monthStr !== filterMonth) return;
 
-        // Chỉ tính doanh thu khi trạng thái là "Đã giao" hoặc "Hoàn tất"
+       
         if (order.status !== "Đã giao" && order.status !== "Hoàn tất") return;
 
         let total = 0;
@@ -33,7 +33,7 @@ function renderRevenueReport() {
         revenueByDate[dayStr].total += total;
     });
 
-    // Cập nhật bảng
+  
     const tbody = document.getElementById("revenueTableBody");
     tbody.innerHTML = "";
 
@@ -54,7 +54,7 @@ function renderRevenueReport() {
         `;
     });
 
-    // Vẽ biểu đồ
+ 
     const ctx = document.getElementById("revenueChart").getContext("2d");
     if (revenueChart instanceof Chart) {
         revenueChart.destroy();  

@@ -1,4 +1,4 @@
-// output  
+ 
 const ITEMS_PER_PAGE = 8;
 let currentPage = 1;
 let currentFilter = "all";
@@ -6,22 +6,21 @@ let searchKeyword = "";
 let sortOrder = "default";
 let priceRange = "all";
 
-// 👉 Chuyển giá thành số
 function parsePrice(giaString) {
     if (typeof giaString !== 'string') {
         console.error("Giá không phải là chuỗi hợp lệ:", giaString);
         return 0;
     }
 
-    // Loại bỏ 'VNĐ', khoảng trắng, rồi thay dấu chấm bằng chuỗi trống
+   
     const cleaned = giaString.replace(/[^\d]/g, "");
 
     return parseInt(cleaned, 10);
 }
 
-// Lấy dữ liệu sản phẩm từ localStorage
+
 let product_fruit = JSON.parse(localStorage.getItem("product_fruit")) || [];
-// 👉 Lọc sản phẩm theo bộ lọc
+
 function getFilteredProducts() {
     return product_fruit.filter(item => {
         const categories = Array.isArray(item.danhmuc) ? item.danhmuc : [item.danhmuc];
@@ -44,7 +43,7 @@ function getFilteredProducts() {
 }
 
 
-// Vẽ sản phẩm theo trang
+
 function renderProducts(page = 1) {
     currentPage = page;
     const products = getFilteredProducts();
@@ -84,7 +83,7 @@ function renderProducts(page = 1) {
     renderPagination(products.length);
 }
 
-// Vẽ phân trang
+
 function renderPagination(totalItems) {
     const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE);
     const pagination = document.getElementById("pagination");
@@ -110,39 +109,38 @@ function renderPagination(totalItems) {
     pagination.innerHTML = html;
 }
 
-// Xử lý sự kiện chọn danh mục
+
 document.querySelectorAll('[data-filter]').forEach(link => {
     link.addEventListener("click", function (e) {
         e.preventDefault();
 
-        // Bỏ class active ở tất cả các nút có data-filter
+      
         document.querySelectorAll('[data-filter]').forEach(i => i.classList.remove("active"));
 
-        // Thêm class active cho nút vừa click
+       
         this.classList.add("active");
 
-        // Gán bộ lọc hiện tại và render lại sản phẩm
+    
         currentFilter = this.getAttribute("data-filter");
         renderProducts(1);
     });
 });
 
 
-// Tìm kiếm
+
 document.getElementById("search-input").addEventListener("input", function () {
     searchKeyword = this.value.trim();
     renderProducts(1);
 });
 
-// Lọc giá + sắp xếp
 document.querySelectorAll('#price-filter, #price-filter-mobile').forEach(select => {
     select.addEventListener("change", function () {
         const value = this.value;
 
         if (value.startsWith("price_")) {
-            priceRange = value.split("_")[1]; // Lọc theo khoảng giá
+            priceRange = value.split("_")[1]; 
         } else if (value.startsWith("sort_")) {
-            sortOrder = value.split("_")[1]; // Sắp xếp theo giá
+            sortOrder = value.split("_")[1]; 
         }
 
         renderProducts(1);

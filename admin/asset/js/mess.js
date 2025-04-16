@@ -1,39 +1,29 @@
-// Khi DOM đã sẵn sàng
+
 document.addEventListener("DOMContentLoaded", function () {
-    // Lấy form liên hệ
+    
     const contactForm = document.getElementById('contact-form');
 
     if (contactForm) {
-        // Xử lý sự kiện submit của form
+        
         contactForm.addEventListener("submit", function (e) {
-            e.preventDefault(); // Ngừng form không reload trang
+            e.preventDefault(); 
 
-            // Lấy giá trị từ form
+            
             const email = document.getElementById('email').value;
             const title = document.getElementById('title').value;
             const message = document.querySelector('[name="message"]').value;
 
-            // Kiểm tra nếu các trường không trống
+     
             if (email && title && message) {
-                // Lấy danh sách các tin nhắn đã lưu từ localStorage
-                let contactMessages = JSON.parse(localStorage.getItem('contactMessages')) || [];
-
-                // Thêm tin nhắn mới vào danh sách
+                let contactMessages = JSON.parse(localStorage.getItem('contactMessages')) || [];               
                 contactMessages.push({ email, title, message });
-
-                // Lưu lại danh sách vào localStorage
-                localStorage.setItem('contactMessages', JSON.stringify(contactMessages));
-
-                // Thông báo gửi thành công
+                localStorage.setItem('contactMessages', JSON.stringify(contactMessages));               
                 alert("Lời nhắn của bạn đã được gửi thành công!");
-
-                // Reset form sau khi gửi
-                contactForm.reset();
-
-                // Gọi lại renderContactMessages() sau khi gửi thành công
+                
+                contactForm.reset();             
                 renderContactMessages();
             } else {
-                // Nếu có trường nào đó trống, yêu cầu người dùng nhập đầy đủ
+                
                 alert("Vui lòng điền đầy đủ thông tin!");
             }
         });
@@ -51,7 +41,7 @@ function renderContactMessages() {
 
     const contactMessages = JSON.parse(localStorage.getItem("contactMessages")) || [];
 
-    // Xóa nội dung cũ
+   
     contactMessagesList.innerHTML = "";
 
     if (contactMessages.length === 0) {
@@ -62,7 +52,7 @@ function renderContactMessages() {
             messageElement.classList.add("message", "p-3", "mb-3");
             messageElement.style.border = "1px solid #ccc";
             messageElement.style.borderRadius = "8px";
-            messageElement.style.backgroundColor = message.read ? "#e0ffe0" : "#fff"; // Nền khác nhau
+            messageElement.style.backgroundColor = message.read ? "#e0ffe0" : "#fff"; 
 
             const currentDate = new Date().toLocaleString();
 
@@ -77,7 +67,7 @@ function renderContactMessages() {
             contactMessagesList.appendChild(messageElement);
         });
 
-        // Gắn sự kiện cho nút "Đánh dấu là đã đọc"
+        
         const markReadButtons = document.querySelectorAll('.mark-read');
         markReadButtons.forEach(button => {
             button.addEventListener('click', function () {

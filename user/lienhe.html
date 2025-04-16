@@ -243,37 +243,36 @@
 
             if (currentUser && userNavLink) {
                 userNavLink.innerHTML = `&nbsp; Chào, ${currentUser.userFullName} <i class="fa-solid fa-user"></i>`;
-                userNavLink.href = "#"; // hoặc link tới trang cá nhân
+                userNavLink.href = "#"; 
             }
         });
         document.addEventListener("DOMContentLoaded", function () {
-            // Lắng nghe sự kiện submit form
+            
             const contactForm = document.getElementById("contact-form");
 
             if (contactForm) {
                 contactForm.addEventListener("submit", function (e) {
                     e.preventDefault();
 
-                    // Lấy giá trị từ form
+                   
                     const email = document.getElementById("email").value;
                     const title = document.getElementById("title").value;
                     const message = document.querySelector("textarea[name='message']").value;
 
                     if (email && title && message) {
-                        // Lưu lời nhắn vào localStorage
+                        
                         const contactMessages = JSON.parse(localStorage.getItem("contactMessages")) || [];
                         const newMessage = {
                             email,
                             title,
                             message,
-                            date: new Date().toLocaleString(), // 🕒 Thời gian gửi
-                            read: false // 👀 Trạng thái chưa đọc
+                            date: new Date().toLocaleString(), 
+                            read: false 
                         };
                         contactMessages.push(newMessage);
 
                         localStorage.setItem("contactMessages", JSON.stringify(contactMessages));
 
-                        // Sau khi gửi, làm trống form và thông báo
                         contactForm.reset();
                         alert("Lời nhắn đã được gửi thành công.");
                     } else {
@@ -300,7 +299,7 @@
             </div>
         `;
 
-                // Sự kiện Đăng xuất
+               
                 document.getElementById("logoutBtn").addEventListener("click", function (e) {
                     e.preventDefault();
                     localStorage.removeItem("currentUser");

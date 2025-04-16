@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 </div>
             `;
 
-        // Sự kiện Đăng xuất
+       
         document.getElementById("logoutBtn").addEventListener("click", function (e) {
             e.preventDefault();
             localStorage.removeItem("currentUser");

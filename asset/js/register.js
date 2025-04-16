@@ -1,9 +1,9 @@
-// Lấy ra Element của trang 
+
 const formRegister = document.getElementById("register-form");
 const user = document.getElementById("name");
 const fname = document.getElementById("fullname");
 const phone = document.getElementById("phone");
-// Địa chỉ
+
 const city = document.getElementById("city");
 const district = document.getElementById("district");
 const ward = document.getElementById("ward");
@@ -12,7 +12,7 @@ const ward = document.getElementById("ward");
 const password = document.getElementById("pass");
 const repassword = document.getElementById("re_pass");
 
-// Lổi
+
 const userError = document.getElementById("userError");
 const fnameError = document.getElementById("fnameError");
 const phoneError = document.getElementById("phoneError");
@@ -21,16 +21,15 @@ const passError = document.getElementById("passError");
 const repassError = document.getElementById("repassError");
 const repassError2 = document.getElementById("repassError2");
 
-// Lấy dữ diệu từ localStorage
+
 
 const userLocal = JSON.parse(localStorage.getItem("users")) || [];
 
-// Lắng nghe sự kiện submit form đăng ký tài khoản
 formRegister.addEventListener("submit", async function (e) {
-    // Ngăn chặn sự kiện relaod trang
+   
     e.preventDefault();
     let isValid = true;
-    // Validate dữ liệu
+    
     const username = user.value.trim();
     if (!username || username.length <= 3 || username.length >= 12) {
         userError.style.display = "block";
@@ -81,7 +80,7 @@ formRegister.addEventListener("submit", async function (e) {
 
 
     if (isValid) {
-        // Hàm băm mật khẩu sử dụng SHA-256
+       
         async function hashPassword(password) {
             const encoder = new TextEncoder();
             const data = encoder.encode(password);
@@ -104,10 +103,10 @@ formRegister.addEventListener("submit", async function (e) {
             userPassword: hashedPassword
         };
 
-        // Push user vào mảng userLocal
+      
         userLocal.push(userRegister);
 
-        // Lưu trữ lên LocalStorage
+       
         localStorage.setItem("users", JSON.stringify(userLocal));
 
         setTimeout(function () {

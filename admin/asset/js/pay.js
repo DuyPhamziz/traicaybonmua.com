@@ -30,23 +30,23 @@ function confirmCheckout() {
             address: address
         },
         items: cart,
-        userID: currentUser.userID, // Lưu để lọc đơn của người dùng
-        status: "Chờ duyệt" // ✅ thêm trạng thái mặc định
+        userID: currentUser.userID, 
+        status: "Chờ duyệt" 
     };
 
-    // Lưu đơn hàng vào key `allOrders` (chung cho tất cả người dùng, admin sẽ xử lý)
+    
     const allOrders = JSON.parse(localStorage.getItem("allOrders")) || [];
     allOrders.push(newOrder);
     localStorage.setItem("allOrders", JSON.stringify(allOrders));
 
-    // Lưu lịch sử đơn hàng riêng cho người dùng vào key `orderHistory_${currentUser.userID}`
+    
     const orderKey = `orderHistory_${currentUser.userID}`;
     const orderHistory = JSON.parse(localStorage.getItem(orderKey)) || [];
     orderHistory.push(newOrder);
     localStorage.setItem(orderKey, JSON.stringify(orderHistory));
 
 
-    // Dọn giỏ hàng
+    
     localStorage.removeItem("cart");
 
     showThankYouOverlay();
@@ -58,28 +58,28 @@ function confirmCheckout() {
     }, 3000);
 }
 function loadCart() {
-    // Lấy giỏ hàng từ localStorage
+   
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
     const cartSummary = document.getElementById("cart-summary");
-    const totalEl = document.getElementById("total-price"); // Phần tử để hiển thị tổng giá trị giỏ hàng
-    let total = 0; // Biến để tính tổng tiền giỏ hàng
-    cartSummary.innerHTML = ""; // Đặt lại nội dung của phần tử giỏ hàng
+    const totalEl = document.getElementById("total-price"); 
+    let total = 0; 
+    cartSummary.innerHTML = ""; 
 
-    // Nếu giỏ hàng trống
+    
     if (cart.length === 0) {
         cartSummary.innerHTML = "<p>Giỏ hàng của bạn đang trống.</p>";
-        totalEl.innerText = "0 VNĐ"; // Hiển thị tổng giá trị là 0
+        totalEl.innerText = "0 VNĐ"; 
         return;
     }
 
-    // Duyệt qua các sản phẩm trong giỏ hàng và tạo HTML cho chúng
+    
     cart.forEach(item => {
-        // Lấy giá trị của sản phẩm (đảm bảo xóa ký tự không phải số nếu cần thiết)
+        
         const price = parseInt(item.giadagiam.replace(/\D/g, ""));
-        const itemTotal = price * item.soluong; // Tính thành tiền của sản phẩm
-        total += itemTotal; // Cộng dồn vào tổng giỏ hàng
+        const itemTotal = price * item.soluong; 
+        total += itemTotal; 
 
-        // Tạo HTML cho từng sản phẩm trong giỏ hàng
+       
         const row = `
             <div class="d-flex align-items-center mb-3 border-bottom pb-2">
                 <img src="${item.hinh}" class="img-thumbnail me-3" style="width: 80px; height: 80px; object-fit: cover;">
@@ -91,23 +91,23 @@ function loadCart() {
             </div>
         `;
 
-        // Thêm HTML vào container giỏ hàng
+        
         cartSummary.innerHTML += row;
     });
 
-    // Hiển thị tổng giỏ hàng
+ 
     totalEl.innerText = total.toLocaleString("vi-VN") + " VNĐ";
 }
-// Hàm hiển thị lớp phủ
+
 function showThankYouOverlay() {
     const overlay = document.getElementById("thankYouOverlay");
-    overlay.style.display = "flex";  // Hiển thị lớp phủ
+    overlay.style.display = "flex";  
 
-    // Sau 3 giây, ẩn lớp phủ
+  
     setTimeout(function () {
         overlay.style.display = "none";
-    }, 3000); // 3000ms = 3 giây
+    }, 3000); 
 }
 
-// Gọi hàm loadCart khi trang tải xong
+
 document.addEventListener("DOMContentLoaded", loadCart);

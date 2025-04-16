@@ -2,7 +2,7 @@ function addToCart(index) {
     const product = product_fruit[index];
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-    // Kiểm tra sản phẩm đã có trong giỏ chưa
+    
     const existingProduct = cart.find(item => item.tensp === product.tensp);
 
     if (existingProduct) {
@@ -18,7 +18,7 @@ function addToCart(index) {
     }
 
     localStorage.setItem("cart", JSON.stringify(cart));
-    updateCartCount(); // Cập nhật số lượng trên icon giỏ hàng
+    updateCartCount(); 
 
     const overlay = document.getElementById("cart-overlay");
     if (overlay.style.display === "block") {
@@ -32,7 +32,7 @@ function updateCartCount() {
     document.getElementById("cart-count").textContent = count;
 }
 
-// Gọi khi load trang
+
 window.onload = updateCartCount;
 
 function showOverlay() {

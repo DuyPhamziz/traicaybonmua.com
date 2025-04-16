@@ -359,7 +359,7 @@
             </div>
         `;
 
-                // Sự kiện Đăng xuất
+             
                 document.getElementById("logoutBtn").addEventListener("click", function (e) {
                     e.preventDefault();
                     localStorage.removeItem("currentUser");
@@ -375,13 +375,12 @@
                 link.addEventListener('click', function (e) {
                     e.preventDefault();
 
-                    // Bỏ class active khỏi tất cả link trong sidebar
                     sidebarLinks.forEach(l => {
                         l.classList.remove('text-white', 'bg-success');
                         l.classList.add('link-dark');
                     });
 
-                    // Thêm class active vào link được chọn
+                   
                     this.classList.remove('link-dark');
                     this.classList.add('text-white', 'bg-success');
                 });

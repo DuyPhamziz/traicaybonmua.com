@@ -1,4 +1,4 @@
-// Lấy dữ liệu đăng nhập của User
+
 const frmdangnhap = document.getElementById("frmdangnhap");
 const username = document.getElementById("username");
 const userpass = document.getElementById("userpass");

@@ -25,7 +25,7 @@ function loadAllOrders() {
             </select>
         `;
     
-        // Kiểm tra nếu trạng thái là "Hoàn tất"
+       
         const isCompleted = order.status === "Hoàn tất";
     
         let cardClass = isCompleted ? "card mb-3 border-success" : "card mb-3";
@@ -51,22 +51,22 @@ function loadAllOrders() {
 
     container.innerHTML = html;
 
-    // Gắn sự kiện đổi trạng thái
+ 
     document.querySelectorAll('.status-select').forEach(select => {
         select.addEventListener('change', function () {
             const index = this.getAttribute('data-index');
             const newStatus = this.value;
 
-            // Cập nhật trong allOrders
+            
             allOrders[index].status = newStatus;
             localStorage.setItem('allOrders', JSON.stringify(allOrders));
 
-            // Cập nhật trong lịch sử người dùng
+           
             const userID = allOrders[index].userID;
             const userOrderKey = `orderHistory_${userID}`;
             const userOrders = JSON.parse(localStorage.getItem(userOrderKey)) || [];
 
-            // Tìm đúng đơn hàng theo thời gian và cập nhật trạng thái
+            
             const matchedOrder = userOrders.find(o =>
                 o.date === allOrders[index].date &&
                 o.customer.phone === allOrders[index].customer.phone
