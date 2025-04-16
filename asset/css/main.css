@@ -907,6 +907,7 @@ label.valid:after {
   .tucard-title {
     font-size: 40px;
     color: rgb(57, 0, 148);
+    text-align: center;
   }
 
   .tucard-text {
@@ -916,7 +917,8 @@ label.valid:after {
 
   .tufw-bold {
     font-size: 30px;
-    color: #7e0725;
+    color: #fffb00bb;
+    text-align: center;
   }
   .tucard {
     border: 1px solid #e0e0e0;        
