@@ -889,90 +889,49 @@ label.valid:after {
 .turating {
     color: #ffc107;
 }
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 20px;
-  }
+
   
-  .product-card {
-    background: #fff;
-    border: 1px solid #eee;
-    border-radius: 10px;
-    padding: 15px;
-    text-align: center;
-    transition: transform 0.2s ease;
-    box-shadow: 0 0 10px rgba(0,0,0,0.05);
-  }
-  
-  .product-card:hover {
-    transform: translateY(-5px);
-  }
-  
-  .product-card img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-  }
-  
-  .weight-input {
-    width: 100%;
-    margin: 10px 0;
-    padding: 8px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-  }
-  
-  .product-actions button {
-    margin: 5px;
-    padding: 8px 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .order-btn {
-    background-color: #28a745;
-    color: white;
-  }
-  
-  .cart-btn {
-    background-color: #007bff;
-    color: white;
-  }
-  .card-img-top {
-    height: 250px;
+  .tucard-img-top {
+    border-bottom: 1px solid #eee;    
+    border-top-left-radius: 16px;     
+    border-top-right-radius: 16px;
     object-fit: cover;
+    height: 200px;                   
     width: 100%;
   }
 
-  .card-body {
+  .tucard-body {
     background-image: linear-gradient(to right, #00b09b, #96c93d);
   }
 
-  .card-title {
+  .tucard-title {
     font-size: 40px;
     color: rgb(57, 0, 148);
   }
 
-  .card-text {
+  .tucard-text {
     color: black;
     font-size: 20px;
   }
 
-  .fw-bold {
+  .tufw-bold {
     font-size: 30px;
     color: #7e0725;
   }
-
-  .card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  .tucard {
+    border: 1px solid #e0e0e0;        
+    border-radius: 16px;             
+    overflow: hidden;                 
+    transition: transform 0.3s, box-shadow 0.3s; 
+    background-color: #fff;           
   }
-
-  .card:hover {
-    transform: scale(1.03);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    z-index: 2;
+  
+  .tucard:hover {
+    transform: translateY(-5px);   
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12); 
+    border-color: #ffa500;           
   }
+  
+
+  
   
