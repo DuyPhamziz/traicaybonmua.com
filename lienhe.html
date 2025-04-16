@@ -60,7 +60,7 @@
                 <div class="col-12 col-md-3 d-flex align-items-center justify-content-end ms-auto d-none d-md-block">
                     <ul class="navbar-nav ms-auto d-flex w-100 p-0 m-0">
                         <li class="nav-item d-flex flex-grow-1 text-nowrap w-25">
-                            <a class="nav-link w-50" href="pages/cart.html">Giỏ hàng <i
+                            <a class="nav-link w-50" onclick="showOverlayRequest()">Giỏ hàng <i
                                     class="fa-sharp fa-solid fa-cart-shopping"></i> </a>
                         </li>
                         &nbsp;&nbsp;
@@ -71,7 +71,7 @@
                 </div>
                 <div class="collapse" id="cartUserCollapse" style="color: aliceblue;">
                     <div class="d-flex justify-content-between p-3">
-                        <a onclick="showOverlay()" class="nav-link">
+                        <a onclick="showOverlayRequest()" class="nav-link">
                             Giỏ hàng <i class="fa-sharp fa-solid fa-cart-shopping"></i>
                         </a>
                         <a class="nav-link" href="dangnhap.html">
@@ -237,12 +237,8 @@
             <div id="tuchu">Bạn chưa đăng nhập</div>
             <img id="tuhinhchuadn" src="/asset/img/chuadangnhap.png" alt="Chưa đăng nhập">
             <div class="tu2thongtin">
-                <p>Để tiếp tục mua hàng vui lòng <a class="tudndk" href="/dangnhap.html"
-                        onclick="event.preventDefault();">đăng
-                        nhập</a>.</p>
-                <p>Nếu bạn chưa có tài khoản hãy <a class="tudndk" href="/dangky.html"
-                        onclick="event.preventDefault();">đăng
-                        ký</a> nhé!</p>
+                <p>Để tiếp tục mua hàng vui lòng <a class="tudndk" href="dangnhap.html">đăng nhập</a>.</p>
+                <p>Nếu bạn chưa có tài khoản hãy <a class="tudndk" href="dangky.html">đăng ký</a> nhé!</p>
                 <div style="text-align: center;">
                     <button id="tucloseOverlayBtn">Đóng</button>
                 </div>

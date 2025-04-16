@@ -744,9 +744,8 @@ label.valid:after {
 
 .tuoverlay-content {
     position: relative;
-    /* để đặt nút X bên trong */
     background-color: white;
-    padding: 30px 40px;
+    padding: 30px 60px;
     border-radius: 10px;
     text-align: center;
     display: flex;
