@@ -53,45 +53,42 @@
         <div class="col-12 col-md-3 d-flex align-items-center justify-content-center">
 
         </div>
+        <!-- Giỏ hàng và đăng nhập -->
         <div class="col-12 col-md-3 d-flex align-items-center justify-content-end ms-auto d-none d-md-block">
           <ul class="navbar-nav ms-auto d-flex w-100 p-0 m-0">
             <li class="nav-item d-flex flex-grow-1 text-nowrap w-25">
-              <a class="nav-link w-50 position-relative" onclick="showOverlay()">
-                Giỏ hàng
-                <span class="position-relative">
-                  <i class="fa-sharp fa-solid fa-cart-shopping"></i>
-                  <span id="cart-count"
-                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
-                    style="font-size: 0.6rem; padding: 4px 6px;">
-                    0
-                  </span>
-                </span>
+              <a href="/user/giohang.html" class="nav-link w-50" id="cartLink">Giỏ hàng <i
+                  class="fa-sharp fa-solid fa-cart-shopping"></i>
               </a>
             </li>
-
             <li class="nav-item d-flex flex-grow-1 text-nowrap w-25" id="userNavItem">
-              <a class="nav-link w-50" href="/dangnhap.html" id="userNavLink"> Đăng nhập <i
-                  class="fa-solid fa-user"></i></a>
+              <a class="nav-link w-50 userNavLink" href="dangnhap.html">Đăng nhập <i class="fa-solid fa-user"></i></a>
             </li>
           </ul>
         </div>
-        <div id="loginOverlay" class="overlay">
-          <div class="overlay-content">
-            <h3>Bạn cần đăng nhập để xem giỏ hàng.</h3>
-            <a href="/dangnhap.html" class="btn btn-primary">Đăng nhập</a>
-            <button id="closeOverlay" class="btn btn-secondary">Đóng</button>
-          </div>
-        </div>
         <div class="collapse" id="cartUserCollapse" style="color: aliceblue;">
-          <div class="d-flex justify-content-between p-3">
-            <a class="nav-link" href="pages/cart.html">
-              Giỏ hàng <i class="fa-sharp fa-solid fa-cart-shopping"></i>
+          <div class="d-flex flex-column gap-2 p-3 w-100">
+
+            
+            <a href="/user/giohang.html" class="nav-link" id="cartLink">
+              Giỏ hàng
             </a>
-            <a class="nav-link" href="/dangnhap.html">
+
+           
+            <a class="nav-link userNavLink" href="dangnhap.html">
               Đăng nhập <i class="fa-solid fa-user"></i>
             </a>
+
+           
+            <div class="d-none flex-column gap-2 userMenuMobile">
+              <span class="text-white ps-2 fw-bold"> Xin chào, <span class="userNameMobile">User</span></span>
+              <a href="/user/lichsu.html" class="nav-link"> Lịch sử mua hàng</a>
+              <a href="#" onclick="logout()" class="nav-link text-danger"> Đăng xuất</a>
+            </div>
           </div>
         </div>
+
+
       </div>
 
     </div>
@@ -378,38 +375,34 @@
     Copyright &copy 2025 - Nhóm 2 lập trình web
   </div>
   <script>
-    function addToCart(productId) {
-      const quantity = parseInt(document.getElementById(`quantity${productId}`).value);
+    document.addEventListener("DOMContentLoaded", function () {
+      const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+      const userNavLinks = document.querySelectorAll(".userNavLink");
+      const userMenuMobile = document.querySelector(".userMenuMobile");
+      const userNameMobile = document.querySelector(".userNameMobile");
 
-      if (isNaN(quantity) || quantity < 1) {
-        alert('Vui lòng nhập số lượng hợp lệ.');
-        return;
+      if (currentUser) {
+
+        userNavLinks.forEach(link => link.style.display = "none");
+
+
+        if (userMenuMobile) {
+          userMenuMobile.classList.remove("d-none");
+        }
+
+
+        if (userNameMobile) {
+          userNameMobile.textContent = currentUser.userFullName;
+        }
       }
+    });
 
-      const product = {
-        id: productId,
-        name: "Chôm chôm",
-        price: 60000,
-        quantity: quantity,
-        image: "/asset/img/traicayvn/traicayvn1.jpeg"
-      };
 
-      let cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-      const index = cart.findIndex(item => item.id === product.id);
-      if (index !== -1) {
-        cart[index].quantity += quantity;  
-      } else {
-        cart.push(product);  
+    function logout() {
+      if (confirm("Bạn có chắc chắn muốn đăng xuất không?")) {
+        localStorage.removeItem("currentUser");
+        window.location.reload();
       }
-
-      localStorage.setItem('cart', JSON.stringify(cart));
-      alert(`Đã thêm ${quantity} kg ${product.name} vào giỏ hàng.`);
-    }
-
-    function buyNow(productId) {
-      addToCart(productId);
-      window.location.href = "giohang.html";  
     }
   </script>
 

@@ -6,10 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trái cây bốn mùa</title>
     <link rel="stylesheet" href="/asset/css/style.css">
-    <link rel="stylesheet" href="/asset/css/main.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-
 
 </head>
 
@@ -70,30 +66,43 @@
                                     class="fa-sharp fa-solid fa-cart-shopping"></i>
                             </a>
                         </li>
-                        <li class="nav-item d-flex flex-grow-1 text-nowrap w-25">
+                        <li class="nav-item d-flex flex-grow-1 text-nowrap w-25" >
                             <a class="nav-link w-50" href="dangnhap.html" id="userNavLink">Đăng nhập <i
                                     class="fa-solid fa-user"></i></a>
                         </li>
                     </ul>
                 </div>
+
+                <!-- Toggler cho điện thoại -->
+                <div class="col-12 col-md-3 d-flex align-items-center justify-content-end ms-auto d-md-none">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#cartUserCollapse" aria-controls="cartUserCollapse" aria-expanded="false"
+                        aria-label="Toggle cart and user">
+                        <i class="fa-solid fa-user"></i>
+                    </button>
+                </div>
+
                 <!-- Lớp phủ -->
-                <div id="loginOverlay" class="overlay">
+                <div id="loginOverlay" class="overlay" style="display: none;">
                     <div class="overlay-content">
                         <h3>Bạn cần đăng nhập để xem giỏ hàng.</h3>
                         <a href="dangnhap.html" class="btn btn-primary">Đăng nhập</a>
                         <button id="closeOverlay" class="btn btn-secondary">Đóng</button>
                     </div>
                 </div>
+
+                <!-- Collapse giỏ hàng và đăng nhập trên điện thoại -->
                 <div class="collapse" id="cartUserCollapse" style="color: aliceblue;">
                     <div class="d-flex justify-content-between p-3">
-                        <a onclick="showOverlayRequest()" class="nav-link">
+                        <a onclick="showOverlayRequest()" class="nav-link" id="cartLink">
                             Giỏ hàng <i class="fa-sharp fa-solid fa-cart-shopping"></i>
                         </a>
-                        <a class="nav-link" href="dangnhap.html">
+                        <a class="nav-link" href="dangnhap.html" id="userNavLink">
                             Đăng nhập <i class="fa-solid fa-user"></i>
                         </a>
                     </div>
                 </div>
+
             </div>
 
         </div>
@@ -212,124 +221,127 @@
         <!-- Danh sách sản phẩm -->
         <section class="jumbotron text-center">
             <div class="container">
-              <h1 class="jumbotron-heading">Danh mục sản phẩm tham khảo</h1>
-              <p class="lead text-muted">Các sản phẩm với chất lượng, uy tín, cam kết từ nhà Sản xuất.</p>
+                <h1 class="jumbotron-heading">Danh mục sản phẩm tham khảo</h1>
+                <p class="lead text-muted">Các sản phẩm với chất lượng, uy tín, cam kết từ nhà Sản xuất.</p>
             </div>
-          </section>
-      
-          <div class="tusanpham-container">
+        </section>
+
+        <div class="tusanpham-container">
             <div class="container my-5">
-              <div class="row g-4">
-                <div class="col-md-4">
-                  <div class="tucard h-100 shadow-sm">
-                    <img src="/asset/img/traicayvn/traicayvn1.jpeg" class="tucard-img-top" alt="Chôm chôm">
-                    <div class="tucard-body d-flex flex-column">
-                      <h5 class="tucard-title">Chôm chôm</h5>
-                      <p class="tucard-text">Chôm chôm tươi ngon, chứa nhiều vitamin và chất dinh dưỡng cho sức khỏe.</p>
-                      <p class="tufw-bold">Giá: 49.000đ/kg</p>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="tucard h-100 shadow-sm">
+                            <img src="/asset/img/traicayvn/traicayvn1.jpeg" class="tucard-img-top" alt="Chôm chôm">
+                            <div class="tucard-body d-flex flex-column">
+                                <h5 class="tucard-title">Chôm chôm</h5>
+                                <p class="tucard-text">Chôm chôm tươi ngon, chứa nhiều vitamin và chất dinh dưỡng cho
+                                    sức khỏe.</p>
+                                <p class="tufw-bold">Giá: 49.000đ/kg</p>
+                            </div>
+                        </div>
                     </div>
-                  </div>
-                </div>
-      
-                <div class="col-md-4">
-                  <div class="tucard h-100 shadow-sm">
-                    <img src="/asset/img/traicayvn/traicayvn2.jpeg" class="tucard-img-top" alt="Măng cụt">
-                    <div class="tucard-body d-flex flex-column">
-                      <h5 class="tucard-title">Măng cụt</h5>
-                      <p class="tucard-text">Trái cây tươi ngon, chứa nhiều vitamin và chất dinh dưỡng cho sức khỏe.</p>
-                      <p class="tufw-bold">Giá: 50.000đ/kg</p>
+
+                    <div class="col-md-4">
+                        <div class="tucard h-100 shadow-sm">
+                            <img src="/asset/img/traicayvn/traicayvn2.jpeg" class="tucard-img-top" alt="Măng cụt">
+                            <div class="tucard-body d-flex flex-column">
+                                <h5 class="tucard-title">Măng cụt</h5>
+                                <p class="tucard-text">Trái cây tươi ngon, chứa nhiều vitamin và chất dinh dưỡng cho sức
+                                    khỏe.</p>
+                                <p class="tufw-bold">Giá: 50.000đ/kg</p>
+                            </div>
+                        </div>
                     </div>
-                  </div>
-                </div>
-      
-                <div class="col-md-4">
-                  <div class="tucard h-100 shadow-sm">
-                    <img src="/asset/img/traicayvn/traicayvn3.jpg" class="tucard-img-top" alt="Sầu riêng">
-                    <div class="tucard-body d-flex flex-column">
-                      <h5 class="tucard-title">Sầu riêng</h5>
-                      <p class="tucard-text">Trái cây tươi ngon, chứa nhiều vitamin và chất dinh dưỡng cho sức khỏe.</p>
-                      <p class="tufw-bold">Giá: 119.000đ/kg</p>
+
+                    <div class="col-md-4">
+                        <div class="tucard h-100 shadow-sm">
+                            <img src="/asset/img/traicayvn/traicayvn3.jpg" class="tucard-img-top" alt="Sầu riêng">
+                            <div class="tucard-body d-flex flex-column">
+                                <h5 class="tucard-title">Sầu riêng</h5>
+                                <p class="tucard-text">Trái cây tươi ngon, chứa nhiều vitamin và chất dinh dưỡng cho sức
+                                    khỏe.</p>
+                                <p class="tufw-bold">Giá: 119.000đ/kg</p>
+                            </div>
+                        </div>
                     </div>
-                  </div>
                 </div>
-              </div>
-      
-              <div class="row g-4 mt-4">
-                <div class="col-md-4">
-                  <div class="tucard h-100 shadow-sm">
-                    <img src="/asset/img/traicayvn/traicayvn4.jpg" class="tucard-img-top" alt="Vải">
-                    <div class="tucard-body d-flex flex-column">
-                      <h5 class="tucard-title">Vải</h5>
-                      <p class="tucard-text">Chứa nhiều chất dinh dưỡng cho sức khỏe.</p>
-                      <p class="tufw-bold">Giá: 55.000đ/kg</p>
+
+                <div class="row g-4 mt-4">
+                    <div class="col-md-4">
+                        <div class="tucard h-100 shadow-sm">
+                            <img src="/asset/img/traicayvn/traicayvn4.jpg" class="tucard-img-top" alt="Vải">
+                            <div class="tucard-body d-flex flex-column">
+                                <h5 class="tucard-title">Vải</h5>
+                                <p class="tucard-text">Chứa nhiều chất dinh dưỡng cho sức khỏe.</p>
+                                <p class="tufw-bold">Giá: 55.000đ/kg</p>
+                            </div>
+                        </div>
                     </div>
-                  </div>
-                </div>
-      
-                <div class="col-md-4">
-                  <div class="tucard h-100 shadow-sm">
-                    <img src="/asset/img/traicayvn/traicayvn5.jpg" class="tucard-img-top" alt="Sabo">
-                    <div class="tucard-body d-flex flex-column">
-                      <h5 class="tucard-title">Saboche</h5>
-                      <p class="tucard-text">Tươi ngon, giàu chất dinh dưỡng.</p>
-                      <p class="tufw-bold">Giá: 27.000đ/kg</p>
+
+                    <div class="col-md-4">
+                        <div class="tucard h-100 shadow-sm">
+                            <img src="/asset/img/traicayvn/traicayvn5.jpg" class="tucard-img-top" alt="Sabo">
+                            <div class="tucard-body d-flex flex-column">
+                                <h5 class="tucard-title">Saboche</h5>
+                                <p class="tucard-text">Tươi ngon, giàu chất dinh dưỡng.</p>
+                                <p class="tufw-bold">Giá: 27.000đ/kg</p>
+                            </div>
+                        </div>
                     </div>
-                  </div>
-                </div>
-      
-                <div class="col-md-4">
-                  <div class="tucard h-100 shadow-sm">
-                    <img src="/asset/img/traicayvn/traicayvn6.jpg" class="tucard-img-top" alt="Vú sữa">
-                    <div class="tucard-body d-flex flex-column">
-                      <h5 class="tucard-title">Vú sữa</h5>
-                      <p class="tucard-text">Giàu chất xơ và vitamin thiết yếu.</p>
-                      <p class="tufw-bold">Giá: 70.000đ/kg</p>
+
+                    <div class="col-md-4">
+                        <div class="tucard h-100 shadow-sm">
+                            <img src="/asset/img/traicayvn/traicayvn6.jpg" class="tucard-img-top" alt="Vú sữa">
+                            <div class="tucard-body d-flex flex-column">
+                                <h5 class="tucard-title">Vú sữa</h5>
+                                <p class="tucard-text">Giàu chất xơ và vitamin thiết yếu.</p>
+                                <p class="tufw-bold">Giá: 70.000đ/kg</p>
+                            </div>
+                        </div>
                     </div>
-                  </div>
                 </div>
-              </div>
-      
-              <div class="row g-4 mt-4">
-                <div class="col-md-4">
-                  <div class="tucard h-100 shadow-sm">
-                    <img src="/asset/img/traicayvn/traicayvn7.jpg" class="tucard-img-top" alt="Nhãn">
-                    <div class="tucard-body d-flex flex-column">
-                      <h5 class="tucard-title">Nhãn</h5>
-                      <p class="tucard-text">Tươi ngon, mọng nước và bổ dưỡng.</p>
-                      <p class="tufw-bold">Giá: 60.000đ/kg</p>
+
+                <div class="row g-4 mt-4">
+                    <div class="col-md-4">
+                        <div class="tucard h-100 shadow-sm">
+                            <img src="/asset/img/traicayvn/traicayvn7.jpg" class="tucard-img-top" alt="Nhãn">
+                            <div class="tucard-body d-flex flex-column">
+                                <h5 class="tucard-title">Nhãn</h5>
+                                <p class="tucard-text">Tươi ngon, mọng nước và bổ dưỡng.</p>
+                                <p class="tufw-bold">Giá: 60.000đ/kg</p>
+                            </div>
+                        </div>
                     </div>
-                  </div>
-                </div>
-      
-                <div class="col-md-4">
-                  <div class="tucard h-100 shadow-sm">
-                    <img src="/asset/img/traicayvn/traicayvn8.jpg" class="tucard-img-top" alt="Thanh long">
-                    <div class="tucard-body d-flex flex-column">
-                      <h5 class="tucard-title">Thanh long</h5>
-                      <p class="tucard-text">Bổ sung năng lượng và vitamin.</p>
-                      <p class="tufw-bold">Giá: 35.000đ/kg</p>
+
+                    <div class="col-md-4">
+                        <div class="tucard h-100 shadow-sm">
+                            <img src="/asset/img/traicayvn/traicayvn8.jpg" class="tucard-img-top" alt="Thanh long">
+                            <div class="tucard-body d-flex flex-column">
+                                <h5 class="tucard-title">Thanh long</h5>
+                                <p class="tucard-text">Bổ sung năng lượng và vitamin.</p>
+                                <p class="tufw-bold">Giá: 35.000đ/kg</p>
+                            </div>
+                        </div>
                     </div>
-                  </div>
-                </div>
-      
-                <div class="col-md-4">
-                  <div class="tucard h-100 shadow-sm">
-                    <img src="/asset/img/traicayvn/traicayvn9.jpg" class="tucard-img-top" alt="Xoài">
-                    <div class="tucard-body d-flex flex-column">
-                      <h5 class="tucard-title">Xoài</h5>
-                      <p class="tucard-text">Thơm ngon, phù hợp mọi gia đình.</p>
-                      <p class="tufw-bold">Giá: 75.000đ/kg</p>
+
+                    <div class="col-md-4">
+                        <div class="tucard h-100 shadow-sm">
+                            <img src="/asset/img/traicayvn/traicayvn9.jpg" class="tucard-img-top" alt="Xoài">
+                            <div class="tucard-body d-flex flex-column">
+                                <h5 class="tucard-title">Xoài</h5>
+                                <p class="tucard-text">Thơm ngon, phù hợp mọi gia đình.</p>
+                                <p class="tufw-bold">Giá: 75.000đ/kg</p>
+                            </div>
+                        </div>
                     </div>
-                  </div>
                 </div>
-              </div>
             </div>
-          </div>
-      
-      
-          <div class="tuxemnhieusp">
+        </div>
+
+
+        <div class="tuxemnhieusp">
             <a class="tunhieusp" href="sanpham.html">Xem thêm nhiều sản phẩm hơn và mua hàng</a>
-          </div>
+        </div>
     </main>
     <footer class="mt-auto py-3">
         <div class="p-4"></div>
@@ -415,12 +427,13 @@
             </div>
         </div>
     </div>
-
+    
+    <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="/admin/asset/js/product_data.js"></script>
     <script src="/asset/js/crypto-js.min.js"></script>
     <script src="/asset/js/accountAmin.js"></script>
     <script src="/asset/js/tujskiemtra.js"></script>
-    <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
 
 </body>
 

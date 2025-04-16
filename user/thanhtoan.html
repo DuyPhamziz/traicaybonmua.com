@@ -62,22 +62,38 @@
 
                 </div>
                 <!-- Giỏ hàng và đăng nhập -->
-                <div class="col-12 col-md-3 d-flex align-items-center justify-content-end ms-auto d-none d-md-block">
-                    <ul class="navbar-nav ms-auto d-flex w-100 p-0 m-0">
-                        <li class="nav-item d-flex flex-grow-1 text-nowrap w-25">
-                            <a class="nav-link w-50" href="" id="cartLink">Giỏ hàng <i
-                                    class="fa-sharp fa-solid fa-cart-shopping"></i>
-                            </a>
-                        </li>
-
-                        <li class="nav-item d-flex flex-grow-1 text-nowrap w-25" id="userNavItem">
-                            <a class="nav-link w-50" href="dangnhap.html" id="userNavLink"> Đăng nhập <i
-                                    class="fa-solid fa-user"></i></a>
-                        </li>
-                    </ul>
+                <div class="collapse" id="cartUserCollapse" style="color: aliceblue;">
+                    <div class="d-flex flex-column gap-2 p-3 w-100">
+          
+                      
+                      <a href="/user/giohang.html" class="nav-link" id="cartLink">
+                        Giỏ hàng
+                      </a>
+          
+                     
+                      <a class="nav-link userNavLink" href="dangnhap.html">
+                        Đăng nhập <i class="fa-solid fa-user"></i>
+                      </a>
+          
+                     
+                      <div class="d-none flex-column gap-2 userMenuMobile">
+                        <span class="text-white ps-2 fw-bold"> Xin chào, <span class="userNameMobile">User</span></span>
+                        <a href="/user/lichsu.html" class="nav-link"> Lịch sử mua hàng</a>
+                        <a href="#" onclick="logout()" class="nav-link text-danger"> Đăng xuất</a>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="collapse" id="cartUserCollapse" style="color: aliceblue;">
+                <div class="d-flex justify-content-between p-3 w-100">
+                    <a href="/user/giohang.html" class="nav-link" id="cartLink">
+                        Giỏ hàng <i class="fa-sharp fa-solid fa-cart-shopping"></i>
+                    </a>
+                    <a class="nav-link userNavLink" href="dangnhap.html">
+                        Đăng nhập <i class="fa-solid fa-user"></i>
+                    </a>
                 </div>
             </div>
-
         </div>
     </nav>
     <!-- end header -->
@@ -94,11 +110,13 @@
                     </div>
                     <div class="mb-3">
                         <span for="email" class="form-span">Email</span>
-                        <input type="email" class="form-control" id="email" required>
+                        <input type="email" class="form-control" id="email" required
+                            pattern="[a-zA-Z0-9._%+-]+@gmail\.com$" title="Email phải có đuôi @gmail.com">
                     </div>
                     <div class="mb-3">
                         <span for="phone" class="form-span">Số Điện Thoại</span>
-                        <input type="text" class="form-control" id="phone" required>
+                        <input type="text" class="form-control" id="phone" required pattern="0\d{9}"
+                            title="Số điện thoại phải bắt đầu bằng 0 và có 10 chữ số">
                     </div>
                     <div class="mb-3">
                         <span for="address" class="form-span">Địa Chỉ</span>
@@ -106,9 +124,10 @@
                     </div>
                     <button onclick="confirmCheckout()"
                         style="height: 50px; width: 400px; font-weight: bold; margin-bottom: 3px; font-size: 20px;"
-                        type="button" class="btn btn-warning">Xác Nhận Thanh Toán</button>
+                        type="submit" class="btn btn-warning">Xác Nhận Thanh Toán</button>
                 </form>
             </div>
+
             <div class="col-md-6" style="background-image: url(/asset/img/traiacquy/bg-pay.png);">
                 <h3 class="text-success">Thông Tin Sản Phẩm</h3>
                 <div id="cart-summary" class="border rounded p-3 bg-light">
@@ -121,9 +140,6 @@
             </div>
         </div>
     </div>
-
-
-
 
     <footer class="mt-auto py-3">
         <div class="p-4"></div>
@@ -199,6 +215,20 @@
     </div>
 
     <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+            const userNavLinks = document.querySelectorAll(".userNavLink");
+
+            if (currentUser) {
+                userNavLinks.forEach(link => {
+                    link.innerHTML = `&nbsp; Chào, ${currentUser.userFullName} <i class="fa-solid fa-user"></i>`;
+                    link.href = "#";
+                });
+            }
+        });
+
+        console.log(JSON.parse(localStorage.getItem("cart")));
         document.addEventListener("DOMContentLoaded", function () {
             const currentUser = JSON.parse(localStorage.getItem("currentUser"));
             const userNavItem = document.getElementById("userNavItem");
@@ -211,7 +241,7 @@
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarUserDropdown">
                         <li><a class="dropdown-item" href="#" id="logoutBtn">Đăng xuất</a></li></ul></div>`;
 
-               
+
                 document.getElementById("logoutBtn").addEventListener("click", function (e) {
                     e.preventDefault();
                     localStorage.removeItem("currentUser");

@@ -70,6 +70,28 @@
                         </li>
                     </ul>
                 </div>
+                <div class="collapse" id="cartUserCollapse" style="color: aliceblue;">
+                    <div class="d-flex flex-column gap-2 p-3 w-100">
+
+
+                        <a href="/user/giohang.html" class="nav-link" id="cartLink">
+                            Giỏ hàng
+                        </a>
+
+
+                        <a class="nav-link userNavLink" href="dangnhap.html">
+                            Đăng nhập <i class="fa-solid fa-user"></i>
+                        </a>
+
+
+                        <div class="d-none flex-column gap-2 userMenuMobile">
+                            <span class="text-white ps-2 fw-bold"> Xin chào, <span
+                                    class="userNameMobile">User</span></span>
+                            <a href="/user/lichsu.html" class="nav-link"> Lịch sử mua hàng</a>
+                            <a href="#" onclick="logout()" class="nav-link text-danger"> Đăng xuất</a>
+                        </div>
+                    </div>
+                </div>
             </div>
 
         </div>
@@ -141,7 +163,10 @@
     <div class="text-center fw-bold bg-success text-white" style="text-decoration: none;">
         Copyright &copy 2025 - Nhóm 2 lập trình web
     </div>
+
     <script src="/admin/asset/js/history.js"></script>
+    <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/admin/asset/js/logout.js"></script>
 </body>
 
 </html>

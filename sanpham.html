@@ -40,16 +40,16 @@
                     <div class="navbar-collapse collapse" id="navbarCollapse">
                         <ul class="navbar-nav mr-auto justify-content-between ml-auto w-100">
                             <li class="nav-item active">
-                                <a class="nav-link" href="index.html">Trang chủ</a>
+                                <a class="nav-link" href="/index.html">Trang chủ</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="gioithieu.html">Giới thiệu</a>
+                                <a class="nav-link" href="/gioithieu.html">Giới thiệu</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Sản phẩm</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="lienhe.html">Liên hệ</a>
+                                <a class="nav-link" href="/lienhe.html">Liên hệ</a>
                             </li>
 
                         </ul>
@@ -61,19 +61,42 @@
                 <div class="col-12 col-md-3 d-flex align-items-center justify-content-center">
 
                 </div>
+
                 <!-- Giỏ hàng và đăng nhập -->
                 <div class="col-12 col-md-3 d-flex align-items-center justify-content-end ms-auto d-none d-md-block">
                     <ul class="navbar-nav ms-auto d-flex w-100 p-0 m-0">
                         <li class="nav-item d-flex flex-grow-1 text-nowrap w-25">
-                            <a class="nav-link w-50" onclick="showOverlayRequest()">Giỏ hàng <i
-                                    class="fa-sharp fa-solid fa-cart-shopping"></i> </a>
+                            <a onclick="showOverlayRequest()" class="nav-link w-50" id="cartLink">Giỏ hàng <i
+                                    class="fa-sharp fa-solid fa-cart-shopping"></i>
+                            </a>
                         </li>
-
                         <li class="nav-item d-flex flex-grow-1 text-nowrap w-25">
-                            <a class="nav-link w-50" href="/dangnhap.html">Đăng nhập <i
+                            <a class="nav-link w-50" href="dangnhap.html" id="userNavLink">Đăng nhập <i
                                     class="fa-solid fa-user"></i></a>
                         </li>
                     </ul>
+                </div>
+
+
+                <!-- Lớp phủ -->
+                <div id="loginOverlay" class="overlay" style="display: none;">
+                    <div class="overlay-content">
+                        <h3>Bạn cần đăng nhập để xem giỏ hàng.</h3>
+                        <a href="dangnhap.html" class="btn btn-primary">Đăng nhập</a>
+                        <button id="closeOverlay" class="btn btn-secondary">Đóng</button>
+                    </div>
+                </div>
+
+                <!-- Collapse giỏ hàng và đăng nhập trên điện thoại -->
+                <div class="collapse" id="cartUserCollapse" style="color: aliceblue;">
+                    <div class="d-flex justify-content-between p-3">
+                        <a onclick="showOverlayRequest()" class="nav-link" id="cartLink">
+                            Giỏ hàng <i class="fa-sharp fa-solid fa-cart-shopping"></i>
+                        </a>
+                        <a class="nav-link" href="dangnhap.html" id="userNavLink">
+                            Đăng nhập <i class="fa-solid fa-user"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
 
@@ -255,7 +278,7 @@
                     </div>
 
 
-                    <div class="container row g-5 p-2 w-100 justify-content-center" id="product-content"></div>
+                    <div class="container row g-5 p-2 w-100" id="product-content"></div>
                     <nav aria-label="Page navigation example">
                         <ul class="pagination justify-content-center mt-4" id="pagination"></ul>
                     </nav>
@@ -364,13 +387,13 @@
                 link.addEventListener('click', function (e) {
                     e.preventDefault();
 
-                    // Bỏ class active khỏi tất cả link trong sidebar
+
                     sidebarLinks.forEach(l => {
                         l.classList.remove('text-white', 'bg-success');
                         l.classList.add('link-dark');
                     });
 
-                    // Thêm class active vào link được chọn
+
                     this.classList.remove('link-dark');
                     this.classList.add('text-white', 'bg-success');
                 });

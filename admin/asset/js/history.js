@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
             `;
         });
 
-        const receivedButton = order.status === "Đang giao"
+        const receivedButton = order.status === "Đã giao"
             ? `<button class="btn btn-success btn-sm mt-2 confirm-receive-btn" data-order-index="${orderHistory.length - index - 1}">Đã nhận được hàng</button>`
             : "";
 
@@ -48,19 +48,19 @@ document.addEventListener("DOMContentLoaded", function () {
         `;
     });
 
-  
+
     document.querySelectorAll('.confirm-receive-btn').forEach(btn => {
         btn.addEventListener('click', function () {
             const index = this.getAttribute('data-order-index');
             const orderKey = `orderHistory_${currentUser.userID}`;
             const orderHistory = JSON.parse(localStorage.getItem(orderKey)) || [];
 
-           
+
             if (orderHistory[index].status === "Đang giao" || orderHistory[index].status === "Đã giao") {
                 orderHistory[index].status = "Hoàn tất";
                 localStorage.setItem(orderKey, JSON.stringify(orderHistory));
 
-              
+
                 const allOrders = JSON.parse(localStorage.getItem("allOrders")) || [];
                 const match = allOrders.find(o =>
                     o.userID === currentUser.userID && o.date === orderHistory[index].date
@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
 
                 alert("Cảm ơn bạn đã xác nhận. Đơn hàng đã được đánh dấu là 'Hoàn tất'.");
-                location.reload(); 
+                location.reload();
             }
         });
     });

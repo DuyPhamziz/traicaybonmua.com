@@ -71,7 +71,7 @@
                 </div>
                 <div class="collapse" id="cartUserCollapse" style="color: aliceblue;">
                     <div class="d-flex justify-content-between p-3">
-                        <a onclick="showOverlay()" class="nav-link">
+                        <a onclick="showOverlayRequest()" class="nav-link" id="cartLink">
                             Giỏ hàng <i class="fa-sharp fa-solid fa-cart-shopping"></i>
                         </a>
                         <a class="nav-link" href="dangnhap.html">
@@ -254,33 +254,33 @@
     <script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            
+
             const contactForm = document.getElementById("contact-form");
 
             if (contactForm) {
                 contactForm.addEventListener("submit", function (e) {
                     e.preventDefault();
 
-                   
+
                     const email = document.getElementById("email").value;
                     const title = document.getElementById("title").value;
                     const message = document.querySelector("textarea[name='message']").value;
 
                     if (email && title && message) {
-                        
+
                         const contactMessages = JSON.parse(localStorage.getItem("contactMessages")) || [];
                         const newMessage = {
                             email,
                             title,
                             message,
-                            date: new Date().toLocaleString(), 
-                            read: false 
+                            date: new Date().toLocaleString(),
+                            read: false
                         };
                         contactMessages.push(newMessage);
 
                         localStorage.setItem("contactMessages", JSON.stringify(contactMessages));
 
-                        
+
                         contactForm.reset();
                         alert("Lời nhắn đã được gửi thành công.");
                     } else {

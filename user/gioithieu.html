@@ -62,7 +62,7 @@
                 <div class="col-12 col-md-3 d-flex align-items-center justify-content-end ms-auto d-none d-md-block">
                     <ul class="navbar-nav ms-auto d-flex w-100 p-0 m-0">
                         <li class="nav-item d-flex flex-grow-1 text-nowrap w-25">
-                            <a class="nav-link w-50" href="" id="cartLink">Giỏ hàng <i
+                            <a class="nav-link w-50" href="/user/giohang.html" id="cartLink">Giỏ hàng <i
                                     class="fa-sharp fa-solid fa-cart-shopping"></i>
                             </a>
                         </li>
@@ -73,22 +73,26 @@
                         </li>
                     </ul>
                 </div>
-                <!-- Lớp phủ -->
-                <div id="loginOverlay" class="overlay">
-                    <div class="overlay-content">
-                        <h3>Bạn cần đăng nhập để xem giỏ hàng.</h3>
-                        <a href="/dangnhap.html" class="btn btn-primary">Đăng nhập</a>
-                        <button id="closeOverlay" class="btn btn-secondary">Đóng</button>
-                    </div>
-                </div>
                 <div class="collapse" id="cartUserCollapse" style="color: aliceblue;">
-                    <div class="d-flex justify-content-between p-3">
-                        <a class="nav-link" href="pages/cart.html">
-                            Giỏ hàng <i class="fa-sharp fa-solid fa-cart-shopping"></i>
+                    <div class="d-flex flex-column gap-2 p-3 w-100">
+
+
+                        <a href="/user/giohang.html" class="nav-link" id="cartLink">
+                            Giỏ hàng
                         </a>
-                        <a class="nav-link" href="dangnhap.html">
+
+
+                        <a class="nav-link userNavLink" href="dangnhap.html">
                             Đăng nhập <i class="fa-solid fa-user"></i>
                         </a>
+
+
+                        <div class="d-none flex-column gap-2 userMenuMobile">
+                            <span class="text-white ps-2 fw-bold"> Xin chào, <span
+                                    class="userNameMobile">User</span></span>
+                            <a href="/user/lichsu.html" class="nav-link"> Lịch sử mua hàng</a>
+                            <a href="#" onclick="logout()" class="nav-link text-danger"> Đăng xuất</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -342,7 +346,19 @@
     <div class="text-center fw-bold bg-success text-white" style="text-decoration: none;">
         Copyright &copy 2025 - Nhóm 2 lập trình web
     </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+            const userNavLinks = document.querySelectorAll(".userNavLink");
 
+            if (currentUser) {
+                userNavLinks.forEach(link => {
+                    link.innerHTML = `&nbsp; Chào, ${currentUser.userFullName} <i class="fa-solid fa-user"></i>`;
+                    link.href = "#";
+                });
+            }
+        });
+    </script>
     <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="/admin/asset/js/logout.js"></script>
 </body>

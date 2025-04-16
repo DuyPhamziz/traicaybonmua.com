@@ -73,7 +73,27 @@
                         </li>
                     </ul>
                 </div>
-                <!-- Lớp phủ -->
+                <div class="collapse" id="cartUserCollapse" style="color: aliceblue;">
+                    <div class="d-flex flex-column gap-2 p-3 w-100">
+          
+                      
+                      <a href="/user/giohang.html" class="nav-link" id="cartLink">
+                        Giỏ hàng
+                      </a>
+          
+                     
+                      <a class="nav-link userNavLink" href="dangnhap.html">
+                        Đăng nhập <i class="fa-solid fa-user"></i>
+                      </a>
+          
+                     
+                      <div class="d-none flex-column gap-2 userMenuMobile">
+                        <span class="text-white ps-2 fw-bold"> Xin chào, <span class="userNameMobile">User</span></span>
+                        <a href="/user/lichsu.html" class="nav-link"> Lịch sử mua hàng</a>
+                        <a href="#" onclick="logout()" class="nav-link text-danger"> Đăng xuất</a>
+                      </div>
+                    </div>
+                  </div>
 
             </div>
 
@@ -161,15 +181,19 @@
         Copyright &copy 2025 - Nhóm 2 lập trình web
     </div>
     <script>
+
         document.addEventListener("DOMContentLoaded", function () {
             const currentUser = JSON.parse(localStorage.getItem("currentUser"));
-            const userNavLink = document.getElementById("userNavLink");
+            const userNavLinks = document.querySelectorAll(".userNavLink");
 
-            if (currentUser && userNavLink) {
-                userNavLink.innerHTML = `&nbsp; Chào, ${currentUser.userFullName} <i class="fa-solid fa-user"></i>`;
-                userNavLink.href = "#";
+            if (currentUser) {
+                userNavLinks.forEach(link => {
+                    link.innerHTML = `&nbsp; Chào, ${currentUser.userFullName} <i class="fa-solid fa-user"></i>`;
+                    link.href = "#";
+                });
             }
         });
+
 
         function loadCart() {
             const cart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -238,13 +262,13 @@
             loadCart();
         }
         document.getElementById('checkoutBtn').addEventListener('click', function () {
-           
+
             const cart = JSON.parse(localStorage.getItem("cart")) || [];
             if (cart.length === 0) {
                 alert("Giỏ hàng của bạn đang trống. Vui lòng thêm sản phẩm trước khi thanh toán.");
             } else {
-               
-                window.location.href = 'thanhtoan.html';  
+
+                window.location.href = 'thanhtoan.html';
             }
         });
 
